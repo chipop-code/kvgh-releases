@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiếm Võng Giang Hồ — Đại Bản Cập Nhật Ver. 1.0.11 (Build #115)</title>
+  <meta name="description" content="Trang thông tin chính thức Đại Bản Cập Nhật Kiếm Võng Giang Hồ Ver. 1.0.11 (Build #115): Chơi Tự Do miễn phí tới Lv.120, Tu Vi Tích Trữ, Bí Cảnh Hoa Sơn, 13 Danh Hiệu Mặt Nạ VIP, Giao diện Cổ Phong Điện Ảnh & Bảo mật OTA Ed25519." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kiếm Võng Giang Hồ — Đại Bản Cập Nhật Ver. 1.0.11 (Build #115)" />
+  <meta property="og:description" content="Miễn phí trải nghiệm tới Lv.120 · Hệ sinh thái hoạt động Giang Hồ 4 đợt · Bí Cảnh Hoa Sơn & Kiếm Thần Long · 13 Danh Hiệu Mặt Nạ VIP · Chữ ký số Ed25519 KVGHP2." />
+  <meta property="og:image" content="https://chipop-code.github.io/kvgh-releases/updates/assets/hero_v1011.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="hf-grain-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Kiếm Võng Giang Hồ trang đầu">
+        <span class="brand-seal" aria-hidden="true">劍</span>
+        <span>Kiếm Võng Giang Hồ</span>
+      </a>
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#chapters">Nội dung cập nhật</a>
+        <a href="#gallery">Hình ảnh giao diện</a>
+        <a href="#tech">Tối ưu &amp; Bảo mật</a>
+        <a href="#download">Cách cập nhật</a>
+        <a href="../privacy-policy.html">Chính sách</a>
+      </nav>
+      <span class="ver-pill">VER. 1.0.11 · #115</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Giới thiệu bản cập nhật 1.0.11">
+      <div class="hero-bg">
+        <img src="./assets/hero_v1011.webp" alt="Cảnh kiếm hiệp đỉnh Hoa Sơn hoàng hôn sương khói — Kiếm Võng Giang Hồ 1.0.11" width="1376" height="768" fetchpriority="high" />
+      </div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <canvas id="hero-embers" aria-hidden="true"></canvas>
+
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="seal-tag">Đại Bản Cập Nhật · PC Offline</span>
+            <span class="meta-tag">VER. 1.0.11 · BUILD #115 · 22/11/2026</span>
+          </div>
+          <h1>
+            <span class="shimmer-gold-text">Kiếm Võng Giang Hồ</span>
+            <span class="hero-sub">Khai Mở Chơi Tự Do &amp; Đại Tu Cổ Phong Điện Ảnh</span>
+          </h1>
+          <p class="hero-lead">
+            Mở cửa trải nghiệm miễn phí trọn vẹn tới Cấp 120 với kho <strong>Tu Vi Tích Trữ</strong>, đại tu toàn bộ giao diện Cổ Phong Điện Ảnh, bổ sung hệ sinh thái hoạt động Giang Hồ 4 đợt, Bí Cảnh Hoa Sơn và nâng chuẩn chữ ký cập nhật <strong>Ed25519</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#chapters">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Khám phá toàn bộ cập nhật
+            </a>
+            <a class="btn btn-ghost" href="#download">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Hướng dẫn cập nhật &amp; Tải bản mới
+            </a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Thông số nổi bật">
+            <div class="metric"><span class="metric-val">Miễn Phí Lv.120</span><span class="metric-lbl">Chơi tự do, không cần mã</span></div>
+            <div class="metric"><span class="metric-val">10+ Hệ Thống</span><span class="metric-lbl">Lịch Trình · VIP · Đại Hội</span></div>
+            <div class="metric"><span class="metric-val">13 Danh Hiệu VIP</span><span class="metric-lbl">Khung trong suốt Lưu Quang</span></div>
+            <div class="metric"><span class="metric-val">Ed25519 KVGHP2</span><span class="metric-lbl">Cập nhật tự động giữ 100% save</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chapters" class="section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="sec-kicker">Chi tiết phiên bản 1.0.11</span>
+            <h2 class="sec-title">Bốn Trọng Tâm Nâng Cấp Lớn Nhất</h2>
+            <p class="sec-desc">Lọc nhanh theo nhóm tính năng để nắm trọn thay đổi của bản dựng #115. Bấm vào bất kỳ hình ảnh nào để phóng lớn toàn màn hình.</p>
+          </div>
+        </div>
+
+        <div class="filter-bar" role="toolbar" aria-label="Lọc nhóm tính năng">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">Tất cả (4 chương)</button>
+          <button class="filter-btn" type="button" data-filter="freeplay" aria-pressed="false">Chơi Tự Do &amp; Lv.120</button>
+          <button class="filter-btn" type="button" data-filter="engagement" aria-pressed="false">Hoạt Động Giang Hồ</button>
+          <button class="filter-btn" type="button" data-filter="combat" aria-pressed="false">Hoa Sơn &amp; Chiến Đấu</button>
+          <button class="filter-btn" type="button" data-filter="visual" aria-pressed="false">Giao Diện &amp; Mặt Nạ 3D</button>
+        </div>
+
+        <div class="chapters">
+          <article class="chapter hf-lit-card" data-reveal data-cat="freeplay">
+            <div class="chap-media">
+              <button type="button" data-lightbox-src="./assets/gallery_login_cophong.webp" data-lightbox-cap="Giao diện Đăng Nhập Cổ Phong Điện Ảnh & Chế độ Chơi Tự Do miễn phí tới Lv.120">
+                <img src="./assets/gallery_login_cophong.webp" alt="Màn hình đăng nhập Cổ Phong Điện Ảnh Kiếm Võng Giang Hồ" width="1280" height="720" loading="lazy" />
+                <span class="zoom-hint">Phóng to</span>
+              </button>
+            </div>
+            <div class="chap-body">
+              <span class="chap-num">Chương I · Chơi Tự Do</span>
+              <h3>Miễn Phí Tới Lv.120, Tu Vi Tích Trữ &amp; Thử Đột Phá Map 50</h3>
+              <p class="chap-lead">Bỏ hẳn bước nhập mã kích hoạt rườm rà: tải về mở <code>client.exe</code> là hành tẩu giang hồ ngay lập tức.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Chơi miễn phí trọn vẹn tới Cấp 120:</strong> đầy đủ 10 môn phái, 12 bản đồ luyện công, chuỗi Tân Thủ 11 bước, Dã Tẩu &amp; kỹ năng 9x/120 (Lễ Quan hỗ trợ Gói Thăng Cấp Lv.90 &amp; Bộ Lam Ngũ Hành).</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Tu Vi Tích Trữ (Banked EXP):</strong> mọi kinh nghiệm săn quái ở Lv.120 được bảo lưu cộng dồn, tự giải ngân nhận đủ cấp ngay khi mở khóa.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Thử Đột Phá Map 50 (10 phút):</strong> trải nghiệm thực chiến bản đồ cao cấp Lạc Bắc ngay tại mốc Lv.120 trước khi quyết định mở khóa.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Mở Khóa Trọn Đời 29.000đ / Combo Quyền GM 59.000đ:</strong> cộng vĩnh viễn +4% Hút Sinh &amp; Nội Lực, bộ Tím Lễ Quan, phá trần Lv.121–300 &amp; xác nhận VietQR TPBank tự động sau 2–5 giây.</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="chapter rev hf-lit-card" data-reveal data-cat="engagement">
+            <div class="chap-media">
+              <button type="button" data-lightbox-src="./assets/chap_jianghu_arena.webp" data-lightbox-cap="Võ Lâm Đại Hội 16 Cao Thủ, Kẻ Thù Truyền Kiếp & Hệ Sinh Thái Hoạt Động Giang Hồ 4 Đợt">
+                <img src="./assets/chap_jianghu_arena.webp" alt="Lôi đài Võ Lâm Đại Hội trên đỉnh núi chạng vạng" width="1280" height="714" loading="lazy" />
+                <span class="zoom-hint">Phóng to</span>
+              </button>
+            </div>
+            <div class="chap-body">
+              <span class="chap-num">Chương II · Hoạt Động Giang Hồ</span>
+              <h3>Hệ Sinh Thái Giữ Chân 4 Đợt: Lịch Trình, Phúc Lợi, Kỳ Ngộ &amp; Đại Hội</h3>
+              <p class="chap-lead">Biến giang hồ Offline thành thế giới võ lâm sống động có mục tiêu rõ ràng mỗi ngày, mỗi tuần và xuyên suốt hành trình đột phá.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Lịch Trình Giang Hồ &amp; Rương Tuần:</strong> 6 việc hằng ngày (20/40/60/80/100đ) + lịch đếm ngược sự kiện giờ + bấm <em>Đi tới</em> dẫn thẳng đúng bản đồ/phó bản.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Phúc Lợi 3 Tab &amp; Hộp Thư Giang Hồ:</strong> Thất Nhật Lễ (ngày 7 tặng VIP Hoàng Kim), <strong>Lịch Điểm Danh VIP Tháng 7×6</strong> kèm 5 rương mốc, Hộp Trưởng Thành đủ 17 mốc &amp; Hộp Thư nhận quà một chạm.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Võ Lâm Lục 30 Thành Tựu &amp; 3 Chuỗi Kỳ Ngộ:</strong> săn thành tựu mở danh hiệu nhóm, gặp Kỳ Ngộ ngẫu nhiên có bảo hiểm tỷ lệ &amp; chuỗi <strong>Bình Cảnh Lv.115–120</strong> chiến Tâm Ma.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Kẻ Thù Truyền Kiếp, Phong Vân Bảng &amp; Võ Lâm Đại Hội:</strong> SimBot hạ gục bạn sẽ kết oán phục kích; đua Top 50 trên 4 bảng xếp hạng &amp; tranh hùng 16 cao thủ (<code>/daihoi</code>).</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="chapter hf-lit-card" data-reveal data-cat="combat">
+            <div class="chap-media">
+              <button type="button" data-lightbox-src="./assets/chap_hoason_thanlong.webp" data-lightbox-cap="Bí Cảnh Hoa Sơn (Map 51) & Thần Binh Kiếm Thần Long trong Chuỗi 3 Thần Long Kiếm Ý">
+                <img src="./assets/chap_hoason_thanlong.webp" alt="Cầu đá cổ Bí Cảnh Hoa Sơn và thần binh Kiếm Thần Long" width="1280" height="714" loading="lazy" />
+                <span class="zoom-hint">Phóng to</span>
+              </button>
+            </div>
+            <div class="chap-body">
+              <span class="chap-num">Chương III · Hoa Sơn &amp; Chiến Đấu</span>
+              <h3>Bí Cảnh Hoa Sơn (Map 51), Kiếm Thần Long &amp; SimBot V4 Cao Thủ</h3>
+              <p class="chap-lead">Mở rộng đỉnh cao PvE &amp; PvP với bản đồ Hoa Sơn 3 tầng kết giới, thần binh mới, kỹ năng 120 và hệ thống rơi đồ phân tầng công bằng.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Bí Cảnh Hoa Sơn (Map 51) &amp; Chuỗi 3 Thần Long Kiếm Ý:</strong> 3 khu vực mở dần theo kết giới, câu đố Phong Thủy có tranh minh họa + lồng tiếng NPC, 4 Boss AI kiểu SimBot &amp; rèn thần binh <strong>Kiếm Thần Long</strong>.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Kỹ Năng Cấp 120 &amp; 4 Ô Linh Hoạt S1–S4:</strong> trọn bộ kỹ năng 120 các môn phái, gắn nhanh phím 6–9 &amp; <strong>Máy Phân Giải Trang Bị</strong> tùy chọn phẩm chất ngay khi nhặt.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>SimBot V4 &amp; Ngũ Hành Tương Sinh/Khắc:</strong> SimBot đánh đúng chiêu theo cấp/phái, biết đánh hội đồng &amp; rút lui bơm máu, chat icon cảm xúc; đồ Lam/Tím kích hoạt dòng ẩn Ngũ Hành &amp; phân tầng rớt đồ chuẩn theo cấp bản đồ.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Thần Hành Phù 7 Dòng:</strong> thêm nút quay lại đúng bãi luyện công gần nhất chỉ với một lần bấm.</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="chapter rev hf-lit-card" data-reveal data-cat="visual">
+            <div class="chap-media">
+              <button type="button" data-lightbox-src="./assets/chap_masks_titles.webp" data-lightbox-cap="13 Danh Hiệu Mặt Nạ VIP Khung Trong Suốt Lưu Quang, Vòng Quay Thiên Cơ & Đổi Mặt Nạ Mượt 0 Lag">
+                <img src="./assets/chap_masks_titles.webp" alt="Chân dung đôi hiệp khách Cổ Phong Điện Ảnh với ánh sáng đèn lồng" width="1280" height="714" loading="lazy" />
+                <span class="zoom-hint">Phóng to</span>
+              </button>
+            </div>
+            <div class="chap-body">
+              <span class="chap-num">Chương IV · Giao Diện &amp; Mỹ Thuật</span>
+              <h3>Đại Tu Cổ Phong Điện Ảnh, 20 Icon Ấn Đồng &amp; 13 Danh Hiệu VIP</h3>
+              <p class="chap-lead">Lột xác toàn bộ ngôn ngữ thị giác từ màn hình đăng nhập, thanh HUD cho tới từng khung danh hiệu động trên đầu nhân vật.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Bộ 20 Icon HUD Ấn Đồng &amp; Bố Cục 2 Hàng:</strong> sắc nét chuẩn 2× trên khung đồng cổ, có chấm đỏ thông báo trực quan cho Thư, Lịch Trình, Phúc Lợi, Võ Lâm Lục &amp; Phong Vân.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>13 Danh Hiệu Mặt Nạ VIP Độc Bản:</strong> khung điêu khắc trong suốt 100%, chữ thư pháp <em>Lưu Quang</em> chạy sóng ánh sáng theo từng ký tự tiếng Việt &amp; tự thu phóng cân đối khi zoom camera.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Vòng Quay Thiên Cơ 12 Nền &amp; Font Chuẩn:</strong> làm mới 12 nền mặt nạ VIP một trang dễ chọn, tách riêng font sát thương Bạo Kích cổ điển và nâng cấp Rương chứa đồ 44px gọn gàng.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Đổi Mặt Nạ Tại Chỗ 0 Lag &amp; Giữ Góc Camera:</strong> thay ngoại trang tức thì trên cùng một khung hình — hết hẳn tình trạng khựng 1 giây và không còn bị xoay lại góc camera.</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section section-alt">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="sec-kicker">Mỹ thuật trong bản 1.0.11</span>
+            <h2 class="sec-title">Thư Viện Hình Ảnh Cổ Phong Điện Ảnh</h2>
+            <p class="sec-desc">Tổng hợp các nền giao diện &amp; tranh minh họa được chế tác riêng cho đại bản cập nhật #115. Bấm ảnh để xem chi tiết kích thước lớn.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gal-card" data-reveal>
+            <button type="button" data-lightbox-src="./assets/gallery_login_cophong.webp" data-lightbox-cap="Nền Đăng Nhập & Chọn Nhân Vật Cổ Phong Điện Ảnh 4K mới">
+              <div class="gal-thumb"><img src="./assets/gallery_login_cophong.webp" alt="Nền đăng nhập Cổ Phong Điện Ảnh mới" width="1280" height="720" loading="lazy" /></div>
+              <figcaption class="gal-meta"><strong>Màn Hình Đăng Nhập Mới</strong><span>Mỹ thuật Cổ Phong 4K</span></figcaption>
+            </button>
+          </figure>
+
+          <figure class="gal-card" data-reveal>
+            <button type="button" data-lightbox-src="./assets/gallery_ui_jianghu.webp" data-lightbox-cap="Họa nền tiêu đề Lịch Trình Giang Hồ, Võ Lâm Lục & Phong Vân Bảng">
+              <div class="gal-thumb"><img src="./assets/gallery_ui_jianghu.webp" alt="Nền giao diện Lịch Trình Giang Hồ và Võ Lâm Lục" width="1200" height="670" loading="lazy" /></div>
+              <figcaption class="gal-meta"><strong>Bảng Lịch Trình &amp; Võ Lâm Lục</strong><span>Sơn thủy mực ngọc · Ánh kim</span></figcaption>
+            </button>
+          </figure>
+
+          <figure class="gal-card" data-reveal>
+            <button type="button" data-lightbox-src="./assets/gallery_ui_welfare.webp" data-lightbox-cap="Họa nền Đình Đèn Lồng cho Phúc Lợi 7 Ngày, Lịch VIP Tháng 7×6 & Hộp Trưởng Thành">
+              <div class="gal-thumb"><img src="./assets/gallery_ui_welfare.webp" alt="Nền giao diện Phúc Lợi Giang Hồ và Điểm Danh VIP Tháng" width="1200" height="670" loading="lazy" /></div>
+              <figcaption class="gal-meta"><strong>Phúc Lợi &amp; Lịch VIP 7×6</strong><span>Đình đèn lồng hoàng hôn</span></figcaption>
+            </button>
+          </figure>
+
+          <figure class="gal-card" data-reveal>
+            <button type="button" data-lightbox-src="./assets/chap_hoason_thanlong.webp" data-lightbox-cap="Bí Cảnh Hoa Sơn Map 51 & Thần Binh Kiếm Thần Long">
+              <div class="gal-thumb"><img src="./assets/chap_hoason_thanlong.webp" alt="Bí Cảnh Hoa Sơn và Kiếm Thần Long" width="1280" height="714" loading="lazy" /></div>
+              <figcaption class="gal-meta"><strong>Hoa Sơn &amp; Kiếm Thần Long</strong><span>Phó bản 3 khu kết giới</span></figcaption>
+            </button>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="sec-kicker">Ổn định · Mượt mà · An toàn</span>
+            <h2 class="sec-title">Tối Ưu Trải Nghiệm, Vá Lỗi &amp; Bảo Mật Mới</h2>
+          </div>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card hf-lit-card" data-reveal>
+            <div class="bento-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Chiến Đấu Mượt &amp; Vá Lỗi Cốt Lõi</h3>
+            <ul>
+              <li><strong>Hết giật ngược vị trí khi xuất chiêu:</strong> đồng bộ tọa độ sống của nhân vật &amp; loại bỏ ghi SQLite cản nhịp khi bật Hào Quang/Buff.</li>
+              <li><strong>Sửa dứt điểm crash khi thoát game:</strong> khôi phục bảng font OpenType giúp Unity 2022.3 đóng sạch tức thì.</li>
+              <li><strong>Sửa lỗi Dã Tẩu 0/3 &amp; F2:</strong> ghi nhận đủ 12 thao tác đục lỗ/khảm/tẩy luyện/cường hóa &amp; cập nhật chỉ số F2 tức thời.</li>
+              <li><strong>Khắc phục lỗi đứng tư thế SimBot</strong> &amp; vá crash Thử Đột Phá Map 50/51.</li>
+            </ul>
+          </article>
+
+          <article class="bento-card hf-lit-card" data-reveal>
+            <div class="bento-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3>Cập Nhật Có Chữ Ký Số Ed25519</h3>
+            <ul>
+              <li><strong>Định dạng gói mới KVGHP2:</strong> ký bằng khóa bất đối xứng <strong>Ed25519</strong> chống tuyệt đối gói cập nhật giả mạo.</li>
+              <li><strong>Tải Dual-CDN tốc độ cao:</strong> kết hợp GitHub Releases &amp; Fastly CDN kèm xác thực TLS chuẩn <code>certifi</code>.</li>
+              <li><strong>Bảo toàn 100% nhân vật &amp; trang bị:</strong> cập nhật nguyên tử có sao lưu hoàn nguyên, không bao giờ mất dữ liệu save.</li>
+            </ul>
+          </article>
+
+          <article class="bento-card hf-lit-card" data-reveal>
+            <div class="bento-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Thanh Toán Tự Động &amp; Quyền Riêng Tư</h3>
+            <ul>
+              <li><strong>Xác nhận chuyển khoản tự động:</strong> đối soát VietQR TPBank tức thì sau 2–5 giây, tự mở khóa không cần chờ duyệt tay.</li>
+              <li><strong>Tự khôi phục khi cài lại game:</strong> đổi thư mục hoặc cài mới trên cùng máy tự động nhận lại đầy đủ gói đã mở khóa.</li>
+              <li><strong>Tôn trọng quyền riêng tư:</strong> không thu thập số điện thoại hay tên máy tính khi tạo đơn; chỉ lưu thống kê ẩn danh.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section section-alt">
+      <div class="wrap">
+        <div class="update-panel" data-reveal>
+          <div>
+            <span class="sec-kicker">Cập nhật chỉ trong 1 phút</span>
+            <h2 class="sec-title">Hướng Dẫn Nâng Cấp Lên Ver. 1.0.11</h2>
+            <div class="steps">
+              <div class="step">
+                <span class="step-num">1</span>
+                <div>
+                  <strong>Đang có bản cũ? Chỉ cần mở <code>client.exe</code></strong>
+                  <p>Hệ thống tự phát hiện <strong>Ver. 1.0.11 (Build #115)</strong>, tải gói vá có chữ ký số Ed25519 và giữ nguyên 100% nhân vật hiện có.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">2</span>
+                <div>
+                  <strong>Người chơi mới: giải nén ra ổ <code>D:\</code></strong>
+                  <p>Tránh đặt thư mục game trong <code>Program Files</code> hoặc thư mục đồng bộ OneDrive để game khởi động nhanh ~1.5 giây.</p>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">3</span>
+                <div>
+                  <strong>Đăng nhập tự do &amp; nhận quà Tân Thủ</strong>
+                  <p>Nhập tài khoản/mật khẩu bất kỳ để tự tạo, nhận chuỗi Tân Thủ 11 bước &amp; mở bảng <strong>Phúc Lợi / Lịch Trình</strong> ngay khi vào Vân Mộc Linh Thôn.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="dl-box" aria-label="Thông số phát hành">
+            <div>
+              <span class="seal-tag" style="margin-bottom:14px;">Bản Phát Hành Chính Thức</span>
+              <div class="dl-specs">
+                <div><span>Phiên bản PC</span><code>Ver. 1.0.11 (Build #115)</code></div>
+                <div><span>Ngày phát hành</span><code>22/11/2026</code></div>
+                <div><span>Chế độ chơi</span><code>Miễn phí tới Lv.120</code></div>
+                <div><span>Chữ ký OTA</span><code>KVGHP2 · Ed25519</code></div>
+                <div><span>Nền tảng</span><code>Windows 10/11 (64-bit)</code></div>
+              </div>
+            </div>
+            <a class="btn btn-gold" href="https://github.com/chipop-code/kvgh-releases/releases/tag/b115" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Xem Bản Phát Hành Trên GitHub
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© 2026 <strong>Kiếm Võng Giang Hồ · Chipop Studio</strong> — Phiên bản Offline PC &amp; Mobile.</div>
+      <div class="footer-links">
+        <a href="../privacy-policy.html">Chính sách quyền riêng tư</a>
+        <a href="../data-deletion.html">Yêu cầu xóa dữ liệu</a>
+        <a href="https://github.com/chipop-code/kvgh-releases/releases" target="_blank" rel="noopener noreferrer">Tất cả bản phát hành</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh kích thước lớn" hidden>
+    <div class="lb-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lb-bar">
+        <span id="lightbox-cap"></span>
+        <div class="lb-controls">
+          <span id="lightbox-count" style="align-self:center;font-family:var(--font-mono);font-size:0.82rem;"></span>
+          <button class="lb-btn lb-prev" type="button" aria-label="Ảnh trước">←</button>
+          <button class="lb-btn lb-next" type="button" aria-label="Ảnh tiếp theo">→</button>
+          <button class="lb-btn lb-close" type="button" aria-label="Đóng xem ảnh">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
