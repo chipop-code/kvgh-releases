@@ -121,32 +121,91 @@
   };
   filterBtns.forEach((b) => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
 
-  /* 4. Accessible Full-Screen Image Lightbox (Click, Esc, Left/Right Arrows) */
+  /* 4. Interactive Chapter In-Game Screenshot Switcher */
+  document.querySelectorAll('.chap-media-col').forEach((col) => {
+    const trigger = col.querySelector('[data-lightbox-src]');
+    const img = trigger ? trigger.querySelector('img') : null;
+    const capEl = col.querySelector('.chap-cap-text');
+    const badgeEl = col.querySelector('.chap-cap-badge');
+    const tabs = Array.from(col.querySelectorAll('.shot-tab'));
+    if (!trigger || !img || !tabs.length) return;
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (tab.classList.contains('active')) return;
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-pressed', String(on));
+        });
+        const src = tab.dataset.shotSrc;
+        const cap = tab.dataset.shotCap || '';
+        const alt = tab.dataset.shotAlt || cap;
+        const badge = tab.dataset.shotBadge || '';
+        trigger.dataset.lightboxSrc = src;
+        trigger.dataset.lightboxCap = cap;
+        if (capEl) capEl.textContent = cap;
+        if (badgeEl && badge) badgeEl.textContent = badge;
+        if (reducedMotion) {
+          img.src = src;
+          img.alt = alt;
+        } else {
+          img.classList.add('is-swapping');
+          const finish = () => img.classList.remove('is-swapping');
+          img.addEventListener('load', finish, { once: true });
+          setTimeout(finish, 320);
+          img.src = src;
+          img.alt = alt;
+        }
+      });
+    });
+  });
+
+  /* 5. Accessible Full-Screen Image Lightbox (Click, Esc, Left/Right Arrows) */
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   const lbCap = document.getElementById('lightbox-cap');
   const lbCount = document.getElementById('lightbox-count');
-  const triggers = Array.from(document.querySelectorAll('[data-lightbox-src]'));
+  let lbItems = [];
   let curIdx = 0;
   let lastFocus = null;
 
-  const renderLb = () => {
-    const t = triggers[curIdx];
-    if (!t || !lbImg) return;
-    lbImg.src = t.dataset.lightboxSrc;
-    lbImg.alt = t.dataset.lightboxCap || '';
-    if (lbCap) lbCap.textContent = t.dataset.lightboxCap || '';
-    if (lbCount) lbCount.textContent = `${curIdx + 1} / ${triggers.length}`;
+  const collectLbItems = () => {
+    const seen = new Set();
+    const list = [];
+    const add = (src, cap) => {
+      if (!src || seen.has(src)) return;
+      seen.add(src);
+      list.push({ src, cap: cap || '' });
+    };
+    document.querySelectorAll('[data-lightbox-src]').forEach((el) => add(el.dataset.lightboxSrc, el.dataset.lightboxCap));
+    document.querySelectorAll('.shot-tab[data-shot-src]').forEach((el) => add(el.dataset.shotSrc, el.dataset.shotCap));
+    return list;
   };
-  const openLb = (idx) => {
+
+  const renderLb = () => {
+    const item = lbItems[curIdx];
+    if (!item || !lbImg) return;
+    lbImg.src = item.src;
+    lbImg.alt = item.cap;
+    if (lbCap) lbCap.textContent = item.cap;
+    if (lbCount) lbCount.textContent = `${curIdx + 1} / ${lbItems.length}`;
+  };
+  const openLbBySrc = (src) => {
     if (!lb) return;
     lastFocus = document.activeElement;
-    curIdx = (idx + triggers.length) % triggers.length;
+    lbItems = collectLbItems();
+    const found = lbItems.findIndex((x) => x.src === src);
+    curIdx = found >= 0 ? found : 0;
     renderLb();
     lb.hidden = false;
     document.body.style.overflow = 'hidden';
     const closeBtn = lb.querySelector('.lb-close');
     if (closeBtn) closeBtn.focus();
+  };
+  const stepLb = (delta) => {
+    if (!lbItems.length) return;
+    curIdx = (curIdx + delta + lbItems.length) % lbItems.length;
+    renderLb();
   };
   const closeLb = () => {
     if (!lb || lb.hidden) return;
@@ -154,17 +213,19 @@
     document.body.style.overflow = '';
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   };
-  triggers.forEach((el, idx) => el.addEventListener('click', () => openLb(idx)));
+  document.querySelectorAll('[data-lightbox-src]').forEach((el) => {
+    el.addEventListener('click', () => openLbBySrc(el.dataset.lightboxSrc));
+  });
   if (lb) {
     lb.querySelector('.lb-close')?.addEventListener('click', closeLb);
-    lb.querySelector('.lb-prev')?.addEventListener('click', () => openLb(curIdx - 1));
-    lb.querySelector('.lb-next')?.addEventListener('click', () => openLb(curIdx + 1));
+    lb.querySelector('.lb-prev')?.addEventListener('click', () => stepLb(-1));
+    lb.querySelector('.lb-next')?.addEventListener('click', () => stepLb(1));
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
     document.addEventListener('keydown', (e) => {
       if (lb.hidden) return;
       if (e.key === 'Escape') closeLb();
-      else if (e.key === 'ArrowLeft') openLb(curIdx - 1);
-      else if (e.key === 'ArrowRight') openLb(curIdx + 1);
+      else if (e.key === 'ArrowLeft') stepLb(-1);
+      else if (e.key === 'ArrowRight') stepLb(1);
     });
   }
 })();
