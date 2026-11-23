@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cẩm Nang Tân Thủ — Kiếm Võng Giang Hồ (PC &amp; Android Offline)</title>
+  <meta name="description" content="Cẩm nang hướng dẫn người chơi mới Kiếm Võng Giang Hồ đầy đủ từ cơ chế thật trong game: Kho đồ, Cường hóa, Đục lỗ, Khảm & Tách đá, Phó bản, SimBot V4, PK, Ngũ Hành và Chọn Thế Giới." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cẩm Nang Tân Thủ — Kiếm Võng Giang Hồ" />
+  <meta property="og:description" content="Tra cứu nhanh mọi cơ chế thật trong game: Hành trang, Thợ Rèn & Thợ Rèn Thần Bí, 5 Phó Bản, SimBot V4, PK/Tỷ Thí, Ngũ Hành & 3 Cảnh Giới Thế Giới." />
+  <meta property="og:image" content="https://chipop-code.github.io/kvgh-releases/guide/assets/guide_hud_controls_real.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./guide.css" />
+</head>
+<body>
+  <div class="hf-grain-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Cẩm Nang Kiếm Võng Giang Hồ">
+        <span class="brand-seal" aria-hidden="true">劍</span>
+        <span>Cẩm Nang KVGH</span>
+      </a>
+      <nav class="nav-links" aria-label="Chuyên mục cẩm nang">
+        <a class="active" href="./index.html">Tổng Quan</a>
+        <a href="./trang-bi.html">Trang Bị &amp; Rèn</a>
+        <a href="./pho-ban.html">Phó Bản &amp; Hoạt Động</a>
+        <a href="./simbot-pk.html">SimBot &amp; PK</a>
+        <a href="./the-gioi.html">Thế Giới &amp; Bản Đồ</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a class="nav-back" href="../updates/">← Bản 1.0.11</a>
+        <button class="menu-toggle" type="button" aria-label="Mở menu chuyên mục" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero has-bg" aria-label="Giới thiệu Cẩm Nang Tân Thủ">
+      <img class="hero-cover" src="../updates/assets/hero_v1011.webp" alt="" width="1376" height="768" />
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="breadcrumb">
+          <a href="../updates/">Kiếm Võng Giang Hồ</a>
+          <span aria-hidden="true">/</span>
+          <span>Cẩm Nang Tân Thủ</span>
+        </div>
+        <span class="seal-tag">Chuẩn Cơ Chế Thực Tế · Ver. 1.0.11</span>
+        <h1><span class="shimmer-gold-text">Cẩm Nang Tân Thủ Toàn Tập</span></h1>
+        <p class="hero-lead">
+          Tổng hợp chuẩn xác toàn bộ cơ chế thực tế trong game cho cả <strong>PC Windows</strong> và <strong>Android</strong> — từ quản lý hành trang, rèn đồ, đục lỗ, khảm &amp; tách đá, vượt 5 phó bản, lập đội SimBot V4, PK Ngũ Hành cho tới chọn 3 Cảnh Giới Thế Giới.
+        </p>
+
+        <div class="search-box">
+          <div class="search-input-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input id="guide-search" type="search" placeholder="Tìm nhanh cơ chế... (VD: tách đá, cường hóa, đục lỗ, simbot, hoa sơn, hạ giới)" autocomplete="off" aria-label="Tìm kiếm trong toàn bộ Cẩm Nang" />
+          </div>
+          <div class="search-chips">
+            <span>Gợi ý:</span>
+            <button class="search-chip-btn" type="button" data-search-chip="tách đá">Tách đá</button>
+            <button class="search-chip-btn" type="button" data-search-chip="khảm đá">Khảm đá</button>
+            <button class="search-chip-btn" type="button" data-search-chip="cường hóa">Cường hóa</button>
+            <button class="search-chip-btn" type="button" data-search-chip="simbot">Tổ đội SimBot</button>
+            <button class="search-chip-btn" type="button" data-search-chip="hạ giới">Chọn Thế Giới</button>
+            <button class="search-chip-btn" type="button" data-search-chip="ngũ hành">Ngũ Hành</button>
+          </div>
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lo-trinh" class="hub-sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="jade-tag">Bước Đầu Nhập Môn</span>
+          <h2>Lộ Trình 4 Bước Cho Người Chơi Mới</h2>
+          <p>Đi theo đúng 4 bước này bạn sẽ nắm vững toàn bộ nhịp chơi từ Lv.1 tại Vân Mộc Linh Thôn tới ngưỡng Chuyển Sinh Lv.200 mà không bỏ sót phúc lợi.</p>
+        </div>
+        <div class="roadmap-grid">
+          <article class="road-step">
+            <div class="road-num">01</div>
+            <h3>Chọn Thế Giới &amp; Tân Thủ 11 Bước</h3>
+            <p>Vào game tại <strong>Vân Mộc Linh Thôn</strong>, bấm <strong>Quả Cầu Thế Giới</strong> góc trên trái chọn <strong>Hạ Giới</strong> nếu muốn train nhàn, mở <strong>Thất Nhật Lễ</strong> và theo chuỗi Tân Thủ 11 bước tự dẫn đường lên Lv.14+.</p>
+            <a class="road-link" href="./the-gioi.html#chon-the-gioi">Xem 3 Cảnh Giới Thế Giới →</a>
+          </article>
+          <article class="road-step">
+            <div class="road-num">02</div>
+            <h3>Làm Chủ Thần Hành Phù &amp; Hành Trang</h3>
+            <p>Gắn <strong>Thần Hành Phù</strong> vào phím <code>4</code> để mở <strong>Rương Thủ Khố Từ Xa</strong>, bật <strong>Tự Phân Giải Khi Nhặt</strong> đồ rác Trắng/Lam và dịch chuyển tới mọi bản đồ luyện công chỉ trong 1 chạm.</p>
+            <a class="road-link" href="./trang-bi.html#kho-do">Xem Kho Đồ &amp; Phân Giải →</a>
+          </article>
+          <article class="road-step">
+            <div class="road-num">03</div>
+            <h3>Cường Hóa, Đục Lỗ, Khảm &amp; Tách Đá</h3>
+            <p>Tới <strong>Thợ Rèn</strong> đập đồ kèm bùa bảo hộ, đục lỗ bằng <strong>Hoàng Thủy Tinh</strong>, khảm ngọc bằng <strong>Lục Thủy Tinh</strong> và gỡ ngọc bảo toàn 100% bất cứ lúc nào khi đổi trang bị mới.</p>
+            <a class="road-link" href="./trang-bi.html#kham-da">Xem Công Thức Rèn &amp; Khảm →</a>
+          </article>
+          <article class="road-step">
+            <div class="road-num">04</div>
+            <h3>Kéo Đội SimBot Vượt 5 Phó Bản</h3>
+            <p>Lập đội tối đa <strong>3 SimBot</strong> theo vào mọi phó bản để nhân tỉ lệ rơi đồ <code>×(1 + số bot)</code>, gom Điểm Khí Vận quay Thiên Cơ Bảo Bàn, vượt Bình Cảnh Lv.115–120 và chinh phục Cổ Địa Hoa Sơn.</p>
+            <a class="road-link" href="./pho-ban.html">Xem 5 Phó Bản &amp; Hoạt Động →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="chuyen-de" class="hub-sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="gold-tag">4 Cổng Chuyên Đề Chuyên Sâu</span>
+          <h2>Chọn Chuyên Mục Bạn Muốn Tra Cứu</h2>
+          <p>Toàn bộ cơ chế được phân tách theo đúng trình tự tiến hóa của nhân vật, đi kèm hình ảnh thực tế trong game và bảng công thức chính xác.</p>
+        </div>
+        <div class="portal-grid">
+          <a class="portal-card" href="./trang-bi.html">
+            <div class="portal-thumb">
+              <img src="./assets/guide_forge_items_real.webp" alt="18 nguyên liệu rèn, đục lỗ, khảm và tách đá thật trong game" width="1280" height="720" loading="lazy" />
+            </div>
+            <div class="portal-body">
+              <span class="gold-tag" style="align-self:flex-start;">Chuyên đề 01</span>
+              <h3>Kho Đồ, Rèn Đập, Đục Lỗ, Khảm &amp; Tách Đá</h3>
+              <p>Trọn bộ thao tác tại Hành Trang (<code>F1</code>), Rương Thủ Khố Từ Xa, Thợ Rèn &amp; Thợ Rèn Thần Bí.</p>
+              <ul class="portal-bullets">
+                <li>Cường hóa + 5 loại Bùa chống tụt cấp &amp; Kế thừa cấp <code>&gt;= +6</code></li>
+                <li>Đục lỗ (Hoàng Thủy Tinh), Mạ màu lỗ, Hóa lỗ Ngũ Sắc &amp; Cực Phẩm (+20%)</li>
+                <li>Giám định, Khảm đá, <strong>Tách/Gỡ đá bảo toàn 100%</strong>, Hợp 3 Ngọc, Tẩy Luyện 11 dòng &amp; Thăng Bạch Kim</li>
+              </ul>
+              <span class="portal-cta">Mở cẩm nang Trang Bị &amp; Rèn →</span>
+            </div>
+          </a>
+
+          <a class="portal-card" href="./pho-ban.html">
+            <div class="portal-thumb">
+              <img src="../updates/assets/ingame_hoason_map51.webp" alt="Bí Cảnh Cổ Địa Hoa Sơn trong Kiếm Võng Giang Hồ" width="1280" height="720" loading="lazy" />
+            </div>
+            <div class="portal-body">
+              <span class="jade-tag" style="align-self:flex-start;">Chuyên đề 02</span>
+              <h3>5 Phó Bản, Phúc Lợi &amp; Hoạt Động Giang Hồ</h3>
+              <p>Hướng dẫn chi tiết điều kiện vào, cơ chế Boss, mẹo săn Bạch Long, Kiếm Thần Long &amp; Quà Hồi Hương.</p>
+              <ul class="portal-bullets">
+                <li>Bán Nguyệt (Mật Thư Bạch Long), Sa Mạc, Thông Thiên Tháp (Tiềm Năng 90)</li>
+                <li>Thuyền Phong Lăng Độ 2 tiếng/chuyến &amp; Cổ Địa Hoa Sơn 3 Kết Giới Kinh Dịch</li>
+                <li>Lịch Trình v3, Phúc Lợi 3 Tab, <strong>Quà Hồi Hương (×2 EXP 3 ngày)</strong>, Kỳ Ngộ, Võ Lâm Lục &amp; Vòng Quay</li>
+              </ul>
+              <span class="portal-cta">Mở cẩm nang Phó Bản &amp; Hoạt Động →</span>
+            </div>
+          </a>
+
+          <a class="portal-card" href="./simbot-pk.html">
+            <div class="portal-thumb">
+              <img src="../updates/assets/ingame_combat_hud.webp" alt="SimBot chat và chiến đấu PK trong Kiếm Võng Giang Hồ" width="1280" height="720" loading="lazy" />
+            </div>
+            <div class="portal-body">
+              <span class="seal-tag" style="align-self:flex-start;">Chuyên đề 03</span>
+              <h3>SimBot V4, Tổ Đội, PK &amp; Kích Hoạt Ngũ Hành</h3>
+              <p>Cách tương tác SimBot như người chơi thật, luật PK/Tỷ Thí, Tống Kim 25v25 và công cụ tra cứu Ngũ Hành.</p>
+              <ul class="portal-bullets">
+                <li>Đối thoại SimBot, Bạn Tâm Giao (<code>/tamsu</code>), mời <strong>3 SimBot đi mọi phó bản</strong> nhân tỉ lệ rơi đồ</li>
+                <li>Kẻ Thù Truyền Kiếp (Nemesis), 3 chế độ PK, Tỷ Thí công bằng (5s/10s), Tống Kim &amp; Đại Hội <code>/daihoi</code></li>
+                <li><strong>Công cụ tương tác:</strong> Chọn hệ Ngũ Hành của bạn để xem ngay cách kích đủ dòng ẩn 10 món đồ</li>
+              </ul>
+              <span class="portal-cta">Mở cẩm nang SimBot &amp; PK →</span>
+            </div>
+          </a>
+
+          <a class="portal-card" href="./the-gioi.html">
+            <div class="portal-thumb">
+              <img src="./assets/guide_world_diff_real.webp" alt="Chọn Thế Giới 3 Cảnh Giới Độ Khó trong Kiếm Võng Giang Hồ" width="1280" height="720" loading="lazy" />
+            </div>
+            <div class="portal-body">
+              <span class="gold-tag" style="align-self:flex-start;">Chuyên đề 04</span>
+              <h3>Chọn Thế Giới, Thần Hành Phù &amp; Bản Đồ Train</h3>
+              <p>Làm chủ 3 Cảnh Giới độ khó, 7 dòng dịch chuyển Thần Hành Phù, bản đồ Lv.10–250 &amp; Chuyển Sinh Lv.200.</p>
+              <ul class="portal-bullets">
+                <li><strong>Hạ Giới (20% HP) · Linh Giới (50% HP) · Tiên Giới (100% HP)</strong> đổi nhanh qua Quả Cầu góc trái</li>
+                <li>7 chức năng Thần Hành Phù, Thổ Địa Phù lưu tọa độ cũ &amp; Luyện Công VIP</li>
+                <li>Bản đồ luyện công <code>Lv.10 → Lv.250</code>, phân tầng Tiềm Năng <code>42–90</code>, Tu Vi Tích Trữ &amp; Chuyển Sinh</li>
+              </ul>
+              <span class="portal-cta">Mở cẩm nang Thế Giới &amp; Bản Đồ →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="phim-tat" class="hub-sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="gold-tag">Bản Đồ Giao Diện &amp; Điều Khiển</span>
+          <h2>Giải Mã Giao Diện HUD &amp; Bảng Phím Tắt Chuẩn</h2>
+          <p>Ảnh chụp thực tế từ trong game kèm 6 vị trí quan trọng nhất tân thủ cần nhớ ngay phút đầu vào Vân Mộc Linh Thôn (bấm vào ảnh để phóng lớn).</p>
+        </div>
+
+        <figure class="zoomable-fig">
+          <img src="./assets/guide_hud_controls_real.webp" alt="Bản đồ 6 vùng giao diện HUD chính trong Kiếm Võng Giang Hồ" width="1280" height="824" loading="lazy" />
+          <figcaption>
+            <span>6 khu vực cốt lõi trên giao diện thực tế: Quả Cầu Thế Giới (1), Chế Độ PK (2), Kênh Chat &amp; SimBot (3), Cụm Icon Đồng Cổ (4), Thanh Vật Phẩm Nhanh 1–5 (5), Vòng Kỹ Năng &amp; Khinh Công (6).</span>
+            <span class="zoom-hint">Bấm phóng lớn</span>
+          </figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Nhóm Thao Tác</th><th>Phím / Chuột (PC)</th><th>Công Dụng Thực Tế Trong Game</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Di chuyển &amp; Góc nhìn</strong></td><td><kbd>Chuột Trái</kbd> · <kbd>Chuột Phải</kbd> · <kbd>Con lăn</kbd></td><td>Nhấp trái để đi/chọn mục tiêu; giữ phải xoay camera (nhấp phải thi triển chiêu vào mục tiêu gần nhất); cuộn phóng to/thu nhỏ.</td></tr>
+              <tr><td><strong>Kỹ năng &amp; Né đòn</strong></td><td><kbd>Q</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>C</kbd> <kbd>V</kbd> · <kbd>6</kbd>–<kbd>9</kbd></td><td>5 ô kỹ năng chính (hỗ trợ cả <code>Num0–4</code>) và 4 ô kỹ năng phụ S1–S4.</td></tr>
+              <tr><td><strong>Khinh công &amp; Đứng đánh</strong></td><td><kbd>Space</kbd> · <kbd>Left Shift</kbd> · <kbd>Ctrl+Trái</kbd></td><td><code>Space</code> bay khinh công, <code>Left Shift</code> né tránh nhanh, giữ <code>Ctrl + nhấp trái</code> đứng tại chỗ xuất chiêu.</td></tr>
+              <tr><td><strong>Vật phẩm nhanh &amp; Ngựa</strong></td><td><kbd>1</kbd>–<kbd>5</kbd> · <kbd>M</kbd></td><td>Dùng nhanh máu/mana, <strong>Thần Hành Phù</strong> (ô <code>4</code>), <strong>Thổ Địa Phù</strong> (ô <code>5</code>); bấm <code>M</code> lên/xuống ngựa.</td></tr>
+              <tr><td><strong>Cửa sổ &amp; Hỗ trợ</strong></td><td><kbd>F1</kbd> · <kbd>F2</kbd> · <kbd>F7</kbd>/<kbd>F8</kbd> · <kbd>ESC</kbd></td><td>Mở Hành Trang (<code>F1</code>), Nhân Vật (<code>F2</code>), ẩn/hiện tên &amp; thanh máu (<code>F7/F8</code>), menu Hệ Thống (<code>ESC</code>).</td></tr>
+              <tr><td><strong>Tự đánh &amp; Nhặt đồ</strong></td><td><kbd>Z</kbd> · <kbd>F</kbd> · <kbd>Tab</kbd> · <kbd>T</kbd> · <kbd>G</kbd></td><td>Bật/tắt Auto đánh quái (<code>Z</code>), nhặt vật phẩm (<code>F</code>), đổi mục tiêu (<code>Tab</code>, giữ để hủy), nói chuyện NPC gần nhất (<code>T</code>), chạy tới tọa độ thông báo (<code>G</code>).</td></tr>
+              <tr><td><strong>Mẹo Hành Trang &amp; Chat</strong></td><td><kbd>Shift+Kéo</kbd> · <code>/Tên</code> · <kbd>Ctrl+Click</kbd></td><td>Trong Balo, <code>Shift + kéo</code> món vào nút Phân Giải/Vứt rồi nhấp phải lặp nhanh; ấn giữ món khoe vào Chat (tối đa 2 món); gõ <code>/TênNhânVật</code> nhắn riêng; <code>Ctrl+Click</code> link trong chat để chép.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="hub-sec" style="border-bottom:none;">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="jade-tag">Giải Đáp Nhanh</span>
+          <h2>Câu Hỏi Tân Thủ Hay Gặp Nhất</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Tôi muốn gỡ viên ngọc đã khảm sang vũ khí mới thì làm sao để không mất ngọc?</summary>
+            <div class="faq-body"><p>Đến <strong>Thợ Rèn Thần Bí</strong> → chọn mục <strong>Khảm Bảo Thạch</strong> → chỉ đặt <strong>duy nhất 1 món trang bị đang có ngọc</strong> (không đặt thêm ngọc hay thủy tinh) rồi bấm Xác nhận. Toàn bộ ngọc sẽ được tháo nguyên vẹn 100% về hành trang. Xem chi tiết tại <a href="./trang-bi.html#tach-da" style="color:var(--gold-bright);text-decoration:underline;">Hướng dẫn Tách Đá</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Quái hoặc Boss đánh quá đau khi đồ còn yếu, có cách nào giảm độ khó không?</summary>
+            <div class="faq-body"><p>Có! Bấm vào <strong>Quả Cầu Thế Giới</strong> ở góc trên bên trái màn hình (bên cạnh bản đồ nhỏ) và chọn <strong>Hạ Giới</strong> (Quái chỉ còn 20% máu / 50% sát thương; riêng Boss Bán Nguyệt &amp; Sa Mạc giảm thêm 50% máu nữa). Bạn có thể đổi qua lại Hạ Giới / Linh Giới / Tiên Giới bất cứ lúc nào (hồi chiêu 3 giây) mà vẫn giữ nguyên phần thưởng. Xem <a href="./the-gioi.html#chon-the-gioi" style="color:var(--gold-bright);text-decoration:underline;">Chọn Thế Giới</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Làm sao kéo SimBot đi phụ đánh Boss phó bản và tăng tỉ lệ rơi đồ?</summary>
+            <div class="faq-body"><p>Bạn có thể mời tối đa <strong>3 SimBot</strong> vào Tổ đội (hoặc nhắn từ khóa <code>pt</code> / <code>tổ đội</code> / <code>kéo xe</code> trong kênh Đội để triệu tập nhanh). Khi bạn vào bất kỳ phó bản nào (Bán Nguyệt, Sa Mạc, Thông Thiên Tháp, Phong Lăng Độ, Cổ Địa Hoa Sơn), SimBot trong đội sẽ tự động theo vào hỗ trợ và <strong>nhân tỉ lệ rơi đồ theo công thức <code>×(1 + số SimBot)</code></strong>. Xem <a href="./simbot-pk.html#simbot" style="color:var(--gold-bright);text-decoration:underline;">Hệ thống SimBot V4</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Chơi miễn phí tới Lv.120 có bị mất điểm kinh nghiệm nếu tiếp tục đánh quái không?</summary>
+            <div class="faq-body"><p>Không hề! Khi chạm mốc Lv.120 ở chế độ Chơi Tự Do, toàn bộ kinh nghiệm đánh quái và làm nhiệm vụ tiếp theo được tích lũy an toàn vào kho <strong>Tu Vi Tích Trữ</strong>, đồng thời bạn vẫn được vào trải nghiệm thử khu vực <strong>Map 50</strong>. Chi tiết xem tại <a href="./the-gioi.html#chuyen-sinh" style="color:var(--gold-bright);text-decoration:underline;">Đột Phá Lv.120 &amp; Chuyển Sinh</a>.</p></div>
+          </details>
+        </div>
+
+        <nav class="chapter-pager" aria-label="Điều hướng chương">
+          <a class="pager-card" href="../updates/">
+            <span class="pager-dir">← Quay lại trang chính</span>
+            <span class="pager-title">Đại Bản Cập Nhật Ver. 1.0.11</span>
+          </a>
+          <a class="pager-card is-next" href="./trang-bi.html">
+            <span class="pager-dir">Chuyên đề đầu tiên →</span>
+            <span class="pager-title">Kho Đồ, Rèn Đập, Khảm &amp; Tách Đá</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© 2026 <strong>Kiếm Võng Giang Hồ · Chipop Studio</strong> — Cẩm Nang Tân Thủ Chính Thức.</div>
+      <div class="footer-links">
+        <a href="../updates/">Trang Cập Nhật 1.0.11</a>
+        <a href="../updates/#download">Tải Game (PC &amp; Android)</a>
+        <a href="../privacy-policy.html">Chính sách</a>
+        <a href="https://play.google.com/store/apps/details?id=com.chipop.kiemvongoffline" target="_blank" rel="noopener noreferrer">Google Play</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh kích thước lớn" hidden>
+    <div class="lb-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lb-bar">
+        <span id="lightbox-cap"></span>
+        <div class="lb-controls">
+          <span id="lightbox-count" style="font-family:var(--font-mono);font-size:0.82rem;"></span>
+          <button class="lb-btn lb-prev" type="button" aria-label="Ảnh trước">←</button>
+          <button class="lb-btn lb-next" type="button" aria-label="Ảnh tiếp theo">→</button>
+          <button class="lb-btn lb-close" type="button" aria-label="Đóng xem ảnh">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./guide.js" defer></script>
+</body>
+</html>
