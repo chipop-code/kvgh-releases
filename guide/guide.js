@@ -1,43 +1,115 @@
-/* Kiếm Võng Giang Hồ — Cẩm Nang Tân Thủ Interactive Controller */
+/* Kiếm Võng Giang Hồ — Cẩm Nang Đa Trang (Genshin-Inspired Interactive Controller) */
 (() => {
   'use strict';
 
-  /* 1. Unified Search Index across all 5 Guide Pages */
-  const SEARCH_INDEX = [
-    { t: 'Bản đồ HUD & Phím tắt điều khiển (F1, F2, M, Q-V, Z, T, Space)', p: 'index.html#phim-tat', c: 'Tổng Quan', k: 'phim tat dieu khien hud balo f1 f2 ngua khinh cong auto z' },
-    { t: 'Lộ trình Tân Thủ 4 bước từ Lv.1 tới Lv.120 & Chuyển Sinh', p: 'index.html#lo-trinh', c: 'Tổng Quan', k: 'lo trinh tan thu 11 buoc van moc linh thon bat dau moi choi' },
-    { t: 'Câu hỏi thường gặp (FAQ) cho người mới', p: 'index.html#faq', c: 'Tổng Quan', k: 'faq hoi dap loi thuong gap ban do ket duong' },
-    { t: 'Hành Trang (F1), Rương Thủ Khố Từ Xa & Máy Phân Giải Tự Động', p: 'trang-bi.html#kho-do', c: 'Trang Bị', k: 'kho do hanh trang balo ruong thu kho tu xa phan giai tu dong ghep chong' },
-    { t: 'Cường Hóa Trang Bị & 5 Loại Bùa Chống Tụt Cấp (203–214)', p: 'trang-bi.html#cuong-hoa', c: 'Trang Bị', k: 'cuong hoa dap do tut cap thien duyen thach cat tinh phu bao ho 210 214' },
-    { t: 'Kế Thừa Cường Hóa (Truyền Thừa Thạch 220, phôi >= +6)', p: 'trang-bi.html#ke-thua', c: 'Trang Bị', k: 'ke thua truyen thua cuong hoa 220 chuyen cap trang bi' },
-    { t: 'Đục Lỗ Trang Bị (Hoàng Thủy Tinh 255–258, 4 lỗ Vũ Khí/Ngựa)', p: 'trang-bi.html#duc-lo', c: 'Trang Bị', k: 'duc lo hoang thuy tinh 255 258 so lo vu khi toa ky' },
-    { t: 'Mạ Màu Lỗ, Hóa Lỗ Ngũ Sắc & Lỗ Cực Phẩm (+20%)', p: 'trang-bi.html#ma-lo', c: 'Trang Bị', k: 'ma lo doi mau lo tu thuy tinh bat quai bi ngan 334 thuy ngan ruc ro 333' },
-    { t: 'Giám Định Ngọc Thạch (Cửu Tiêu Ngọc Chiếu Đăng 335)', p: 'trang-bi.html#giam-dinh', c: 'Trang Bị', k: 'giam dinh ngoc thach cuu tieu ngoc chieu dang 335 thanh minh xich viem tu ha' },
-    { t: 'Khảm Đá / Ngọc Thạch Vào Trang Bị (Lục Thủy Tinh 250–253)', p: 'trang-bi.html#kham-da', c: 'Trang Bị', k: 'kham da kham ngoc luc thuy tinh 250 253 lo do lam tim ngu sac' },
-    { t: 'Tách Đá / Gỡ Ngọc Bảo Toàn 100% (Đặt 1 Trang Bị Duy Nhất)', p: 'trang-bi.html#tach-da', c: 'Trang Bị', k: 'tach da go da thao ngoc bao toan 100 tra ngoc ve tui ui_itembox' },
-    { t: 'Hợp 3 Ngọc (Phù 331 = 100%), Quy Chân Kính (330) & Hợp Thủy Tinh 6→1', p: 'trang-bi.html#hop-ngoc', c: 'Trang Bị', k: 'hop ngoc 3 vien phu bao ho 331 quy chan kinh 330 hop thuy tinh 6 thanh 1 di truyen 221' },
-    { t: 'Tẩy Luyện Mới (Mở 11 Dòng, Đá 245–248) & Nâng Tiềm Năng (23 Mốc)', p: 'trang-bi.html#tay-luyen', c: 'Trang Bị', k: 'tay luyen xilian da 245 248 khoa dong tiem nang 240 243 hon tinh' },
-    { t: 'Chiết Xuất & Khắc Kết Tinh Thuộc Tính (300–328)', p: 'trang-bi.html#ket-tinh', c: 'Trang Bị', k: 'chiet xuat khac ket tinh 300 309 chat tach 315 328 dong an dong hien' },
-    { t: '3 Hợp 1 Hoàng Kim, Thăng Bạch Kim (+20%), Đổi Ngũ Hành & Ấn (336)', p: 'trang-bi.html#lo-bat-quai', c: 'Trang Bị', k: '3 hop 1 hoang kim bach kim tran pham thach 332 doi ngu hanh 237 huy khoa hua nguyen chau 336' },
-    { t: 'Bán Nguyệt Bí Cảnh (Map 105) & Mật Thư Thú Cưỡi Bay Bạch Long', p: 'pho-ban.html#ban-nguyet', c: 'Phó Bản', k: 'ban nguyet bi canh 105 mat thu mon phai bach long 5570' },
-    { t: 'Tử Vong Hoang Mạc (106/154) & Thông Thiên Thí Luyện Tháp (205/208)', p: 'pho-ban.html#sa-mac-thap', c: 'Phó Bản', k: 'tu vong hoang mac sa mac 106 154 thong thien thap 205 cuu tieu 208 tiem nang 90' },
-    { t: 'Thuyền Phong Lăng Độ / Linh Chu Độ Hải (Map 206, 2h Giờ Lẻ)', p: 'pho-ban.html#phong-lang-do', c: 'Phó Bản', k: 'thuyen phong lang do linh chu do hai 206 gio le 30 dot boss hoang kim' },
-    { t: 'Bí Cảnh Cổ Địa Hoa Sơn (Map 51): 3 Kết Giới, Kinh Dịch & Kiếm Thần Long', p: 'pho-ban.html#hoa-son', c: 'Phó Bản', k: 'co dia hoa son 51 ket gioi cau xich kinh dich kiem than long ma quan' },
-    { t: 'Lịch Trình v3, Phúc Lợi 3 Tab (7 Ngày · VIP 42 Ô · Hộp Trưởng Thành)', p: 'pho-ban.html#phuc-loi', c: 'Hoạt Động', k: 'lich trinh phuc loi that nhat le vip 42 o hop truong thanh 17 moc' },
-    { t: 'Quà Hồi Hương (Vắng >= 7 Ngày: ×2 EXP 3 Ngày + Khí Vận)', p: 'pho-ban.html#hoi-huong', c: 'Hoạt Động', k: 'qua hoi huong quay lai vang 7 ngay x2 exp 3 ngay khi van' },
-    { t: 'Dã Tẩu, Kỳ Ngộ (Bảo Hiểm 80), Bình Cảnh Lv.115–120, Võ Lâm Lục & Vòng Quay', p: 'pho-ban.html#hoat-dong-khac', c: 'Hoạt Động', k: 'da tau ky ngo binh canh tam ma vo lam luc 30 thanh tuu vong quay thien co tang bao do' },
-    { t: 'Đối Thoại SimBot V4, Bạn Tâm Giao (/tamsu) & Tổ Đội 3 SimBot Đi Phó Bản', p: 'simbot-pk.html#simbot', c: 'SimBot & PK', k: 'simbot chat doi thoai ban tam giao tamsu to doi pt keo xe pho ban roi do' },
-    { t: 'Kẻ Thù Truyền Kiếp (Nemesis) — Phục Kích & Thu Phục Đồng Minh', p: 'simbot-pk.html#nemesis', c: 'SimBot & PK', k: 'ke thu truyen kiep nemesis phuc kich thu phuc dong minh danh hieu' },
-    { t: '3 Chế Độ PK (Luyện Công · Chiến Đấu · Đồ Sát) & Tỷ Thí Công Bằng (5s/10s)', p: 'simbot-pk.html#che-do-pk', c: 'SimBot & PK', k: 'pk luyen cong chien dau do sat ty thi 2350 5 giay 10 giay ngung chien' },
-    { t: 'Chiến Trường Tống Kim 25v25 (Map 200) & Võ Lâm Đại Hội (/daihoi)', p: 'simbot-pk.html#tong-kim-dai-hoi', c: 'SimBot & PK', k: 'tong kim 25v25 map 200 vo lam dai hoi daihoi 16 cao thu minh chu' },
-    { t: 'Ngũ Hành Tương Sinh / Khắc (±20%), 10 Phái & Tra Cứu Kích Hoạt Dòng Ẩn', p: 'simbot-pk.html#ngu-hanh', c: 'SimBot & PK', k: 'ngu hanh kim moc thuy hoa tho tuong sinh khac kich hoat dong an trang bi 10 mon phai' },
-    { t: 'Chọn Thế Giới: 3 Cảnh Giới Độ Khó (Hạ Giới · Linh Giới · Tiên Giới)', p: 'the-gioi.html#chon-the-gioi', c: 'Thế Giới', k: 'chon the gioi qua cau ha gioi linh gioi tien gioi do kho 20% 50% 100% hoi chieu 3s' },
-    { t: 'Thần Hành Phù 7 Dòng & Trở Lại Địa Điểm Cũ (Thổ Địa Phù)', p: 'the-gioi.html#than-hanh-phu', c: 'Thế Giới', k: 'than hanh phu 7 dong tho dia phu tro lai dia diem cu luyen cong vip' },
-    { t: 'Bản Đồ Luyện Công Theo Cấp (Lv.10 → Lv.250) & Phân Tầng Tiềm Năng 42–90', p: 'the-gioi.html#ban-do-train', c: 'Thế Giới', k: 'ban do luyen cong train map cap 10 250 tiem nang 42 60 70 80 90 boss hoang kim' },
-    { t: 'Miễn Phí Tới Lv.120, Tu Vi Tích Trữ, Thử Map 50 & Chuyển Sinh Lv.200', p: 'the-gioi.html#chuyen-sinh', c: 'Thế Giới', k: 'mien phi lv 120 tu vi tich tru map 50 dot pha chuyen sinh lv 200 1200 quai tim' }
+  /* 1. Single Source of Truth: All 10 Focused Guide Pages */
+  const GUIDE_ARTICLES = [
+    {
+      slug: 'the-gioi.html',
+      cat: 'the-gioi',
+      catLabel: 'Thế Giới & SimBot',
+      tag: 'Cổng 3 Thế Giới',
+      title: 'Chọn Thế Giới Phù Hợp: Phàm Giới · Linh Giới · Tiên Giới',
+      desc: 'Phàm Giới chơi đồ Xanh–Tím giới hạn cấp 120; Linh Giới chinh phục trang bị Hoàng Kim; Tiên Giới mở thế giới mới với bộ animation đặc thù & hệ sinh thái SimBot riêng biệt.',
+      img: './assets/world_tien_gioi.webp',
+      featured: true,
+      date: 'Cốt lõi'
+    },
+    {
+      slug: 'cay-vang.html',
+      cat: 'vang-datau',
+      catLabel: 'Vàng & Dã Tẩu',
+      tag: 'Kinh Tế',
+      title: 'Cách Cày Vàng Không Khóa (KNB) Hiệu Quả Nhất & Quản Lý Tiền Trang',
+      desc: 'Phân biệt Vàng Không Khóa (KNB), Vàng Khóa & Xu; tối ưu tỉ lệ 15% nổ 25K–50K KNB từ Dã Tẩu 4–5 Sao, chợ sạp SimBot & tích lũy mốc 1.000 Vạn Vàng mở Vũ Khí Thần.',
+      img: './assets/guide_cay_vang.webp',
+      featured: true,
+      date: 'Mẹo cày'
+    },
+    {
+      slug: 'hoa-son.html',
+      cat: 'phoban-pk',
+      catLabel: 'Phó Bản & PK',
+      tag: 'Thưởng Khủng',
+      title: 'Hệ Thống Nhiệm Vụ Cổ Địa Hoa Sơn (Map 51): Rèn Kiếm Thần Long & Mặt Nạ 3D',
+      desc: 'Vượt 3 Khu Kết Giới, giải đố Kinh Dịch & Tứ Linh Long Mạch, nhận 100 Chuyển Sinh Đan, +200 Tiềm Năng, Kiếm Thần Long (6052) và Mặt Nạ Tiên Nhân/Tiên Tử cho phép giao dịch.',
+      img: './assets/guide_hoason_chain3.webp',
+      featured: true,
+      date: 'Siêu thưởng'
+    },
+    {
+      slug: 'da-tau.html',
+      cat: 'vang-datau',
+      catLabel: 'Vàng & Dã Tẩu',
+      tag: 'Boss Giữa Chừng',
+      title: 'Nhiệm Vụ Dã Tẩu: Boss Mốc Mỗi 10 NV, Boss 5 Sao & Phần Thưởng Bạch Kim 2 Dòng Thái Cực',
+      desc: 'Hướng dẫn chi tiết chuỗi Dã Tẩu 1★–5★, cách gọi lại Boss Mốc Dã Tẩu Thủ Hộ (Map 26) rớt đồ VIP Bạch Kim Ám C10 Tiềm Năng 150 và 7 mốc tích lũy tới 3.000 NV.',
+      img: './assets/guide_da_tau_boss.webp',
+      date: 'Hướng dẫn'
+    },
+    {
+      slug: 'cuong-hoa.html',
+      cat: 'trang-bi',
+      catLabel: 'Trang Bị & Rèn',
+      tag: 'Thợ Rèn',
+      title: 'Hướng Dẫn Cường Hóa Trang Bị, 5 Loại Bùa Chống Tụt Cấp & Kế Thừa Cường Hóa',
+      desc: 'Quy tắc tụt cấp từ +4 đến +12, bảng so sánh Thiên Duyên Thạch · Cát Tinh Thạch · 3 Phù Bảo Hộ và công thức Kế Thừa Cường Hóa bằng Truyền Thừa Thạch (220).',
+      img: './assets/guide_thoren_live.webp',
+      date: 'Cơ bản'
+    },
+    {
+      slug: 'tay-luyen.html',
+      cat: 'trang-bi',
+      catLabel: 'Trang Bị & Rèn',
+      tag: 'Tẩy Luyện Mới',
+      title: 'Hướng Dẫn Chức Năng Tẩy Luyện 11 Dòng (Đá 245–248) & Nâng Tiềm Năng 23 Mốc',
+      desc: 'Cách dùng 4 bậc Đá Tẩy Luyện giảm tới 100% phí Xu và chắc chắn tăng dòng khóa, mở khóa đủ 11 dòng Hiện/Ẩn/Đặc Biệt và nâng Tiềm Năng tới 150% không bao giờ tụt.',
+      img: './assets/guide_xilian_ui_real.webp',
+      date: 'Nâng cao'
+    },
+    {
+      slug: 'kham-tach-da.html',
+      cat: 'trang-bi',
+      catLabel: 'Trang Bị & Rèn',
+      tag: 'Thợ Rèn Thần Bí',
+      title: 'Kho Đồ (F1), Đục Lỗ, Mạ Lỗ, Khảm Đá, Tách Đá Bảo Toàn 100%, Kết Tinh & Bạch Kim',
+      desc: 'Trọn bộ 18 nguyên liệu thật, công thức đục lỗ Hoàng Thủy Tinh, hóa lỗ Ngũ Sắc/Cực Phẩm (+20%), mẹo Tách Đá không mất 1 viên, Hợp 3 Ngọc, Chiết Xuất Kết Tinh & Thăng Bạch Kim.',
+      img: './assets/guide_forge_items_real.webp',
+      date: 'Toàn tập'
+    },
+    {
+      slug: 'tong-kim.html',
+      cat: 'phoban-pk',
+      catLabel: 'Phó Bản & PK',
+      tag: 'Chiến Trường',
+      title: 'Hệ Thống Chiến Trường Tống Kim 25v25: 6 Quân Hàm, Boss Sa Mạc & Thưởng Top 1–3',
+      desc: 'Lịch mở mỗi 30 phút (27p đánh + 3p nghỉ), cân lực ±10%, săn Boss Sa Mạc Chiến Thần (+200 điểm), cày Công Huân lên Nguyên Soái và hốt 1.000.000 Xu + 500K Vàng Khóa Top 1.',
+      img: './assets/world_linh_gioi.webp',
+      date: 'PvP 25v25'
+    },
+    {
+      slug: 'simbot-pk.html',
+      cat: 'the-gioi',
+      catLabel: 'Thế Giới & SimBot',
+      tag: 'AI & Ngũ Hành',
+      title: 'Hệ Thống SimBot Đặc Thù Từng Thế Giới, PK, Tỷ Thí & Công Cụ Tra Kích Hoạt Ngũ Hành',
+      desc: 'Khám phá SimBot riêng biệt ở Phàm/Linh/Tiên Giới, mời 3 SimBot theo mọi phó bản nhân ×4 rơi đồ, Bạn Tâm Giao (/tamsu), Nemesis, Tỷ Thí 5s/10s & tra kích hoạt đồ Ngũ Hành.',
+      img: '../updates/assets/ingame_combat_hud.webp',
+      date: 'Tương tác'
+    },
+    {
+      slug: 'pho-ban.html',
+      cat: 'phoban-pk',
+      catLabel: 'Phó Bản & PK',
+      tag: 'Hoạt Động',
+      title: '5 Đại Phó Bản (Bán Nguyệt, Sa Mạc, Thông Thiên Tháp, Phong Lăng Độ), Phúc Lợi & Quà Hồi Hương',
+      desc: 'Săn Mật Thư thú cưỡi bay Bạch Long (5570), leo Tháp tầng 25+ săn Tiềm Năng 90, lịch Thuyền Phong Lăng Độ 2h giờ lẻ, Phúc Lợi 3 Tab, Quà Hồi Hương ×2 EXP & Vòng Quay Thiên Cơ.',
+      img: '../updates/assets/ingame_phuc_loi_7day.webp',
+      date: 'Phúc lợi'
+    }
   ];
 
-  /* 2. Mobile Topbar Menu Toggle */
+  /* 2. Mobile Menu Toggle & Dropdown Accessibility */
   const menuBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (menuBtn && navLinks) {
@@ -45,248 +117,256 @@
       const open = navLinks.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', String(open));
     });
-    navLinks.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('is-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  document.querySelectorAll('.nav-drop-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = btn.closest('.nav-item');
+      document.querySelectorAll('.nav-item.open').forEach((el) => {
+        if (el !== parent) el.classList.remove('open');
       });
+      parent?.classList.toggle('open');
     });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+      document.querySelectorAll('.nav-item.open').forEach((el) => el.classList.remove('open'));
+    }
+  });
+
+  /* 3. Hub Directory: Featured 3-Card Deck + Category Filter + Horizontal Feed (index.html) */
+  const fold = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+  const featMount = document.getElementById('featured-deck');
+  const feedMount = document.getElementById('hub-feed');
+  const hubSearch = document.getElementById('hub-search');
+  const catTabs = Array.from(document.querySelectorAll('[data-cat-tab]'));
+
+  if (featMount) {
+    featMount.innerHTML = GUIDE_ARTICLES.filter((a) => a.featured).map((a) => `
+      <a class="feat-card" href="./${a.slug}">
+        <div class="feat-thumb"><img src="${a.img}" alt="${a.title}" width="1280" height="720" loading="eager" /></div>
+        <div class="feat-body">
+          <h2>${a.title}</h2>
+          <p>${a.desc}</p>
+          <div class="feat-meta"><span>${a.catLabel}</span><span class="feat-tag">${a.tag} →</span></div>
+        </div>
+      </a>
+    `).join('');
   }
 
-  /* 3. Live Cross-Page Search on Hub (and any page with #guide-search) */
-  const searchInput = document.getElementById('guide-search');
-  const searchResults = document.getElementById('search-results');
-  const fold = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
-
-  if (searchInput && searchResults) {
-    const renderSearch = (raw) => {
-      const q = fold(raw.trim());
-      if (!q) {
-        searchResults.hidden = true;
-        searchResults.innerHTML = '';
-        return;
-      }
-      const tokens = q.split(/\s+/).filter(Boolean);
-      const matches = SEARCH_INDEX.filter((item) => {
-        const hay = fold(`${item.t} ${item.c} ${item.k}`);
+  if (feedMount) {
+    let activeCat = 'all';
+    const renderFeed = () => {
+      const q = fold((hubSearch?.value || '').trim());
+      const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+      const rows = GUIDE_ARTICLES.filter((a) => {
+        if (activeCat !== 'all' && a.cat !== activeCat) return false;
+        if (!tokens.length) return true;
+        const hay = fold(`${a.title} ${a.desc} ${a.catLabel} ${a.tag}`);
         return tokens.every((tk) => hay.includes(tk));
-      }).slice(0, 10);
-
-      searchResults.hidden = false;
-      if (!matches.length) {
-        searchResults.innerHTML = `<div class="sr-empty">Không tìm thấy mục khớp với "<strong>${raw.replace(/</g, '&lt;')}</strong>". Thử từ khóa ngắn như <code>tách đá</code>, <code>cường hóa</code>, <code>simbot</code>, <code>hoa sơn</code>, <code>hạ giới</code>.</div>`;
+      });
+      if (!rows.length) {
+        feedMount.innerHTML = `<div class="feed-card" style="display:block;text-align:center;padding:28px;">Không tìm thấy bài hướng dẫn khớp. Hãy thử từ khóa ngắn như <code>cường hóa</code>, <code>tẩy luyện</code>, <code>dã tẩu</code>, <code>vàng</code>, <code>hoa sơn</code>, <code>tống kim</code>, <code>phàm giới</code>.</div>`;
         return;
       }
-      searchResults.innerHTML = matches.map((m) => `
-        <a class="sr-item" href="./${m.p}">
-          <span class="sr-cat">${m.c}</span>
-          <span class="sr-title">${m.t}</span>
-          <span class="sr-arrow" aria-hidden="true">→</span>
+      feedMount.innerHTML = rows.map((a) => `
+        <a class="feed-card" href="./${a.slug}">
+          <div class="feed-thumb"><img src="${a.img}" alt="${a.title}" width="1280" height="720" loading="lazy" /></div>
+          <div class="feed-content">
+            <h3>${a.title}</h3>
+            <p>${a.desc}</p>
+            <div class="feed-foot">
+              <span class="feed-cat-pill">${a.catLabel} · ${a.tag}</span>
+              <span>Đọc chi tiết →</span>
+            </div>
+          </div>
         </a>
       `).join('');
     };
 
-    searchInput.addEventListener('input', (e) => renderSearch(e.target.value));
-    document.querySelectorAll('[data-search-chip]').forEach((btn) => {
+    catTabs.forEach((btn) => {
       btn.addEventListener('click', () => {
-        searchInput.value = btn.getAttribute('data-search-chip') || '';
-        renderSearch(searchInput.value);
-        searchInput.focus();
+        activeCat = btn.getAttribute('data-cat-tab') || 'all';
+        catTabs.forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        renderFeed();
       });
     });
-    document.addEventListener('click', (e) => {
-      if (!searchResults.hidden && !e.target.closest('.search-box')) {
-        searchResults.hidden = true;
-      }
-    });
+    hubSearch?.addEventListener('input', renderFeed);
+    renderFeed();
   }
 
-  /* 4. Sidebar TOC Scrollspy */
-  const tocLinks = Array.from(document.querySelectorAll('.toc-list a[href^="#"]'));
-  if (tocLinks.length) {
-    const sections = tocLinks
-      .map((a) => ({ a, el: document.querySelector(a.getAttribute('href')) }))
-      .filter((x) => x.el);
-
-    const onScroll = () => {
-      const y = window.scrollY + 120;
-      let cur = sections[0];
-      for (const s of sections) {
-        if (s.el.offsetTop <= y) cur = s;
+  /* 4. Interactive Full-Viewport 3-Worlds Switcher (the-gioi.html — Genshin Image 1!) */
+  const worldStage = document.getElementById('world-stage');
+  if (worldStage) {
+    const WORLDS = {
+      pham: {
+        emblem: '凡',
+        badge: 'CẢNH GIỚI NHẬP MÔN · CỔ ĐIỂN NGUYÊN BẢN',
+        title: 'Phàm Giới',
+        desc: 'Không gian Võ Lâm thuần khiết dành cho người chơi yêu nhịp độ cổ điển: chinh phục hành trình Lv.1 đến giới hạn cấp 120 hoàn toàn miễn phí với hệ thống trang bị Xanh – Tím kích hoạt Ngũ Hành, cường hóa vừa tay và kho Tu Vi Tích Trữ.',
+        stats: ['Trang bị chủ lực: Xanh & Tím', 'Giới hạn cấp: Lv.120', 'Quái: 20% HP · 50% Công', 'SimBot: Tân thủ & Chợ thôn (50%)'],
+        href: '#chi-tiet-pham',
+        btnText: 'Xem Chi Tiết Phàm Giới'
+      },
+      linh: {
+        emblem: '靈',
+        badge: 'CẢNH GIỚI THẦN BINH · TRANG BỊ HOÀNG KIM',
+        title: 'Linh Giới',
+        desc: 'Thế giới dành riêng cho đại hiệp đam mê săn lùng và hoàn thiện bộ trang bị Hoàng Kim, Định Quốc, An Bang và Bạch Kim. Mở khóa trọn vẹn tinh hoa Thợ Rèn Thần Bí: đục 4 lỗ, mạ lỗ Ngũ Sắc, khảm/tách ngọc bảo toàn 100%, săn Boss Mốc Dã Tẩu và chiến trường Tống Kim 25v25.',
+        stats: ['Trang bị chủ lực: Hoàng Kim · Bạch Kim', 'Full Thợ Rèn & Thợ Rèn Thần Bí', 'Quái: 50% HP · 75% Công', 'SimBot: Tổ đội Phó Bản & Nemesis (75%)'],
+        href: '#chi-tiet-linh',
+        btnText: 'Xem Chi Tiết Linh Giới'
+      },
+      tien: {
+        emblem: '仙',
+        badge: 'THẾ GIỚI HOÀN TOÀN MỚI · BỘ ANIMATION ĐẶC THÙ',
+        title: 'Tiên Giới',
+        desc: 'Bước vào cảnh giới hoàn toàn mới vượt khỏi khuôn mẫu võ lâm truyền thống: sở hữu bộ chuyển động & animation chiến đấu đặc thù (Kiếm Sĩ BnS, Thú Cưỡi Bay 3D Bạch Long, Hào Quang Thiên Cơ, Rig 55 xương & Tuyệt Kỹ Thiên Ngoại Nhất Chưởng), chinh phục Cổ Địa Hoa Sơn và Chuyển Sinh Lv.200.',
+        stats: ['Bộ Animation & Chiêu Thức Đặc Thù', 'Cổ Địa Hoa Sơn 51 · Kiếm Thần Long', 'Quái & Boss: 100% Nguyên Bản', 'SimBot V4 Cao Thủ 10 Phái (100%)'],
+        href: '#chi-tiet-tien',
+        btnText: 'Xem Chi Tiết Tiên Giới'
+      },
+      simbot: {
+        emblem: '俠',
+        badge: 'CỘNG ĐỒNG AI ĐẶC THÙ TỪNG CẢNH GIỚI',
+        title: 'SimBot Từng Thế Giới',
+        desc: 'Mỗi thế giới vận hành một hệ sinh thái SimBot riêng biệt từ ngoại hình, trang bị, cách bày bán mặc cả cho tới trí tuệ chiến đấu: từ bạn đồng hành tân thủ ở Phàm Giới, đội kéo phó bản nhân ×4 rơi đồ ở Linh Giới cho tới Cao Thủ V4 đánh hội đồng & đại chiến Tống Kim ở Tiên Giới.',
+        stats: ['Phàm Giới: 50% chỉ số · Sạp Xanh–Tím', 'Linh Giới: 75% chỉ số · Kéo Phó Bản ×4', 'Tiên Giới: 100% V4 · 10 Phái 23 Nhánh', 'Tương tác: Bạn Tâm Giao & Nemesis'],
+        href: '#simbot-cac-the-gioi',
+        btnText: 'Xem Hệ Thống SimBot'
       }
-      tocLinks.forEach((l) => l.classList.remove('active'));
-      if (cur) cur.a.classList.add('active');
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+
+    const bgs = Array.from(worldStage.querySelectorAll('.world-bg-layer'));
+    const railBtns = Array.from(worldStage.querySelectorAll('[data-world-id]'));
+    const elEmblem = document.getElementById('w-emblem');
+    const elBadge = document.getElementById('w-badge');
+    const elTitle = document.getElementById('w-title');
+    const elDesc = document.getElementById('w-desc');
+    const elStats = document.getElementById('w-stats');
+    const elLink = document.getElementById('w-detail-link');
+    const elBtnTxt = document.getElementById('w-detail-text');
+
+    const activateWorld = (id) => {
+      const w = WORLDS[id] || WORLDS.pham;
+      bgs.forEach((img) => img.classList.toggle('active', img.getAttribute('data-bg-id') === id));
+      railBtns.forEach((b) => {
+        const on = b.getAttribute('data-world-id') === id;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      if (elEmblem) elEmblem.textContent = w.emblem;
+      if (elBadge) elBadge.textContent = w.badge;
+      if (elTitle) elTitle.textContent = w.title;
+      if (elDesc) elDesc.textContent = w.desc;
+      if (elStats) elStats.innerHTML = w.stats.map((s) => `<span class="world-stat-pill">${s}</span>`).join('');
+      if (elLink) elLink.setAttribute('href', w.href);
+      if (elBtnTxt) elBtnTxt.textContent = w.btnText;
+    };
+
+    railBtns.forEach((b) => b.addEventListener('click', () => activateWorld(b.getAttribute('data-world-id'))));
+    const initParam = new URLSearchParams(window.location.search).get('realm');
+    activateWorld(initParam && WORLDS[initParam] ? initParam : 'pham');
   }
 
-  /* 5. Click-to-Copy Chat Commands */
+  /* 5. Auto-Populate Right Sidebar "Bài Viết Liên Quan" on Every Detail Page */
+  const relatedRail = document.getElementById('related-rail');
+  if (relatedRail) {
+    const curSlug = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const curItem = GUIDE_ARTICLES.find((a) => a.slug === curSlug);
+    const siblings = GUIDE_ARTICLES.filter((a) => a.slug !== curSlug && curItem && a.cat === curItem.cat);
+    const others = GUIDE_ARTICLES.filter((a) => a.slug !== curSlug && (!curItem || a.cat !== curItem.cat));
+    const picks = [...siblings, ...others].slice(0, 6);
+    relatedRail.innerHTML = picks.map((a) => `
+      <a class="rail-card" href="./${a.slug}">
+        <div class="rail-thumb"><img src="${a.img}" alt="${a.title}" width="320" height="200" loading="lazy" /></div>
+        <div>
+          <div class="rail-card-title">${a.title}</div>
+          <div class="rail-card-tag">${a.catLabel} · ${a.tag}</div>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  /* 6. Click-to-Copy Chat Commands */
   document.querySelectorAll('.cmd-copy').forEach((btn) => {
     btn.addEventListener('click', () => {
       const text = btn.getAttribute('data-copy') || btn.textContent.trim();
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).catch(() => {});
-      }
+      navigator.clipboard?.writeText(text).catch(() => {});
       const orig = btn.getAttribute('data-orig') || btn.innerHTML;
       btn.setAttribute('data-orig', orig);
       btn.classList.add('copied');
       btn.textContent = `Đã chép: ${text}`;
-      window.setTimeout(() => {
-        btn.classList.remove('copied');
-        btn.innerHTML = orig;
-      }, 1500);
+      window.setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 1400);
     });
   });
 
-  /* 6. Interactive WuXing (Ngũ Hành) Hidden-Stat Activation Calculator (simbot-pk.html) */
+  /* 7. Interactive WuXing (Ngũ Hành) Activation Lookup (simbot-pk.html) */
   const wxRoot = document.getElementById('wuxing-calc');
   if (wxRoot) {
     const WUXING = {
-      kim: {
-        name: 'Hệ Kim', color: '#ecd086',
-        sects: 'Thiếu Lâm · Thiên Vương',
-        khac: 'Hệ Mộc (+20% sát thương)',
-        biKhac: 'Hệ Hỏa (-20% sát thương)',
-        sinh: 'Hệ Thủy (Kim sinh Thủy)',
-        duocSinh: 'Hệ Thổ (Thổ sinh Kim)',
-        slots: [
-          ['Vũ Khí & Mũ', 'Hệ Kim', 'Kích bằng Dây Chuyền & Áo hệ Thổ'],
-          ['Áo & Dây Chuyền', 'Hệ Thổ', 'Kích bằng Thắt Lưng & Nhẫn Dưới hệ Hỏa'],
-          ['Thắt Lưng & Nhẫn Dưới', 'Hệ Hỏa', 'Kích bằng Hộ Uyển & Ngọc Bội hệ Mộc'],
-          ['Hộ Uyển & Ngọc Bội', 'Hệ Mộc', 'Kích bằng Giày & Nhẫn Trên hệ Thủy'],
-          ['Giày & Nhẫn Trên', 'Hệ Thủy', 'Kích bằng Vũ Khí & Mũ hệ Kim']
-        ]
-      },
-      moc: {
-        name: 'Hệ Mộc', color: '#7ee0b4',
-        sects: 'Đường Môn · Ngũ Độc',
-        khac: 'Hệ Thổ (+20% sát thương)',
-        biKhac: 'Hệ Kim (-20% sát thương)',
-        sinh: 'Hệ Hỏa (Mộc sinh Hỏa)',
-        duocSinh: 'Hệ Thủy (Thủy sinh Mộc)',
-        slots: [
-          ['Vũ Khí & Mũ', 'Hệ Mộc', 'Kích bằng Dây Chuyền & Áo hệ Thủy'],
-          ['Áo & Dây Chuyền', 'Hệ Thủy', 'Kích bằng Thắt Lưng & Nhẫn Dưới hệ Kim'],
-          ['Thắt Lưng & Nhẫn Dưới', 'Hệ Kim', 'Kích bằng Hộ Uyển & Ngọc Bội hệ Thổ'],
-          ['Hộ Uyển & Ngọc Bội', 'Hệ Thổ', 'Kích bằng Giày & Nhẫn Trên hệ Hỏa'],
-          ['Giày & Nhẫn Trên', 'Hệ Hỏa', 'Kích bằng Vũ Khí & Mũ hệ Mộc']
-        ]
-      },
-      thuy: {
-        name: 'Hệ Thủy', color: '#8ac8ff',
-        sects: 'Nga Mi · Thúy Yên',
-        khac: 'Hệ Hỏa (+20% sát thương)',
-        biKhac: 'Hệ Thổ (-20% sát thương)',
-        sinh: 'Hệ Mộc (Thủy sinh Mộc)',
-        duocSinh: 'Hệ Kim (Kim sinh Thủy)',
-        slots: [
-          ['Vũ Khí & Mũ', 'Hệ Thủy', 'Kích bằng Dây Chuyền & Áo hệ Kim'],
-          ['Áo & Dây Chuyền', 'Hệ Kim', 'Kích bằng Thắt Lưng & Nhẫn Dưới hệ Thổ'],
-          ['Thắt Lưng & Nhẫn Dưới', 'Hệ Thổ', 'Kích bằng Hộ Uyển & Ngọc Bội hệ Hỏa'],
-          ['Hộ Uyển & Ngọc Bội', 'Hệ Hỏa', 'Kích bằng Giày & Nhẫn Trên hệ Mộc'],
-          ['Giày & Nhẫn Trên', 'Hệ Mộc', 'Kích bằng Vũ Khí & Mũ hệ Thủy']
-        ]
-      },
-      hoa: {
-        name: 'Hệ Hỏa', color: '#ff9a8a',
-        sects: 'Cái Bang · Thiên Nhẫn',
-        khac: 'Hệ Kim (+20% sát thương)',
-        biKhac: 'Hệ Thủy (-20% sát thương)',
-        sinh: 'Hệ Thổ (Hỏa sinh Thổ)',
-        duocSinh: 'Hệ Mộc (Mộc sinh Hỏa)',
-        slots: [
-          ['Vũ Khí & Mũ', 'Hệ Hỏa', 'Kích bằng Dây Chuyền & Áo hệ Mộc'],
-          ['Áo & Dây Chuyền', 'Hệ Mộc', 'Kích bằng Thắt Lưng & Nhẫn Dưới hệ Thủy'],
-          ['Thắt Lưng & Nhẫn Dưới', 'Hệ Thủy', 'Kích bằng Hộ Uyển & Ngọc Bội hệ Kim'],
-          ['Hộ Uyển & Ngọc Bội', 'Hệ Kim', 'Kích bằng Giày & Nhẫn Trên hệ Thổ'],
-          ['Giày & Nhẫn Trên', 'Hệ Thổ', 'Kích bằng Vũ Khí & Mũ hệ Hỏa']
-        ]
-      },
-      tho: {
-        name: 'Hệ Thổ', color: '#dfbe84',
-        sects: 'Võ Đang · Côn Lôn',
-        khac: 'Hệ Thủy (+20% sát thương)',
-        biKhac: 'Hệ Mộc (-20% sát thương)',
-        sinh: 'Hệ Kim (Thổ sinh Kim)',
-        duocSinh: 'Hệ Hỏa (Hỏa sinh Thổ)',
-        slots: [
-          ['Vũ Khí & Mũ', 'Hệ Thổ', 'Kích bằng Dây Chuyền & Áo hệ Hỏa'],
-          ['Áo & Dây Chuyền', 'Hệ Hỏa', 'Kích bằng Thắt Lưng & Nhẫn Dưới hệ Mộc'],
-          ['Thắt Lưng & Nhẫn Dưới', 'Hệ Mộc', 'Kích bằng Hộ Uyển & Ngọc Bội hệ Thủy'],
-          ['Hộ Uyển & Ngọc Bội', 'Hệ Thủy', 'Kích bằng Giày & Nhẫn Trên hệ Kim'],
-          ['Giày & Nhẫn Trên', 'Hệ Kim', 'Kích bằng Vũ Khí & Mũ hệ Thổ']
-        ]
-      }
+      kim: { sects: 'Thiếu Lâm · Thiên Vương', khac: 'Hệ Mộc (+20% ST)', biKhac: 'Hệ Hỏa (-20% ST)', sinh: 'Thổ sinh Kim · Kim sinh Thủy',
+        slots: [['Vũ Khí & Mũ', 'Hệ Kim', 'Dây Chuyền & Áo hệ Thổ'], ['Áo & Dây Chuyền', 'Hệ Thổ', 'Thắt Lưng & Nhẫn Dưới hệ Hỏa'], ['Thắt Lưng & Nhẫn Dưới', 'Hệ Hỏa', 'Hộ Uyển & Ngọc Bội hệ Mộc'], ['Hộ Uyển & Ngọc Bội', 'Hệ Mộc', 'Giày & Nhẫn Trên hệ Thủy'], ['Giày & Nhẫn Trên', 'Hệ Thủy', 'Vũ Khí & Mũ hệ Kim']] },
+      moc: { sects: 'Đường Môn · Ngũ Độc', khac: 'Hệ Thổ (+20% ST)', biKhac: 'Hệ Kim (-20% ST)', sinh: 'Thủy sinh Mộc · Mộc sinh Hỏa',
+        slots: [['Vũ Khí & Mũ', 'Hệ Mộc', 'Dây Chuyền & Áo hệ Thủy'], ['Áo & Dây Chuyền', 'Hệ Thủy', 'Thắt Lưng & Nhẫn Dưới hệ Kim'], ['Thắt Lưng & Nhẫn Dưới', 'Hệ Kim', 'Hộ Uyển & Ngọc Bội hệ Thổ'], ['Hộ Uyển & Ngọc Bội', 'Hệ Thổ', 'Giày & Nhẫn Trên hệ Hỏa'], ['Giày & Nhẫn Trên', 'Hệ Hỏa', 'Vũ Khí & Mũ hệ Mộc']] },
+      thuy: { sects: 'Nga Mi · Thúy Yên', khac: 'Hệ Hỏa (+20% ST)', biKhac: 'Hệ Thổ (-20% ST)', sinh: 'Kim sinh Thủy · Thủy sinh Mộc',
+        slots: [['Vũ Khí & Mũ', 'Hệ Thủy', 'Dây Chuyền & Áo hệ Kim'], ['Áo & Dây Chuyền', 'Hệ Kim', 'Thắt Lưng & Nhẫn Dưới hệ Thổ'], ['Thắt Lưng & Nhẫn Dưới', 'Hệ Thổ', 'Hộ Uyển & Ngọc Bội hệ Hỏa'], ['Hộ Uyển & Ngọc Bội', 'Hệ Hỏa', 'Giày & Nhẫn Trên hệ Mộc'], ['Giày & Nhẫn Trên', 'Hệ Mộc', 'Vũ Khí & Mũ hệ Thủy']] },
+      hoa: { sects: 'Cái Bang · Thiên Nhẫn', khac: 'Hệ Kim (+20% ST)', biKhac: 'Hệ Thủy (-20% ST)', sinh: 'Mộc sinh Hỏa · Hỏa sinh Thổ',
+        slots: [['Vũ Khí & Mũ', 'Hệ Hỏa', 'Dây Chuyền & Áo hệ Mộc'], ['Áo & Dây Chuyền', 'Hệ Mộc', 'Thắt Lưng & Nhẫn Dưới hệ Thủy'], ['Thắt Lưng & Nhẫn Dưới', 'Hệ Thủy', 'Hộ Uyển & Ngọc Bội hệ Kim'], ['Hộ Uyển & Ngọc Bội', 'Hệ Kim', 'Giày & Nhẫn Trên hệ Thổ'], ['Giày & Nhẫn Trên', 'Hệ Thổ', 'Vũ Khí & Mũ hệ Hỏa']] },
+      tho: { sects: 'Võ Đang · Côn Lôn', khac: 'Hệ Thủy (+20% ST)', biKhac: 'Hệ Mộc (-20% ST)', sinh: 'Hỏa sinh Thổ · Thổ sinh Kim',
+        slots: [['Vũ Khí & Mũ', 'Hệ Thổ', 'Dây Chuyền & Áo hệ Hỏa'], ['Áo & Dây Chuyền', 'Hệ Hỏa', 'Thắt Lưng & Nhẫn Dưới hệ Mộc'], ['Thắt Lưng & Nhẫn Dưới', 'Hệ Mộc', 'Hộ Uyển & Ngọc Bội hệ Thủy'], ['Hộ Uyển & Ngọc Bội', 'Hệ Thủy', 'Giày & Nhẫn Trên hệ Kim'], ['Giày & Nhẫn Trên', 'Hệ Kim', 'Vũ Khí & Mũ hệ Thổ']] }
     };
-
     const out = document.getElementById('wuxing-output');
     const btns = Array.from(wxRoot.querySelectorAll('[data-wx]'));
-    const renderWx = (key) => {
-      const d = WUXING[key] || WUXING.kim;
-      btns.forEach((b) => {
-        const active = b.getAttribute('data-wx') === key;
-        b.classList.toggle('active', active);
-        b.setAttribute('aria-pressed', String(active));
-      });
+    const renderWx = (k) => {
+      const d = WUXING[k] || WUXING.kim;
+      btns.forEach((b) => { const on = b.getAttribute('data-wx') === k; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
       if (!out) return;
       out.innerHTML = `
         <div class="wx-summary">
-          <div><span class="wx-k">Môn phái</span><strong style="color:${d.color}">${d.sects}</strong></div>
+          <div><span class="wx-k">Môn phái</span><strong>${d.sects}</strong></div>
           <div><span class="wx-k">Khắc chế mạnh</span><strong class="txt-jade">${d.khac}</strong></div>
           <div><span class="wx-k">Bị khắc chế</span><strong class="txt-red">${d.biKhac}</strong></div>
-          <div><span class="wx-k">Vòng Tương Sinh</span><strong>${d.duocSinh} · ${d.sinh}</strong></div>
+          <div><span class="wx-k">Vòng Tương Sinh</span><strong>${d.sinh}</strong></div>
         </div>
-        <div class="table-wrap" style="margin-top:14px;">
-          <table class="data-table">
-            <thead><tr><th>Cặp Vị Trí Trang Bị</th><th>Hệ Nên Mang</th><th>Nguồn Kích Hoạt Dòng Ẩn (Trang Bị Lam/Tím)</th></tr></thead>
-            <tbody>
-              ${d.slots.map(([pair, elem, src]) => `<tr><td><strong>${pair}</strong></td><td><code>${elem}</code></td><td>${src}</td></tr>`).join('')}
-            </tbody>
-          </table>
-        </div>
-      `;
+        <div class="table-wrap" style="margin-top:12px;"><table class="data-table">
+          <thead><tr><th>Cặp Vị Trí Trang Bị</th><th>Hệ Nên Mang</th><th>Nguồn Kích Hoạt Dòng Ẩn (Đồ Xanh/Tím)</th></tr></thead>
+          <tbody>${d.slots.map(([p, e, s]) => `<tr><td><strong>${p}</strong></td><td><code>${e}</code></td><td>Kích bằng ${s}</td></tr>`).join('')}</tbody>
+        </table></div>`;
     };
     btns.forEach((b) => b.addEventListener('click', () => renderWx(b.getAttribute('data-wx'))));
     renderWx('kim');
   }
 
-  /* 7. Accessible Lightbox for All Clickable In-Game Screenshots */
+  /* 8. Accessible Lightbox for All Clickable Figures */
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   const lbCap = document.getElementById('lightbox-cap');
   const lbCount = document.getElementById('lightbox-count');
-  const figures = Array.from(document.querySelectorAll('.zoomable-fig'));
+  const figs = Array.from(document.querySelectorAll('.zoomable-fig'));
   let lbIdx = 0;
-
-  const showLb = (idx) => {
-    if (!lb || !figures.length) return;
-    lbIdx = (idx + figures.length) % figures.length;
-    const f = figures[lbIdx];
-    const img = f.querySelector('img');
-    const cap = f.querySelector('figcaption');
+  const showLb = (i) => {
+    if (!lb || !figs.length) return;
+    lbIdx = (i + figs.length) % figs.length;
+    const img = figs[lbIdx].querySelector('img');
+    const cap = figs[lbIdx].querySelector('figcaption span');
     lbImg.src = img.getAttribute('src');
     lbImg.alt = img.getAttribute('alt') || '';
     lbCap.textContent = cap ? cap.textContent.trim() : img.alt;
-    lbCount.textContent = `${lbIdx + 1} / ${figures.length}`;
+    lbCount.textContent = `${lbIdx + 1} / ${figs.length}`;
     lb.hidden = false;
     document.body.style.overflow = 'hidden';
   };
-  const closeLb = () => {
-    if (!lb) return;
-    lb.hidden = true;
-    document.body.style.overflow = '';
-  };
-
-  figures.forEach((f, i) => {
-    f.setAttribute('tabindex', '0');
-    f.setAttribute('role', 'button');
+  const closeLb = () => { if (!lb) return; lb.hidden = true; document.body.style.overflow = ''; };
+  figs.forEach((f, i) => {
+    f.setAttribute('tabindex', '0'); f.setAttribute('role', 'button');
     f.addEventListener('click', () => showLb(i));
-    f.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showLb(i); }
-    });
+    f.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showLb(i); } });
   });
-
   if (lb) {
     lb.querySelector('.lb-close')?.addEventListener('click', closeLb);
     lb.querySelector('.lb-prev')?.addEventListener('click', () => showLb(lbIdx - 1));
