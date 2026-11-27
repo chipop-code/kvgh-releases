@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hướng Dẫn Toàn Tập NPC Thợ Rèn (7 Chức Năng Chi Tiết) — Cẩm Nang KVGH</title>
-  <meta name="description" content="Toàn bộ 7 chức năng của NPC Thợ Rèn trong Kiếm Võng Giang Hồ: Tiệm Rèn, Cường Hóa +1..+15 & 5 Bùa, Truyền Thừa, Nâng Tiềm Năng 42–150, Tẩy Luyện 11 Dòng, Hợp Thành Hoàng Kim/Định Quốc/Ngũ Hành Ám/12 Thần Binh & Ngũ Hành Ấn/Trang Sức." />
+  <title>Hướng Dẫn NPC Thợ Rèn — Dễ Hiểu Cho Người Chơi — Cẩm Nang KVGH</title>
+  <meta name="description" content="Giải thích đơn giản 7 chức năng tại NPC Thợ Rèn: mua vũ khí tân thủ, cường hóa, truyền thừa cấp đập, nâng tiềm năng, tẩy luyện dòng đẹp, ghép đồ Hoàng Kim và nâng cấp Ấn / Trang Sức." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hướng Dẫn Toàn Tập NPC Thợ Rèn (7 Chức Năng Chi Tiết) — Cẩm Nang KVGH" />
-  <meta property="og:description" content="Toàn bộ 7 chức năng của NPC Thợ Rèn trong Kiếm Võng Giang Hồ: Tiệm Rèn, Cường Hóa +1..+15 & 5 Bùa, Truyền Thừa, Nâng Tiềm Năng 42–150, Tẩy Luyện 11 Dòng, Hợp Thành Hoàng Kim/Định Quốc/Ngũ Hành Ám/12 Thần Binh & Ngũ Hành Ấn/Trang Sức." />
+  <meta property="og:title" content="Hướng Dẫn NPC Thợ Rèn — Dễ Hiểu Cho Người Chơi — Cẩm Nang KVGH" />
+  <meta property="og:description" content="Giải thích đơn giản 7 chức năng tại NPC Thợ Rèn: mua vũ khí tân thủ, cường hóa, truyền thừa cấp đập, nâng tiềm năng, tẩy luyện dòng đẹp, ghép đồ Hoàng Kim và nâng cấp Ấn / Trang Sức." />
   <meta property="og:image" content="https://chipop-code.github.io/kvgh-releases/guide/assets/world_tien_gioi.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,11 +28,11 @@
         <div class="nav-item">
           <button class="nav-drop-btn active" type="button" aria-haspopup="true">Trang Bị ▾</button>
           <div class="nav-dropdown">
-            <a class="active" href="./tho-ren.html">NPC Thợ Rèn (Toàn Tập 7 Nhánh)</a>
-            <a href="./tho-ren-huyen-bi.html">NPC Thợ Rèn Huyền Bí (5 Đại Nhánh)</a>
-            <a href="./cuong-hoa.html">Cường Hóa &amp; Kế Thừa (Tóm Tắt)</a>
-            <a href="./tay-luyen.html">Tẩy Luyện 11 Dòng &amp; Tiềm Năng</a>
-            <a href="./kham-tach-da.html">Kho Đồ, Đục Lỗ, Khảm &amp; Tách Đá</a>
+            <a class="active" href="./tho-ren.html">Hướng Dẫn Thợ Rèn (7 Tính Năng)</a>
+            <a href="./tho-ren-huyen-bi.html">Hướng Dẫn Thợ Rèn Huyền Bí</a>
+            <a href="./cuong-hoa.html">Cường Hóa &amp; Kế Thừa</a>
+            <a href="./tay-luyen.html">Tẩy Luyện &amp; Tiềm Năng</a>
+            <a href="./kham-tach-da.html">Kho Đồ, Khảm &amp; Tách Đá</a>
           </div>
         </div>
         <div class="nav-item">
@@ -69,166 +69,112 @@
 
       <div class="detail-grid">
         <article class="paper-sheet">
-          <span class="paper-kicker">NPC Thợ Rèn · Toàn Tập 7 Hệ Thống Rèn Đập</span>
-          <h1>Hướng Dẫn Toàn Tập NPC Thợ Rèn (7 Chức Năng Chi Tiết)</h1>
+          <span class="paper-kicker">NPC Thợ Rèn · Đập Đồ & Rèn Trang Bị</span>
+          <h1>Hướng Dẫn NPC Thợ Rèn (7 Tính Năng Cần Biết)</h1>
           <div class="paper-meta">
             <span>Chuyên mục: <strong>Trang Bị & Rèn</strong></span>
             <span>Áp dụng: <strong>PC Windows &amp; Android Offline</strong></span>
             <span>Chuẩn cơ chế Ver. 1.0.11</span>
           </div>
           
-    <p><strong>NPC Thợ Rèn</strong> (tại Vân Mộc Linh Thôn và Thiên Nguyên Thành — hoặc mở nhanh từ xa qua <em>Thần Hành Phù → ① Túi Đồ</em>) là nơi đảm nhiệm toàn bộ vòng đời phát triển sức mạnh nền của trang bị: từ <strong>Cường Hóa +1 → +15</strong>, <strong>Truyền Thừa</strong>, <strong>Nâng Tiềm Năng (42–150)</strong>, <strong>Tẩy Luyện 11 Dòng</strong>, <strong>Hợp Thành Hoàng Kim / Định Quốc / Ngũ Hành Ám / 12 Danh Hiệu Thần Binh</strong> cho tới <strong>Ngũ Hành Ấn &amp; 11 Loại Trang Sức</strong>.</p>
+    <p><strong>Thợ Rèn</strong> đứng ngay trong <em>Vân Mộc Linh Thôn</em> và <em>Thiên Nguyên Thành</em> (hoặc bạn mở nhanh từ xa bằng <strong>Thần Hành Phù</strong>). Đây là nơi bạn ghé thường xuyên nhất để <strong>đập đồ lên lực chiến</strong>, quay dòng thuộc tính ngon và ghép trang bị Hoàng Kim.</p>
     <figure class="zoomable-fig">
-      <img src="./assets/guide_thoren_live.webp" alt="Giao diện đối thoại NPC Thợ Rèn thực tế tại Vân Mộc Linh Thôn" width="1280" height="720" loading="eager" />
-      <figcaption><span>Gặp NPC Thợ Rèn tại thôn/thành để mở đủ 7 nhánh rèn đập · Cần đục lỗ, khảm/tách ngọc, chiết xuất Kết Tinh hay Lò Bát Quái hãy sang <a class="inline-link" href="./tho-ren-huyen-bi.html">NPC Thợ Rèn Huyền Bí</a>.</span><span class="zoom-hint">Bấm phóng lớn</span></figcaption>
+      <img src="./assets/guide_thoren_live.webp" alt="Bảng chọn 7 chức năng khi nói chuyện với NPC Thợ Rèn trong game" width="1280" height="720" loading="eager" />
+      <figcaption><span>7 dòng chức năng khi nói chuyện với Thợ Rèn · Cần đục lỗ, khảm/tháo ngọc hay đổi đồ hãy ghé <a class="inline-link" href="./tho-ren-huyen-bi.html">Thợ Rèn Huyền Bí</a>.</span><span class="zoom-hint">Bấm phóng lớn</span></figcaption>
     </figure>
 
     <div class="callout">
-      <strong class="co-title">Mục Lục Nhanh 7 Chức Năng Của NPC Thợ Rèn</strong>
-      <a class="inline-link" href="#tiem-ren">① Mua Vật Phẩm</a> ·
-      <a class="inline-link" href="#cuong-hoa">② Cường Hóa +1..+15 &amp; 5 Bùa</a> ·
-      <a class="inline-link" href="#truyen-thua">③ Truyền Thừa Cường Hóa</a> ·
-      <a class="inline-link" href="#tiem-nang">④ Nâng Tiềm Năng 42–150</a> ·
-      <a class="inline-link" href="#tay-luyen">⑤ Tẩy Luyện 11 Dòng Mới</a> ·
-      <a class="inline-link" href="#hop-thanh">⑥ Hợp Thành Hoàng Kim · Định Quốc · Ngũ Hành Ám</a> ·
-      <a class="inline-link" href="#an-trang-suc">⑦ Nâng Cấp Bộ, Bạch Kim &amp; Ngũ Hành Ấn / Trang Sức</a>
+      <strong class="co-title">Xem nhanh mục bạn cần</strong>
+      <a class="inline-link" href="#tiem-ren">1. Mua vũ khí</a> ·
+      <a class="inline-link" href="#cuong-hoa">2. Cường hóa</a> ·
+      <a class="inline-link" href="#truyen-thua">3. Truyền thừa</a> ·
+      <a class="inline-link" href="#tiem-nang">4. Nâng tiềm năng</a> ·
+      <a class="inline-link" href="#tay-luyen">5. Tẩy luyện</a> ·
+      <a class="inline-link" href="#hop-thanh">6. Ghép &amp; tái chế đồ</a> ·
+      <a class="inline-link" href="#nang-cap">7. Nâng cấp &amp; Ấn / Trang Sức</a>
     </div>
 
-    <h2 id="tiem-ren">1. Mua Vật Phẩm (Tiệm Rèn Nhập Môn)</h2>
-    <p>Cửa hàng Tiệm Rèn cung cấp <strong>30 loại vũ khí nhập môn</strong> đầy đủ mọi hệ phái (<em>Kiếm, Đao, Bổng, Thương, Chùy, Song Đao, Triền Thủ, Phi Đao, Phi Tiêu, Tụ Tiễn</em>) với giá chỉ từ <code>360 – 2.120</code> Tiền Đồng (Xu), giúp tân thủ đổi đúng vũ khí hệ phái ngay khi mới bước chân vào Phàm Giới.</p>
+    <h2 id="tiem-ren">1. Mua Vật Phẩm (Cửa Hàng Tân Thủ)</h2>
+    <p>Bán sẵn 30 loại vũ khí cơ bản của đủ mọi môn phái (Kiếm, Đao, Bổng, Thương, Chùy, Song Đao, Phi Đao...) với giá rất rẻ chỉ vài trăm đến vài nghìn Xu — tiện cho người mới mua cầm tạm lúc đầu.</p>
 
-    <h2 id="cuong-hoa">2. Cường Hóa Trang Bị (+1 → +15) &amp; 5 Loại Bùa Bảo Hộ</h2>
-    <p>Trang bị được cường hóa tuần tự từng cấp từ <code>+1</code> tối đa tới <strong><code>+15</code></strong>. Nguyên liệu phân rõ theo 3 nhóm vị trí và 2 chặng cấp:</p>
+    <h2 id="cuong-hoa">2. Cường Hóa Trang Bị (Đập Đồ Từ +1 Đến +15)</h2>
+    <p>Giúp tăng thẳng công, máu và phòng thủ cho món đồ bạn đang dùng.</p>
     <ul>
-      <li><strong>Chặng +1 → +9 (dùng Mảnh):</strong> Vũ Khí dùng <em>Mảnh Vũ Khí</em> (<code>203</code>) · Phòng Cụ dùng <em>Mảnh Phòng Cụ</em> (<code>205</code>) · Trang Sức dùng <em>Mảnh Trang Sức</em> (<code>207</code>).</li>
-      <li><strong>Chặng +10 → +15 (dùng Tinh Hoa):</strong> Vũ Khí dùng <em>Tinh Hoa Vũ Khí</em> (<code>204</code>) · Phòng Cụ dùng <em>Tinh Chất Giáp</em> (<code>206</code>) · Trang Sức dùng <em>Tinh Chất Phụ Kiện</em> (<code>208</code>).</li>
-      <li><strong>Riêng trang bị Hoàng Kim trở lên:</strong> Cần kẹp thêm <strong>Mảnh Cổ Thần (<code>209</code>)</strong>: <code>1</code> viên (<code>+1..+3</code>), <code>2</code> viên (<code>+4..+5</code>), <code>3</code> viên (<code>+6..+8</code>), <code>4</code> viên (<code>+9..+11</code>) và <code>5</code> viên (<code>+12..+15</code>). Mốc <code>+13/+14/+15</code> nhân phí Xu bậc <code>+12</code> lên <code>×2 / ×3 / ×4</code>.</li>
-    </ul>
-    <div class="table-wrap"><table class="data-table">
-      <thead><tr><th>Mốc Cấp Đập</th><th>Tỉ Lệ Gốc</th><th>Tụt Cấp Nếu Xịt (Không Bùa)</th><th>Khuyến Nghị Bùa Hỗ Trợ</th></tr></thead>
-      <tbody>
-        <tr><td><strong>+1 → +3</strong></td><td class="txt-jade">100% · 90% · 80%</td><td class="txt-jade">Tụt 0 cấp</td><td>Không cần bùa — đập thẳng tay!</td></tr>
-        <tr><td><strong>+4 → +6</strong></td><td><code>75% · 70% · 60%</code></td><td>Tụt <code>1</code> cấp</td><td><em>Phù Phàm Phẩm (212)</em> hoặc <em>Thiên Duyên Thạch (210)</em></td></tr>
-        <tr><td><strong>+7 → +8</strong></td><td><code>50% · 45%</code></td><td>Tụt <code>2</code> cấp</td><td><em>Phù Lương Phẩm (213)</em> hoặc <em>Thiên Duyên Thạch (210)</em></td></tr>
-        <tr><td><strong>+9 → +12</strong></td><td><code>30% · 25% · 25% · 20%</code></td><td class="txt-red">Tụt 3 cấp!</td><td><strong>Bắt buộc</strong> <em>Thiên Duyên Thạch (210)</em> hoặc <em>Phù Cực Phẩm (214)</em></td></tr>
-        <tr><td><strong>+13 → +15</strong></td><td><code>35% · 25% · 20%</code></td><td class="txt-red">Tụt 3 cấp!</td><td>Chỉ đập khi có <em>Thiên Duyên Thạch (210: +20%, tụt max 1)</em></td></tr>
-      </tbody>
-    </table></div>
-    <p><strong>5 Loại Đá &amp; Phù Bảo Hộ (<code>210–214</code>):</strong> <strong>Thiên Duyên Thạch (<code>210</code>)</strong> (<code>+20%</code>, xịt tụt tối đa <code>1</code>, mọi cấp — mạnh nhất!) · <strong>Cát Tinh Thạch (<code>211</code>)</strong> (<code>+20%</code>, tụt tối đa <code>3</code>, mọi cấp) · <strong>Phù Bảo Hộ Phàm Phẩm (<code>212</code>)</strong> (<code>+0%</code>, max <code>1</code>, <code>&lt;= +6</code>) · <strong>Phù Lương Phẩm (<code>213</code>)</strong> (<code>+0%</code>, max <code>1</code>, <code>&lt;= +9</code>) · <strong>Phù Cực Phẩm (<code>214</code>)</strong> (<code>+0%</code>, max <code>1</code>, mọi cấp). Xem thêm mẹo cày Bùa tại <a class="inline-link" href="./cuong-hoa.html">Trang Tóm Tắt Cường Hóa</a>.</p>
-
-    <h2 id="truyen-thua">3. Trang Bị Truyền Thừa (Chuyển Cấp Cường Hóa Khi Lên Đời Đồ)</h2>
-    <p>Cho phép chuyển cấp cường hóa từ món phôi cũ sang món trang bị mới <strong>cùng vị trí</strong> (cả 2 món phải <strong>tháo ra Hành Trang <code>F1</code></strong>; phôi phải <code>&gt;= +6</code> và cao hơn món đích). Tỉ lệ <strong>giữ nguyên 100% cấp cũ là <code>40%</code></strong> (cùng phẩm &amp; cùng bậc); <code>60%</code> còn lại giảm đúng <code>1</code> cấp (tối thiểu <code>+5</code>). Món phôi sau truyền thừa trở về <code>+0</code>.</p>
-    <div class="table-wrap"><table class="data-table">
-      <thead><tr><th>Phẩm Chất Phôi</th><th>Cấp Phôi</th><th>Truyền Thừa Thạch (220)</th><th>Phí Tiền Đồng (Xu)</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Đồ Lam</strong></td><td><code>+6 → +12</code></td><td><code>1 → 12</code> viên</td><td><code>500.000 → 1.500.000</code> Xu</td></tr>
-        <tr><td><strong>Đồ Tím</strong></td><td><code>+6 → +12</code></td><td><code>1 → 12</code> viên</td><td><code>750.000 → 2.250.000</code> Xu</td></tr>
-        <tr><td><strong>Hoàng Kim / Bạch Kim</strong></td><td><code>+6..+8 / +9 / +10 / +11 / +12</code></td><td><code>3 / 5–7 / 8–10 / 12–18 / 18–25</code> viên</td><td><code>1M..1.5M / 1.6M / 2M / 2.4M / 3M</code> Xu</td></tr>
-        <tr><td><strong>Trên +12 (+13..+15)</strong></td><td>Mỗi cấp vượt <code>+12</code></td><td>Cộng thêm <code>+4</code> viên / cấp</td><td>Cộng thêm <code>+500.000</code> Xu / cấp</td></tr>
-      </tbody>
-    </table></div>
-
-    <h2 id="tiem-nang">4. Nâng Tiềm Năng Trang Bị (42 → 150 Điểm · Không Tụt · Thức Tỉnh ☯)</h2>
-    <p>Tiềm năng nhân trực tiếp biên độ toàn bộ dòng thuộc tính của trang bị: sàn <code>42</code> điểm, trần <strong><code>100</code></strong> (đồ Xanh/Tím) và trần <strong><code>150</code></strong> (Hoàng Kim / Bạch Kim / Ngũ Hành Ám). <strong>Điểm cực quan trọng:</strong> Nâng Tiềm Năng thất bại <strong>KHÔNG BAO GIỜ bị tụt điểm</strong>! Đặc biệt, khi trang bị Hoàng Kim+ chạm mốc <strong><code>100</code></strong> điểm sẽ tự động <strong>thức tỉnh 2 dòng Thuộc Tính Đặc Biệt Thái Cực (<code>☯</code>)</strong>!</p>
-    <div class="table-wrap"><table class="data-table">
-      <thead><tr><th>Khoảng Tiềm Năng (Hoàng Kim)</th><th>Phù Thức Tỉnh (240)</th><th>Phí Xu</th><th>Tỉ Lệ Gốc &amp; Điểm Cộng</th><th>Ô Phụ Hồn Tinh (241/242/243) hoặc Phôi</th></tr></thead>
-      <tbody>
-        <tr><td><code>0 – 49</code></td><td><code>1</code> phù</td><td><code>90.000</code></td><td><code>60%</code> (<code>+4</code>đ)</td><td><em>Hồn Tinh Thường (241)</em> <code>×20</code> (Lam 5 · Tím 10)</td></tr>
-        <tr><td><code>50 – 69</code></td><td><code>1</code> phù</td><td><code>150.000</code></td><td><code>50%</code> (<code>+3</code>đ)</td><td><em>Hồn Tinh Thường (241)</em> <code>×20</code></td></tr>
-        <tr><td><code>70 – 79</code></td><td><code>1</code> phù</td><td><code>180.000</code></td><td><code>40%</code> (<code>+2</code>đ)</td><td><em>Hồn Tinh Ưu Lương (242)</em> <code>×10</code> (Lam 1 · Tím 3)</td></tr>
-        <tr><td><code>80 – 89</code></td><td><code>1</code> phù</td><td><code>250.000</code></td><td><code>30%</code> (<code>+2</code>đ)</td><td><em>Hồn Tinh Ưu Lương (242)</em> <code>×20</code> (Lam 5 · Tím 10)</td></tr>
-        <tr><td><code>90 – 94</code></td><td><code>2</code> phù</td><td><code>500.000</code></td><td><code>20%</code> (<code>+1</code>đ)</td><td><em>Hồn Tinh Hoàn Mỹ (243)</em> <code>×4</code> (Lam 1 · Tím 3)</td></tr>
-        <tr><td><code>95 – 99</code></td><td><code>2</code> phù</td><td><code>1.000.000</code></td><td><code>15%</code> (<code>+1</code>đ)</td><td><em>Hồn Tinh Hoàn Mỹ (243)</em> <code>×5</code> (Lam 2 · Tím 4)</td></tr>
-        <tr><td><strong><code>100 – 119</code></strong></td><td><code>4</code> phù</td><td><code>3.000.000</code></td><td class="txt-jade">100% (+2đ)</td><td><em>Hồn Tinh Hoàn Mỹ (243)</em> <code>×50</code> hoặc phôi cùng tên <code>&gt;= 100%</code></td></tr>
-        <tr><td><strong><code>120 – 139</code></strong></td><td><code>12</code> phù</td><td><code>5.000.000</code></td><td class="txt-jade">100% (+2đ)</td><td><em>Hồn Tinh Hoàn Mỹ (243)</em> <code>×60</code> hoặc phôi cùng tên <code>&gt;= 120%</code></td></tr>
-        <tr><td><strong><code>140 – 149</code></strong></td><td><code>25</code> phù</td><td><code>9.900.000</code></td><td class="txt-jade">100% (+2đ)</td><td><em>Hồn Tinh Hoàn Mỹ (243)</em> <code>×80</code> hoặc phôi cùng tên <code>&gt;= 140%</code></td></tr>
-      </tbody>
-    </table></div>
-
-    <h2 id="tay-luyen">5. Luyện Lại · Đúc Lại · Tẩy Luyện (Giao Diện Mới 11 Dòng)</h2>
-    <p>Giao diện Tẩy Luyện mới chia 2 Tab (<em>Đang Mặc / Túi Đồ</em>, tối đa 30 món — không áp dụng cho Ấn, Trang Sức, Mặt Nạ), hiển thị so sánh trực quan <strong>Trước → Sau</strong>, mở khóa khóa tự do cả <strong>11 dòng</strong> và hỗ trợ trả bằng <strong>Vàng Khóa</strong> hoặc <strong>Tiền Đồng (Xu)</strong>.</p>
-    <ul>
-      <li><strong>Phí gốc minh bạch:</strong> Tẩy ngẫu nhiên tốn <code>100.000 Xu</code> hoặc <code>10.000 Vàng Khóa</code>. Khóa <code>k</code> dòng (tối đa 11 dòng) tính tuyến tính đúng <code>k × 100.000 Xu</code> hoặc <code>k × 10.000 Vàng Khóa</code>.</li>
-      <li><strong>4 Bậc Đá Tẩy Luyện (<code>245–248</code>):</strong> <em>Nhỏ (<code>245</code>)</em> giảm <code>25%</code> phí · <em>Vừa (<code>246</code>)</em> giảm <code>50%</code> · <em>Lớn (<code>247</code>)</em> giảm <code>75%</code> · <strong>Xa Hoa / Hoàn Mỹ (<code>248</code>) giảm <code>100%</code> (= 0 Xu!)</strong>. Khi kẹp Đá Tẩy Luyện, hệ thống kích hoạt cơ chế đẩy tăng chỉ số! Xem thêm chiến thuật tại <a class="inline-link" href="./tay-luyen.html">Trang Tẩy Luyện 11 Dòng</a>.</li>
+      <li><strong>Nguyên liệu cần:</strong> Từ <strong>+1 đến +9</strong> dùng <em>Mảnh</em> (Mảnh Vũ Khí, Mảnh Phòng Cụ hoặc Mảnh Trang Sức). Từ <strong>+10 đến +15</strong> chuyển sang dùng <em>Tinh Hoa</em>. Riêng đồ <strong>Hoàng Kim</strong> cần kèm thêm <em>Mảnh Cổ Thần</em>.</li>
+      <li><strong>Khi đập xịt có bị tụt cấp không?</strong> Từ <strong>+1 đến +3 không bao giờ tụt</strong> (cứ đập thoải mái). Từ <strong>+4 đến +6</strong> xịt tụt 1 cấp; <strong>+7 đến +8</strong> tụt 2 cấp; từ <strong>+9 trở lên</strong> tụt tới 3 cấp.</li>
+      <li><strong>Cách chống tụt cấp:</strong> Kẹp thêm bùa hỗ trợ vào ô chúc phúc trước khi bấm đập:
+        <ul>
+          <li><strong>Thiên Duyên Thạch</strong> (ngon nhất): tăng <strong>+20%</strong> tỉ lệ thành công, lỡ xịt chỉ tụt tối đa 1 cấp, dùng được mọi cấp.</li>
+          <li><strong>Cát Tinh Thạch</strong>: tăng <strong>+20%</strong> tỉ lệ, xịt tụt tối đa 3 cấp.</li>
+          <li><strong>Phù Bảo Hộ</strong> (Phàm / Lương / Cực Phẩm): không tăng tỉ lệ nhưng giữ lỡ xịt chỉ tụt tối đa 1 cấp (Phàm dùng đến +6, Lương đến +9, Cực Phẩm dùng mọi cấp).</li>
+        </ul>
+      </li>
     </ul>
 
-    <h2 id="hop-thanh">6. Hợp Thành Trang Bị (Hoàng Kim · Tím · Định Quốc · Ngũ Hành Ám · 12 Thần Binh)</h2>
-    <p>Mục <strong>Hợp Thành Trang Bị</strong> tại NPC Thợ Rèn là trung tâm chế tác đồ cuối với 9 công thức cốt lõi cho người chơi:</p>
-    <div class="recipe-grid">
-      <div class="recipe-card">
-        <h4>① Hợp Thành Hoàng Kim (4 Bộ Danh Tiếng)</h4>
-        <div class="recipe-formula">5× Mảnh Cổ Thần (209) + 10× Tinh Hoa (204/206/208) + 1× Hàn Băng (238) hoặc Kim Phách (239) + 100.000 Xu</div>
-        <p>Chọn đúc trực tiếp: <strong>Định Quốc</strong> (<code>6055–6059</code>), <strong>An Bang</strong> (<code>6030–6033</code>), <strong>Lăng Nhạc / Cập Phong</strong> (<code>6000–6012</code>) hoặc <strong>Thập Đại Thần Binh</strong> (<code>6040–6049</code>).</p>
-      </div>
-      <div class="recipe-card">
-        <h4>② Ghép Định Quốc Từ Rương Boss Bí Cảnh</h4>
-        <div class="recipe-formula">Ngẫu nhiên: 3×601 + 3×602 + 2×238 + 200k Xu<br/>Chọn đúng món: 5×601 + 5×602 + 3×238 + 2×239 + 500k Xu</div>
-        <p>Dùng <em>Cầu Ma Lực (601)</em> &amp; <em>Khí Rồng (602)</em> từ Rương Bán Nguyệt/Sa Mạc → nhận Định Quốc Tiềm Năng <code>42–90</code> (<code>70%</code> 42–60 · <code>22%</code> 61–79 · <code>8%</code> 80–90).</p>
-      </div>
-      <div class="recipe-card">
-        <h4>③ Đúc Trang Bị Tím (6 Dòng Thuộc Tính)</h4>
-        <div class="recipe-formula">Tím Thường: 28× Mảnh (203/205/207) + 1× Mảnh Bổ Thiên (180)<br/>Tím Cao Cấp Giai 8–10: 200× Mảnh (203) + 1× Bổ Thiên Trung (181)</div>
-        <p>Đúc đồ Tím 6 dòng cho Phàm Giới hoặc làm phôi; riêng bản Giai 8–10 nhận sẵn Tiềm Năng <code>95</code>!</p>
-      </div>
-      <div class="recipe-card">
-        <h4>④ Hồi Lò Tái Chế Trang Bị Dư Trong Túi</h4>
-        <div class="recipe-formula">Mỗi món Tím dư → 5× mỗi loại Tinh Hoa (204/206/208)<br/>Mỗi món Hoàng Kim dư → 15× mỗi loại Tinh Hoa + 3× Mảnh Cổ Thần (209)</div>
-        <p>Tự động thu hồi toàn bộ đồ Tím/Hoàng Kim <em>chưa mặc</em> trong hành trang — nhớ cất món quý vào Rương trước khi bấm!</p>
-      </div>
-      <div class="recipe-card">
-        <h4>⑤ Hợp Thành Ngũ Hành Ám (Thần Bí / Huyền Diệu)</h4>
-        <div class="recipe-formula">1× Trang Bị Hoàng Kim + 1× Chuyển Sinh Đan (237) + 5× Mảnh Cổ Thần (209)</div>
-        <p>Chuyển sang hệ <strong>Ngũ Hành Ám</strong> (tự kích hoạt dòng ẩn không phụ thuộc tương sinh!), Tiềm Năng nhảy lên <code>150</code> (Vũ khí) / <code>100</code> (Phòng cụ) và thức tỉnh đủ <strong>2 dòng Thái Cực <code>☯</code></strong>!</p>
-      </div>
-      <div class="recipe-card">
-        <h4>⑥ Đổi Tạo Thuộc Tính Đặc Biệt (☯) &amp; Lò Hợp Thành Gốc</h4>
-        <div class="recipe-formula">Đổi 2 dòng ☯ toàn bộ đồ đang mặc: 5× Mảnh Cổ Thần (209)</div>
-        <p>Quay mới cặp dòng đặc biệt <code>☯</code> cho toàn bộ trang bị đang mặc (trừ Tọa Kỵ); đồng thời có lối mở <strong>Hộp Đặt Vật Phẩm Gốc</strong> ngay trong menu Thợ Rèn.</p>
-      </div>
+    <h2 id="truyen-thua">3. Trang Bị Truyền Thừa (Chuyển Cấp Đập Sang Đồ Mới)</h2>
+    <p>Khi kiếm được món đồ xịn hơn (ví dụ từ đồ Tím lên Hoàng Kim), bạn không cần đập lại từ đầu — cứ chuyển cấp cường hóa từ món cũ sang món mới!</p>
+    <ul>
+      <li><strong>Điều kiện:</strong> <strong>Tháo cả 2 món ra khỏi người</strong> bỏ vào hành trang. Hai món phải cùng vị trí (áo sang áo, vũ khí sang vũ khí) và món cũ phải đập từ <strong>+6 trở lên</strong>.</li>
+      <li><strong>Nguyên liệu:</strong> <em>Truyền Thừa Thạch</em> + Tiền Đồng (cấp càng cao và đồ càng xịn thì tốn nhiều đá và Xu hơn).</li>
+      <li><strong>Kết quả:</strong> Có <strong>40% giữ nguyên 100% cấp cũ</strong>, còn lại giảm nhẹ 1 cấp. Món cũ sau khi chuyển sẽ về lại +0.</li>
+    </ul>
+
+    <h2 id="tiem-nang">4. Nâng Tiềm Năng (Tăng Khung Chỉ Số Đồ Lên Tới 150)</h2>
+    <p>Mỗi món đồ đều có điểm <strong>Tiềm Năng</strong> (càng cao thì các dòng sức mạnh trên đồ càng lớn). Đồ Xanh/Tím nâng tối đa tới <strong>100</strong>, còn đồ Hoàng Kim / Bạch Kim nâng tối đa tới <strong>150</strong>.</p>
+    <ul>
+      <li><strong>Điểm cực sướng:</strong> Nâng Tiềm Năng lỡ thất bại <strong>KHÔNG BAO GIỜ bị tụt điểm</strong>!</li>
+      <li><strong>Quà đặc biệt ở mốc 100:</strong> Đồ Hoàng Kim khi nâng chạm mốc <strong>100</strong> sẽ tự động mở thêm <strong>2 dòng thuộc tính đặc biệt Thái Cực (☯)</strong> cực mạnh.</li>
+      <li><strong>Cách nâng:</strong> Dùng <em>Phù Thức Tỉnh Tiềm Năng</em> + Tiền Đồng. Bỏ thêm <em>Hồn Tinh Tiềm Năng</em> (Thường / Ưu Lương / Hoàn Mỹ) hoặc món đồ thừa giống hệt vào ô phụ sẽ tăng mạnh tỉ lệ lên. Riêng đoạn từ <strong>100 lên 150</strong> tỉ lệ thành công là <strong>100%</strong>!</li>
+    </ul>
+
+    <h2 id="tay-luyen">5. Luyện Lại · Đúc Lại · Tẩy Luyện (Quay Dòng Thuộc Tính Đẹp)</h2>
+    <p>Giúp quay lại các dòng chữ trên trang bị để săn dòng ngon như <em>Tốc Độ Đánh, Hút Máu, Hút Nội Lực, Chí Mạng, Bỏ Qua Né Tránh...</em></p>
+    <ul>
+      <li><strong>Khóa dòng đẹp:</strong> Dòng nào đã ưng ý thì bấm biểu tượng <strong>ổ khóa</strong> để giữ nguyên (khóa được tất cả các dòng trên đồ). Tẩy thường tốn 10 vạn Xu hoặc 1 vạn Vàng Khóa; khóa bao nhiêu dòng thì tiền nhân lên bấy nhiêu.</li>
+      <li><strong>Dùng Đá Tẩy Luyện để tiết kiệm &amp; nhảy số to:</strong> Có 4 bậc đá <em>Nhỏ / Vừa / Lớn / Xa Hoa</em> giúp giảm từ <strong>25% đến miễn phí 100% tiền</strong>, đồng thời ưu tiên đẩy chỉ số dòng cao lên!</li>
+    </ul>
+    <div class="callout is-jade">
+      <strong class="co-title">Mẹo tiết kiệm cho người chơi</strong>
+      Đừng vội xài <strong>Đá Tẩy Luyện Xa Hoa</strong> ngay từ đầu! Hãy tẩy thường cho đến khi ra được 2–3 dòng cực ngon, khóa các dòng đó lại rồi mới bỏ Đá Xa Hoa vào để vừa không mất Xu vừa đẩy chỉ số lên sát mức tối đa.
     </div>
 
-    <h3>⑦ Rèn 12 Danh Hiệu / Tiền Tố Thần Binh (Áp Dụng Cho Thập Đại Thần Binh 6040–6049)</h3>
-    <p>Mỗi Danh Hiệu khắc lên Vũ Khí Thần Binh sẽ thay bộ 4 thuộc tính đặc trưng theo hệ phái, đồng thời <strong>bảo toàn nguyên vẹn cấp cường hóa, lỗ đục, bảo thạch và 2 dòng <code>☯</code></strong>:</p>
-    <div class="table-wrap"><table class="data-table">
-      <thead><tr><th>#</th><th>Danh Hiệu Thần Binh</th><th>4 Thuộc Tính Đặc Trưng</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td><strong>Phá Nguyệt Thần Minh</strong></td><td>ST Ngũ Hành % · ST Ngoại Công · Tốc Đánh Ngoại % · Bỏ Qua Kháng</td></tr>
-        <tr><td>2</td><td><strong>Âm Quỷ Long Nha</strong></td><td>ST Ngũ Hành % · Độc Sát Ngoại · Tốc Đánh Ngoại % · ST Cuối</td></tr>
-        <tr><td>3</td><td><strong>Cửu U Tà Vương</strong></td><td>Độc Sát Nội · Tốc Đánh Nội % · Giảm TG Phát Độc % · Bỏ Qua Kháng Độc</td></tr>
-        <tr><td>4</td><td><strong>Thiên Cang Bách Liệt</strong></td><td>ST Ngũ Hành % · ST Ngoại Công · Hút Sinh Lực % · Tốc Đánh Ngoại %</td></tr>
-        <tr><td>5</td><td><strong>Cửu Châu Thương Lôi</strong></td><td>Lôi Sát Nội · Tốc Đánh Nội % · Bỏ Qua Kháng Lôi · ST Cuối Nội</td></tr>
-        <tr><td>6</td><td><strong>Bất Diệt Lê Hoa</strong></td><td>Hỏa Sát Nội · Tốc Đánh Nội % · Bỏ Qua Kháng Hỏa · TG Gây Bỏng %</td></tr>
-        <tr><td>7</td><td><strong>Bất Bại Long Ngâm</strong></td><td>ST Ngũ Hành % · Hỏa Sát Ngoại · Tốc Đánh Ngoại % · Hút Sinh Lực %</td></tr>
-        <tr><td>8</td><td><strong>Tồi Tinh Phá Nguyệt</strong></td><td>ST Ngũ Hành % · Độc Sát Ngoại · Chí Mạng Ngoại % · Tốc Đánh Ngoại %</td></tr>
-        <tr><td>9</td><td><strong>Thực Cốt Băng Tằm</strong></td><td>Băng Sát Ngoại · Độc Sát Ngoại · Tốc Đánh Ngoại % · TG Làm Chậm %</td></tr>
-        <tr><td>10</td><td><strong>Tứ Tà Thương Hồ</strong></td><td>Băng Sát Nội · ST Nội Công · Tốc Đánh Nội % · Bỏ Qua Kháng Băng</td></tr>
-        <tr><td>11</td><td><strong>Tử Điện Thanh Sương</strong></td><td>Lôi Sát Ngoại · Lôi Sát Nội · Tốc Đánh Ngoại % · Bỏ Qua Kháng Lôi</td></tr>
-        <tr><td>12</td><td><strong>Băng Sương Liệp Thủ</strong></td><td>Băng Sát Ngoại · Băng Sát Nội · Tốc Đánh Ngoại % · Tốc Đánh Nội %</td></tr>
-      </tbody>
-    </table></div>
-
-    <h2 id="an-trang-suc">7. Nâng Cấp Bộ (C5 → C8 → C10), Thăng Bạch Kim &amp; Ngũ Hành Ấn / Trang Sức</h2>
+    <h2 id="hop-thanh">6. Hợp Thành Trang Bị (Ghép Đồ Tím · Hoàng Kim · Tái Chế Đồ Dư)</h2>
+    <p>Mở mục này bạn sẽ thấy đầy đủ các lò ghép trang bị từ bình dân tới cực phẩm:</p>
     <div class="card-grid-2">
       <div class="info-card">
-        <span class="card-badge">Nâng Bậc Bộ &amp; Thăng Bạch Kim</span>
-        <h4>Định Quốc · An Bang · Bạch Kim (+20%)</h4>
-        <p>• <strong>C5 → Tinh Xảo C8:</strong> Tốn <code>2× Mảnh Bổ Thiên Lớn (182) + 3× Mảnh Cổ Thần (209)</code> (hoặc 3 món C5 hợp 1 ở Lò Bát Quái: <code>33%</code>, bảo hiểm 5 lần) → <strong>+20% chỉ số</strong>.<br/>• <strong>C8 → Cực Phẩm C10:</strong> Tốn <code>2× Bổ Thiên Hoàn Mỹ (183) + 5× 209</code> (hoặc 3 món C8 hợp 1: <code>20%</code>, bảo hiểm 8 lần) → <strong>+20% &amp; thức tỉnh <code>☯</code></strong>.<br/>• <strong>Thăng Bạch Kim:</strong> Chỉ nâng từ Hoàng Kim (1 lần/món), tốn <code>1× Trân Phẩm Thạch (332) + 2× 209</code> mỗi món → <strong>+20% chỉ số &amp; <code>☯</code></strong>!</p>
+        <span class="card-badge">Ghép Đồ Xịn</span>
+        <h4>Hoàng Kim · Định Quốc · Đồ Tím</h4>
+        <p>• <strong>Đúc Đồ Tím (6 dòng):</strong> Gom <em>Mảnh cường hóa</em> + <em>Mảnh Bổ Thiên</em> để đúc đồ Tím chơi ở Phàm Giới.<br/>• <strong>Ghép Hoàng Kim (Định Quốc, An Bang, Lăng Nhạc, Thần Binh):</strong> Cần <em>Mảnh Cổ Thần</em> + <em>Tinh Hoa</em> + <em>Hàn Băng / Kim Phách</em> + 10 vạn Xu.<br/>• <strong>Ghép Định Quốc từ Rương Boss Bí Cảnh:</strong> Dùng <em>Cầu Ma Lực</em> + <em>Khí Rồng Sa Mạc</em> + <em>Hàn Băng</em> (chọn ngẫu nhiên hoặc thêm <em>Kim Phách</em> để chọn đúng món áo/mũ/giày/tay/đai).</p>
       </div>
       <div class="info-card">
-        <span class="card-badge is-jade">Ngũ Hành Ấn (Ô 14) &amp; 11 Trang Sức (Ô 15)</span>
-        <h4>Cường Hóa +1..+15 &amp; Thăng Bậc 1..10</h4>
-        <p>• <strong>Nguyên liệu:</strong> Ấn dùng <em>Ngũ Hành Nguyên Thạch / Hồn Thạch (<code>184</code>)</em>; Trang Sức dùng <em>Mảnh Trang Sức / Tử Tinh (<code>360</code>)</em>.<br/>• <strong>Cường hóa (+1→+15):</strong> Tốn <code>cấp hiện tại + 1</code> viên · <code>5%</code> lên thẳng / <code>95%</code> cộng <code>+5</code> điểm kinh nghiệm cấp (đủ <code>100/100</code> chắc chắn lên!).<br/>• <strong>Thăng bậc (Bậc 1→10):</strong> Tốn <code>10</code> viên · <code>5%</code> lên bậc; xịt ở <code>&lt;= Bậc 5</code> <strong>giữ nguyên</strong>, trên Bậc 5 tụt <code>1</code> bậc.<br/>• <strong>Đổi tự do 11 Loại Trang Sức</strong> (<em>Trường Sinh, Bột Hải, Võ Uy, Nhược Thủy, Trấn Nhạc, Yên Ba, Thần Tuệ, Truy Ảnh, Long Đảm, Lưu Huỳnh, Cuồng Lan</em>) bảo toàn nguyên <code>+cấp</code> &amp; lỗ ngọc!</p>
+        <span class="card-badge is-jade">Nâng Tầm Sức Mạnh</span>
+        <h4>Ngũ Hành Ám · 12 Danh Hiệu · Hồi Lò</h4>
+        <p>• <strong>Hợp Thành Ngũ Hành Ám:</strong> Dùng <em>Chuyển Sinh Đan</em> + <em>5 Mảnh Cổ Thần</em> để biến đồ Hoàng Kim thành <strong>Ngũ Hành Ám</strong> — tự kích hoạt dòng ẩn không cần ghép hệ, mở sẵn 2 dòng đặc biệt ☯.<br/>• <strong>Đổi Danh Hiệu Thần Binh:</strong> Chọn 1 trong <strong>12 Danh Hiệu</strong> cho Vũ Khí Thần Binh để đổi 4 dòng sức mạnh hợp đúng môn phái (giữ nguyên cấp đập và ngọc).<br/>• <strong>Đổi 2 dòng Thái Cực (☯):</strong> Tốn <em>5 Mảnh Cổ Thần</em> để quay mới dòng đặc biệt cho bộ đồ đang mặc.<br/>• <strong>Hồi Lò Tái Chế:</strong> Tái chế hết đồ Tím / Hoàng Kim <em>không mặc</em> trong túi thành Tinh Hoa và Mảnh Cổ Thần (nhớ cất đồ quý vào Rương trước khi bấm!).</p>
       </div>
     </div>
 
+    <h2 id="nang-cap">7. Nâng Cấp Trang Bị, Lên Bạch Kim &amp; Ngũ Hành Ấn / Trang Sức</h2>
+    <ul>
+      <li><strong>Nâng bậc bộ Định Quốc &amp; An Bang:</strong> Nâng từ bậc <em>Phỏng Chế (Cấp 5)</em> → <em>Tinh Xảo (Cấp 8)</em> → <em>Cực Phẩm (Cấp 10)</em> bằng <em>Mảnh Bổ Thiên Lớn / Hoàn Mỹ</em> và <em>Mảnh Cổ Thần</em>. Mỗi lần lên bậc tăng mạnh <strong>+20% chỉ số</strong>, chạm Cực Phẩm mở thêm dòng đặc biệt ☯.</li>
+      <li><strong>Thăng Cấp Bạch Kim:</strong> Nâng đồ Hoàng Kim đang mặc lên phẩm chất <strong>Bạch Kim</strong> (tốn <em>Trân Phẩm Thạch</em> + <em>2 Mảnh Cổ Thần</em> mỗi món) — tăng ngay <strong>+20% chỉ số</strong> và thức tỉnh dòng ☯.</li>
+      <li><strong>Ngũ Hành Ấn &amp; 11 Loại Trang Sức:</strong>
+        <ul>
+          <li>Ấn dùng <em>Ngũ Hành Nguyên Thạch (Hồn Thạch)</em>; Trang Sức dùng <em>Mảnh Trang Sức (Tử Tinh)</em>.</li>
+          <li><strong>Cường hóa (+1 đến +15):</strong> Có 5% lên cấp thẳng; nếu chưa lên vẫn được cộng <strong>+5 điểm kinh nghiệm</strong>, đủ 100 điểm là <strong>chắc chắn lên cấp</strong> (không bao giờ công cốc!).</li>
+          <li><strong>Thăng bậc (Bậc 1 đến Bậc 10):</strong> Mỗi lần thử tốn 10 viên. Từ <strong>Bậc 5 trở xuống</strong> nếu xịt vẫn giữ nguyên bậc; <strong>trên Bậc 5</strong> xịt sẽ tụt 1 bậc.</li>
+          <li><strong>Đổi 11 loại Trang Sức:</strong> Đổi thoải mái sang loại cộng máu, nội lực, chí mạng, né tránh... mà <strong>giữ nguyên cấp cường hóa và ngọc đang khảm</strong>!</li>
+        </ul>
+      </li>
+    </ul>
+
     <div class="callout is-jade">
-      <strong class="co-title">Bước Tiếp Theo: Đục 4 Lỗ · Khảm &amp; Tách Ngọc · Chiết Xuất Kết Tinh · Lò Bát Quái</strong>
-      Sau khi đã hoàn thiện nền trang bị tại Thợ Rèn, hãy di chuyển ngay sang <a class="inline-link" href="./tho-ren-huyen-bi.html"><strong>NPC Thợ Rèn Huyền Bí (Thần Bí)</strong></a> để hủy khóa, chuyển hệ vũ khí/tọa kỵ, chiết xuất–khắc Kết Tinh 14 vị trí, đục lỗ Cực Phẩm gấp đôi cộng hưởng và mở Lò Bát Quái!
+      <strong class="co-title">Làm xong đồ nền ở Thợ Rèn rồi thì đi đâu tiếp?</strong>
+      Hãy chạy qua <a class="inline-link" href="./tho-ren-huyen-bi.html"><strong>NPC Thợ Rèn Huyền Bí</strong></a> để mở khóa giao dịch, đổi hệ vũ khí/ngựa, rút dòng cực phẩm sang đồ chính, đục 4 lỗ khảm ngọc và dùng Lò Bát Quái!
     </div>
     
           <nav class="chapter-pager" aria-label="Bài trước và bài tiếp theo">
-            <a class="pager-card" href="./trang-bi.html"><span class="pager-dir">← Bài trước</span><span class="pager-title">Cổng Tổng Hợp Hệ Thống Trang Bị</span></a>
-            <a class="pager-card is-next" href="./tho-ren-huyen-bi.html"><span class="pager-dir">Bài tiếp theo →</span><span class="pager-title">Hướng Dẫn Toàn Tập NPC Thợ Rèn Huyền Bí</span></a>
+            <a class="pager-card" href="./trang-bi.html"><span class="pager-dir">← Bài trước</span><span class="pager-title">Tổng Hợp Hệ Thống Trang Bị</span></a>
+            <a class="pager-card is-next" href="./tho-ren-huyen-bi.html"><span class="pager-dir">Bài tiếp theo →</span><span class="pager-title">Hướng Dẫn NPC Thợ Rèn Huyền Bí</span></a>
           </nav>
         </article>
 
