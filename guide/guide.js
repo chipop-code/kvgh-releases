@@ -2,7 +2,7 @@
 (() => {
   'use strict';
 
-  /* 1. Single Source of Truth: All 10 Focused Guide Pages */
+  /* 1. Single Source of Truth: All 12 Focused Guide Pages */
   const GUIDE_ARTICLES = [
     {
       slug: 'the-gioi.html',
@@ -48,12 +48,32 @@
       date: 'Hướng dẫn'
     },
     {
+      slug: 'tho-ren.html',
+      cat: 'trang-bi',
+      catLabel: 'Trang Bị & Rèn',
+      tag: 'NPC Thợ Rèn',
+      title: 'Hướng Dẫn Toàn Tập NPC Thợ Rèn: 7 Chức Năng Từ Cường Hóa +15 Tới Hợp Thành & Ngũ Hành Ấn',
+      desc: 'Đầy đủ 7 nhánh NPC Thợ Rèn: Tiệm Rèn, Cường Hóa +1..+15 & 5 Bùa, Truyền Thừa (220), Nâng Tiềm Năng 42–150 thức tỉnh ☯, Tẩy Luyện 11 dòng, Hợp Thành Hoàng Kim/Định Quốc/Ngũ Hành Ám/12 Thần Binh & Ấn/Trang Sức.',
+      img: './assets/guide_thoren_live.webp',
+      date: 'Toàn tập'
+    },
+    {
+      slug: 'tho-ren-huyen-bi.html',
+      cat: 'trang-bi',
+      catLabel: 'Trang Bị & Rèn',
+      tag: 'Thợ Rèn Huyền Bí',
+      title: 'Hướng Dẫn Toàn Tập NPC Thợ Rèn Huyền Bí: Hủy Khóa, Chuyển Đổi, Kết Tinh, Bảo Thạch & Lò Bát Quái',
+      desc: 'Đủ 5 đại nhánh Thợ Rèn Huyền Bí (Thần Bí): Hủy khóa giữ nguyên chưa giám định, Đổi 10 Thần Binh/Tọa Kỵ/An Bang/Định Quốc, Chiết xuất & Khắc Kết Tinh 14 vị trí, Lỗ Cực Phẩm ×2 cộng hưởng, Tách Đá 100%, Hợp 3 Ngọc, Lò Bát Quái & Đặt Lại Ấn.',
+      img: './assets/guide_forge_items_real.webp',
+      date: 'Chuyên sâu'
+    },
+    {
       slug: 'cuong-hoa.html',
       cat: 'trang-bi',
       catLabel: 'Trang Bị & Rèn',
       tag: 'Thợ Rèn',
       title: 'Hướng Dẫn Cường Hóa Trang Bị, 5 Loại Bùa Chống Tụt Cấp & Kế Thừa Cường Hóa',
-      desc: 'Quy tắc tụt cấp từ +4 đến +12, bảng so sánh Thiên Duyên Thạch · Cát Tinh Thạch · 3 Phù Bảo Hộ và công thức Kế Thừa Cường Hóa bằng Truyền Thừa Thạch (220).',
+      desc: 'Quy tắc tụt cấp từ +4 đến +15, bảng so sánh Thiên Duyên Thạch · Cát Tinh Thạch · 3 Phù Bảo Hộ và công thức Kế Thừa Cường Hóa bằng Truyền Thừa Thạch (220).',
       img: './assets/guide_thoren_live.webp',
       date: 'Cơ bản'
     },
@@ -62,7 +82,7 @@
       cat: 'trang-bi',
       catLabel: 'Trang Bị & Rèn',
       tag: 'Tẩy Luyện Mới',
-      title: 'Hướng Dẫn Chức Năng Tẩy Luyện 11 Dòng (Đá 245–248) & Nâng Tiềm Năng 23 Mốc',
+      title: 'Hướng Dẫn Chức Năng Tẩy Luyện 11 Dòng (Đá 245–248) & Nâng Tiềm Năng 9 Mốc (42–150)',
       desc: 'Cách dùng 4 bậc Đá Tẩy Luyện giảm tới 100% phí Xu và chắc chắn tăng dòng khóa, mở khóa đủ 11 dòng Hiện/Ẩn/Đặc Biệt và nâng Tiềm Năng tới 150% không bao giờ tụt.',
       img: './assets/guide_xilian_ui_real.webp',
       date: 'Nâng cao'
@@ -71,11 +91,11 @@
       slug: 'kham-tach-da.html',
       cat: 'trang-bi',
       catLabel: 'Trang Bị & Rèn',
-      tag: 'Thợ Rèn Thần Bí',
+      tag: 'Thợ Rèn Huyền Bí',
       title: 'Kho Đồ (F1), Đục Lỗ, Mạ Lỗ, Khảm Đá, Tách Đá Bảo Toàn 100%, Kết Tinh & Bạch Kim',
-      desc: 'Trọn bộ 18 nguyên liệu thật, công thức đục lỗ Hoàng Thủy Tinh, hóa lỗ Ngũ Sắc/Cực Phẩm (+20%), mẹo Tách Đá không mất 1 viên, Hợp 3 Ngọc, Chiết Xuất Kết Tinh & Thăng Bạch Kim.',
+      desc: 'Trọn bộ 18 nguyên liệu thật, công thức đục lỗ Hoàng Thủy Tinh, hóa lỗ Ngũ Sắc/Cực Phẩm (×2 cộng hưởng), mẹo Tách Đá không mất 1 viên, Hợp 3 Ngọc, Chiết Xuất Kết Tinh & Thăng Bạch Kim.',
       img: './assets/guide_forge_items_real.webp',
-      date: 'Toàn tập'
+      date: 'Tóm tắt'
     },
     {
       slug: 'tong-kim.html',
