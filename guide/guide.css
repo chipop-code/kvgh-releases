@@ -1,0 +1,516 @@
+/* Kiếm Võng Giang Hồ — Cẩm Nang Đa Trang (Genshin-Inspired Cổ Phong Editorial Portal) */
+:root {
+  --obs-dark: #0e1117;
+  --obs-nav: rgba(15, 19, 27, 0.94);
+  --obs-card: rgba(20, 25, 35, 0.86);
+  --paper-bg: #fbf9f4;
+  --paper-sub: #f2ede2;
+  --stone-bg: #ece7dc;
+  --ink-dark: #1f1c18;
+  --ink-body: #3c3730;
+  --ink-soft: #6c6458;
+  --ink-light: #f4eee3;
+  --ink-light-sub: #c6beb0;
+  --gold-bright: #f2d586;
+  --gold-main: #d4af5a;
+  --gold-deep: #8c651c;
+  --gold-line: rgba(212, 175, 90, 0.32);
+  --jade: #1e6b5c;
+  --jade-bg: #e7f4f0;
+  --cinnabar: #a62c22;
+  --cinnabar-bg: #fbedeb;
+  --font-display: 'Playfair Display', 'Noto Serif', Georgia, serif;
+  --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --max-w: 1220px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-dark);
+  background: var(--obs-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--gold-main); outline-offset: 2px; border-radius: 4px; }
+code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(140, 101, 28, 0.12);
+  color: #6b490c;
+  border: 1px solid rgba(140, 101, 28, 0.24);
+}
+kbd {
+  background: #232833;
+  color: var(--gold-bright);
+  border-color: rgba(212, 175, 90, 0.45);
+  font-weight: 600;
+}
+.wrap { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 22px; }
+
+/* === 1. GENSHIN-INSPIRED DARK OBSIDIAN TOPBAR WITH DROPDOWNS & GOLD DOWNLOAD CTA === */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  height: 64px;
+  background: var(--obs-nav);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 90, 0.24);
+  color: var(--ink-light);
+}
+.topbar-inner {
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: 1380px; margin: 0 auto; padding: 0 0 0 24px;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.06rem;
+  color: var(--gold-bright); white-space: nowrap; flex-shrink: 0;
+}
+.brand-seal {
+  width: 32px; height: 32px; border-radius: 7px; display: grid; place-items: center;
+  background: linear-gradient(135deg, #b83a2d, #791d15);
+  border: 1px solid rgba(242, 213, 134, 0.65); color: #fff6dc; font-size: 0.98rem;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 4px; height: 100%;
+}
+.nav-item { position: relative; height: 100%; display: flex; align-items: center; }
+.nav-link, .nav-drop-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 100%; padding: 0 14px; font-size: 0.9rem; font-weight: 500;
+  color: var(--ink-light-sub); white-space: nowrap; position: relative; transition: color 0.16s;
+}
+.nav-link:hover, .nav-drop-btn:hover, .nav-link.active, .nav-drop-btn.active {
+  color: #ffffff;
+}
+.nav-link.active::after, .nav-drop-btn.active::after {
+  content: ""; position: absolute; left: 12px; right: 12px; top: 0; height: 3px;
+  background: var(--gold-bright); border-radius: 0 0 3px 3px;
+}
+.nav-dropdown {
+  display: none; position: absolute; top: 64px; left: 0; min-width: 248px;
+  background: #141923; border: 1px solid rgba(212, 175, 90, 0.34);
+  border-radius: 0 0 10px 10px; padding: 8px; box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55);
+}
+.nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown, .nav-item.open .nav-dropdown {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.nav-dropdown a {
+  padding: 9px 12px; border-radius: 7px; font-size: 0.87rem; color: var(--ink-light-sub);
+  transition: background 0.14s, color 0.14s;
+}
+.nav-dropdown a:hover, .nav-dropdown a.active {
+  background: rgba(212, 175, 90, 0.16); color: var(--gold-bright); font-weight: 600;
+}
+.topbar-right { display: flex; align-items: center; height: 100%; gap: 10px; }
+.nav-cta-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 100%; padding: 0 26px; font-weight: 700; font-size: 0.94rem;
+  color: #1c160c; background: linear-gradient(135deg, #f7dc88, #e0b342);
+  white-space: nowrap; transition: filter 0.16s;
+}
+.nav-cta-gold:hover { filter: brightness(1.07); }
+.menu-toggle {
+  display: none; align-items: center; justify-content: center;
+  width: 40px; height: 40px; margin-right: 12px; border-radius: 8px;
+  border: 1px solid rgba(212, 175, 90, 0.35); color: var(--gold-bright);
+}
+
+/* === 2. HUB DIRECTORY PAGE (GENSHIN NEWS / FEED LAYOUT — IMAGE 2) === */
+.hub-featured-stage {
+  position: relative; overflow: hidden; padding: 42px 0 46px; color: var(--ink-light);
+  background: radial-gradient(circle at 50% 0%, rgba(212, 175, 90, 0.16), transparent 60%), #10151f;
+}
+.hub-featured-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.28; filter: blur(1.5px) saturate(0.9);
+}
+.hub-featured-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13, 17, 25, 0.72) 0%, rgba(13, 17, 25, 0.90) 100%);
+}
+.hub-featured-stage .wrap { position: relative; z-index: 2; }
+.hub-stage-head {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  flex-wrap: wrap; margin-bottom: 24px;
+}
+.hub-stage-head h1 {
+  font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.45rem);
+  margin: 6px 0 4px; color: var(--gold-bright); line-height: 1.2;
+}
+.hub-stage-head p { margin: 0; color: var(--ink-light-sub); font-size: 0.94rem; }
+.featured-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+}
+.feat-card {
+  display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius-md);
+  background: rgba(17, 22, 31, 0.88); border: 1px solid rgba(212, 175, 90, 0.30);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42); transition: transform 0.2s, border-color 0.2s;
+}
+.feat-card:hover { transform: translateY(-4px); border-color: var(--gold-bright); }
+.feat-thumb { aspect-ratio: 16 / 9; overflow: hidden; background: #0a0d12; }
+.feat-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+.feat-card:hover .feat-thumb img { transform: scale(1.04); }
+.feat-body { padding: 18px 20px 18px; display: flex; flex-direction: column; flex: 1; gap: 8px; }
+.feat-body h2 { font-size: 1.04rem; margin: 0; line-height: 1.42; color: #ffffff; font-weight: 600; }
+.feat-body p {
+  margin: 0; font-size: 0.86rem; color: var(--ink-light-sub); line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.feat-meta {
+  margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.78rem; color: #9ea6b2;
+}
+.feat-tag { color: var(--gold-bright); font-weight: 600; }
+
+/* Feed Section (Warm Parchment Stone — Genshin Image 2 lower half) */
+.hub-feed-zone { background: var(--stone-bg); padding: 38px 0 64px; color: var(--ink-dark); }
+.feed-toolbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  flex-wrap: wrap; margin-bottom: 24px;
+}
+.cat-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+.cat-tab {
+  padding: 9px 18px; border-radius: 6px; font-size: 0.88rem; font-weight: 600;
+  background: #ded8cb; color: #47423a; transition: background 0.16s, color 0.16s;
+}
+.cat-tab:hover { background: #d0c8b7; color: #1c1916; }
+.cat-tab.active { background: #262932; color: #f6e7c1; }
+.feed-search {
+  display: flex; align-items: center; gap: 8px; min-width: 280px; flex: 0 1 340px;
+  background: var(--paper-bg); border: 1px solid #cfc6b5; border-radius: 8px; padding: 8px 13px;
+}
+.feed-search svg { color: var(--gold-deep); flex-shrink: 0; }
+.feed-search input {
+  width: 100%; border: none; outline: none; background: transparent;
+  font: inherit; font-size: 0.9rem; color: var(--ink-dark);
+}
+.feed-list { display: flex; flex-direction: column; gap: 16px; }
+.feed-card {
+  display: grid; grid-template-columns: 268px minmax(0, 1fr); gap: 22px; align-items: stretch;
+  background: var(--paper-bg); border: 1px solid #ddd5c5; border-radius: var(--radius-md);
+  padding: 16px; transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.feed-card:hover {
+  border-color: var(--gold-main); box-shadow: 0 10px 26px rgba(32, 26, 16, 0.09); transform: translateY(-2px);
+}
+.feed-thumb { aspect-ratio: 16 / 9; border-radius: 7px; overflow: hidden; background: #141923; }
+.feed-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.feed-card:hover .feed-thumb img { transform: scale(1.03); }
+.feed-content { display: flex; flex-direction: column; gap: 8px; justify-content: center; min-width: 0; }
+.feed-content h3 { margin: 0; font-size: 1.14rem; color: var(--ink-dark); font-weight: 700; line-height: 1.38; }
+.feed-card:hover .feed-content h3 { color: var(--gold-deep); }
+.feed-content p { margin: 0; font-size: 0.91rem; color: var(--ink-soft); line-height: 1.6; }
+.feed-foot {
+  margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; color: #847a6c;
+}
+.feed-cat-pill {
+  font-weight: 600; color: var(--gold-deep); background: rgba(212, 175, 90, 0.18);
+  padding: 3px 10px; border-radius: 999px;
+}
+
+/* === 3. INTERACTIVE 3-WORLDS SHOWCASE (GENSHIN MAP LAYOUT — IMAGE 1) === */
+.world-stage {
+  position: relative; min-height: calc(100vh - 64px); display: grid; place-items: center;
+  overflow: hidden; background: #0a0e16; color: #ffffff; padding: 56px 24px 72px;
+}
+.world-bg-layer {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transform: scale(1.04); transition: opacity 0.55s ease, transform 0.8s ease;
+}
+.world-bg-layer.active { opacity: 0.86; transform: scale(1); }
+.world-vignette {
+  position: absolute; inset: 0; z-index: 1;
+  background: radial-gradient(circle at 50% 45%, rgba(10, 14, 22, 0.34) 0%, rgba(10, 14, 22, 0.78) 76%),
+              linear-gradient(180deg, rgba(10, 14, 22, 0.52) 0%, rgba(10, 14, 22, 0.25) 45%, rgba(10, 14, 22, 0.88) 100%);
+}
+.world-center {
+  position: relative; z-index: 3; text-align: center; max-width: 760px; margin: 0 auto;
+}
+.world-emblem {
+  width: 76px; height: 76px; margin: 0 auto 14px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(14, 18, 27, 0.68); border: 2px solid rgba(242, 213, 134, 0.75);
+  box-shadow: 0 0 36px rgba(212, 175, 90, 0.35);
+  font-family: var(--font-display); font-size: 1.85rem; color: var(--gold-bright);
+}
+.world-title-row {
+  display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 14px;
+}
+.world-title-line {
+  width: 82px; height: 2px; background: linear-gradient(90deg, transparent, rgba(242, 213, 134, 0.85), transparent);
+}
+.world-center h1 {
+  font-family: var(--font-display); font-size: clamp(2.1rem, 4.4vw, 3.35rem);
+  margin: 0; color: #ffffff; text-shadow: 0 6px 26px rgba(0, 0, 0, 0.65); line-height: 1.15;
+}
+.world-sub-badge {
+  display: inline-block; margin-bottom: 14px; padding: 5px 15px; border-radius: 999px;
+  background: rgba(14, 19, 28, 0.76); border: 1px solid rgba(242, 213, 134, 0.55);
+  color: var(--gold-bright); font-size: 0.84rem; font-weight: 600; letter-spacing: 0.03em;
+}
+.world-desc {
+  margin: 0 auto 22px; max-width: 650px; font-size: 1.02rem; line-height: 1.72;
+  color: #f3efe6; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+}
+.world-stats-pills {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px;
+}
+.world-stat-pill {
+  padding: 6px 14px; border-radius: 999px; font-size: 0.84rem; font-weight: 600;
+  background: rgba(14, 18, 26, 0.78); border: 1px solid rgba(255, 255, 255, 0.24); color: #f6eee0;
+}
+.world-detail-btn {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 10px; color: #ffffff;
+  font-weight: 600; font-size: 0.92rem; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+.world-diamond-ico {
+  width: 48px; height: 48px; transform: rotate(45deg); border-radius: 6px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #f3d27d, #c29132);
+  border: 2px solid #fff5d6; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s;
+}
+.world-diamond-ico svg { transform: rotate(-45deg); color: #1c1509; }
+.world-detail-btn:hover .world-diamond-ico { transform: rotate(45deg) scale(1.08); }
+
+/* Right Vertical Diamond Rail (Genshin Image 1 signature element!) */
+.world-rail {
+  position: absolute; right: 26px; top: 50%; transform: translateY(-50%); z-index: 4;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+  padding-right: 12px; border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+.rail-btn {
+  display: inline-flex; align-items: center; gap: 12px; padding: 7px 14px 7px 16px;
+  border-radius: 4px; font-size: 0.9rem; font-weight: 500;
+  color: rgba(255, 255, 255, 0.84); transition: background 0.18s, color 0.18s;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+.rail-btn:hover { color: #ffffff; background: rgba(255, 255, 255, 0.12); }
+.rail-btn.active {
+  background: rgba(255, 255, 255, 0.95); color: #191c24; font-weight: 700; text-shadow: none;
+}
+.rail-dot {
+  width: 9px; height: 9px; transform: rotate(45deg);
+  border: 1.5px solid rgba(255, 255, 255, 0.82); background: transparent; flex-shrink: 0;
+}
+.rail-btn.active .rail-dot { border-color: var(--gold-deep); background: var(--gold-main); }
+
+/* === 4. DETAIL ARTICLE PAGE (GENSHIN IMAGE 3 — PAPER SHEET + RIGHT RELATED RAIL) === */
+.detail-backdrop {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(212, 175, 90, 0.16), transparent 40%),
+    radial-gradient(circle at 82% 14%, rgba(84, 134, 212, 0.14), transparent 44%),
+    linear-gradient(180deg, #101624 0%, #171e2d 280px, #eae5da 280px, #eae5da 100%);
+  padding: 26px 0 68px;
+}
+.detail-bar {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 18px; font-size: 0.84rem; color: var(--ink-light-sub);
+}
+.detail-crumbs { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.detail-crumbs a:hover { color: var(--gold-bright); }
+.detail-back-link {
+  color: var(--gold-bright); font-weight: 600; white-space: nowrap;
+}
+.detail-back-link:hover { text-decoration: underline; }
+
+.detail-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) 316px; gap: 26px; align-items: start;
+}
+.paper-sheet {
+  background: var(--paper-bg); color: var(--ink-dark);
+  border-top: 4px solid var(--gold-main); border-radius: 4px 4px 10px 10px;
+  box-shadow: 0 18px 46px rgba(10, 14, 22, 0.16);
+  padding: 36px 42px 42px; min-width: 0;
+}
+.paper-kicker {
+  display: inline-block; padding: 3px 11px; border-radius: 999px; font-size: 0.76rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  background: rgba(212, 175, 90, 0.22); color: var(--gold-deep); margin-bottom: 10px;
+}
+.paper-sheet h1 {
+  font-family: var(--font-display); font-size: clamp(1.65rem, 2.7vw, 2.28rem);
+  color: #191612; margin: 0 0 10px; line-height: 1.26;
+}
+.paper-meta {
+  display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.84rem; color: var(--ink-soft);
+  padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid #e2dacb;
+}
+.paper-sheet h2 {
+  font-family: var(--font-display); font-size: 1.38rem; color: #5b3e0d;
+  margin: 30px 0 12px; padding-bottom: 7px; border-bottom: 1px solid #e6dfd0;
+  scroll-margin-top: 84px;
+}
+.paper-sheet h3 { font-size: 1.05rem; color: #241f18; margin: 20px 0 8px; font-weight: 700; }
+.paper-sheet p { margin: 0 0 14px; color: var(--ink-body); }
+.paper-sheet ul, .paper-sheet ol { margin: 0 0 16px; padding-left: 22px; color: var(--ink-body); }
+.paper-sheet li { margin-bottom: 7px; }
+.paper-sheet a.inline-link { color: var(--gold-deep); font-weight: 600; text-decoration: underline; }
+
+/* Figures, Callouts, Formula Cards & Tables on Paper Sheet */
+.zoomable-fig {
+  margin: 20px 0; border-radius: 10px; overflow: hidden; cursor: zoom-in;
+  border: 1px solid #d9d0be; background: #12161f; transition: border-color 0.16s;
+}
+.zoomable-fig:hover { border-color: var(--gold-deep); }
+.zoomable-fig img { width: 100%; display: block; }
+.zoomable-fig figcaption {
+  padding: 10px 14px; font-size: 0.83rem; color: #564f44; background: var(--paper-sub);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.zoom-hint { font-family: var(--font-mono); font-size: 0.74rem; color: var(--gold-deep); white-space: nowrap; }
+
+.callout {
+  margin: 18px 0; padding: 15px 18px; border-radius: 8px;
+  border: 1px solid #dfd3b8; border-left: 4px solid var(--gold-deep);
+  background: #f8f2e4; font-size: 0.92rem; color: var(--ink-body);
+}
+.callout strong.co-title { display: block; margin-bottom: 5px; color: #5e3f0b; }
+.callout.is-jade { background: var(--jade-bg); border-color: #b7dfd4; border-left-color: var(--jade); }
+.callout.is-jade strong.co-title { color: var(--jade); }
+.callout.is-warn { background: var(--cinnabar-bg); border-color: #e9c1bc; border-left-color: var(--cinnabar); }
+.callout.is-warn strong.co-title { color: var(--cinnabar); }
+
+.recipe-grid, .card-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 16px 0; }
+.card-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 16px 0; }
+.recipe-card, .info-card {
+  background: #ffffff; border: 1px solid #e1d8c7; border-radius: 10px; padding: 16px 18px;
+}
+.recipe-card h4, .info-card h4 { margin: 4px 0 8px; font-size: 0.99rem; color: #2a2216; }
+.recipe-formula {
+  font-family: var(--font-mono); font-size: 0.82rem; color: #164f43; background: #edf7f4;
+  border: 1px solid #bfe0d6; padding: 9px 11px; border-radius: 7px; margin-bottom: 9px; line-height: 1.5;
+}
+.card-badge {
+  display: inline-block; font-size: 0.73rem; font-weight: 700; padding: 2px 9px; border-radius: 999px;
+  background: rgba(212, 175, 90, 0.22); color: var(--gold-deep); margin-bottom: 6px;
+}
+.card-badge.is-jade { background: var(--jade-bg); color: var(--jade); }
+.card-badge.is-red { background: var(--cinnabar-bg); color: var(--cinnabar); }
+
+.table-wrap {
+  width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0;
+  border-radius: 9px; border: 1px solid #ddd4c3; background: #ffffff;
+}
+.data-table { width: 100%; border-collapse: collapse; min-width: 500px; font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+.data-table th {
+  text-align: left; padding: 11px 13px; background: #f2ece0; color: #4e360c;
+  font-weight: 700; border-bottom: 1px solid #d9ceba; white-space: nowrap;
+}
+.data-table td { padding: 10px 13px; color: var(--ink-body); border-bottom: 1px solid #eee8dc; vertical-align: top; }
+.data-table tr:last-child td { border-bottom: none; }
+.txt-jade { color: var(--jade); font-weight: 700; }
+.txt-red { color: var(--cinnabar); font-weight: 700; }
+
+.cmd-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+.cmd-copy {
+  padding: 7px 12px; border-radius: 7px; font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600;
+  background: #202530; color: var(--gold-bright); border: 1px solid rgba(212, 175, 90, 0.45); transition: 0.15s;
+}
+.cmd-copy:hover { background: #2c3342; }
+.cmd-copy.copied { background: var(--jade); color: #ffffff; border-color: var(--jade); }
+
+/* Right Related Articles Sidebar (Genshin Image 3 signature right column!) */
+.related-rail {
+  position: sticky; top: 82px;
+  background: var(--paper-bg); border-top: 4px solid var(--gold-main);
+  border-radius: 4px 4px 10px 10px; box-shadow: 0 16px 38px rgba(10, 14, 22, 0.14);
+  padding: 18px 18px 20px;
+}
+.rail-heading {
+  font-family: var(--font-display); font-size: 1.06rem; font-weight: 700; color: #2b2316;
+  text-align: center; padding-bottom: 12px; margin: 0 0 14px; border-bottom: 1px solid #e2dacb;
+}
+.rail-list { display: flex; flex-direction: column; gap: 12px; }
+.rail-card {
+  display: grid; grid-template-columns: 98px minmax(0, 1fr); gap: 11px; align-items: start;
+  padding-bottom: 12px; border-bottom: 1px solid #ede7db; transition: opacity 0.15s;
+}
+.rail-card:last-child { border-bottom: none; padding-bottom: 0; }
+.rail-card:hover .rail-card-title { color: var(--gold-deep); }
+.rail-thumb { aspect-ratio: 16 / 10; border-radius: 5px; overflow: hidden; background: #141923; }
+.rail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.rail-card-title { font-size: 0.84rem; font-weight: 600; color: var(--ink-dark); line-height: 1.38; margin-bottom: 4px; }
+.rail-card-tag { font-size: 0.74rem; color: var(--ink-soft); }
+
+/* WuXing Calculator + Prev/Next Pager + Footer + Lightbox */
+.wx-box { background: #ffffff; border: 1px solid #d9ceba; border-radius: 10px; padding: 18px 20px; margin: 16px 0; }
+.wx-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 14px; }
+.wx-btn { padding: 7px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; background: var(--paper-sub); border: 1px solid #d7ccb8; color: var(--ink-body); }
+.wx-btn.active { background: #232833; color: var(--gold-bright); border-color: #232833; }
+.wx-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.wx-summary > div { background: var(--paper-bg); border: 1px solid #e5ddce; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.wx-k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
+
+.chapter-pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 32px; padding-top: 22px; border-top: 1px solid #e2dacb; }
+.pager-card { display: flex; flex-direction: column; gap: 3px; padding: 14px 16px; border-radius: 9px; background: var(--paper-sub); border: 1px solid #ddd4c2; transition: border-color 0.16s; }
+.pager-card:hover { border-color: var(--gold-deep); }
+.pager-card.is-next { text-align: right; }
+.pager-dir { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
+.pager-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #5b3e0d; }
+
+.footer { background: #0e1117; color: #9ea6b2; border-top: 1px solid rgba(212, 175, 90, 0.22); padding: 26px 0 34px; font-size: 0.85rem; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-links a:hover { color: var(--gold-bright); }
+
+.lightbox { position: fixed; inset: 0; z-index: 90; background: rgba(6, 9, 14, 0.92); display: grid; place-items: center; padding: 18px; backdrop-filter: blur(8px); }
+.lb-inner { max-width: min(1160px, 96vw); display: flex; flex-direction: column; gap: 10px; }
+.lb-inner img { max-height: 78vh; width: auto; max-width: 100%; margin: 0 auto; border-radius: 8px; border: 1px solid rgba(212, 175, 90, 0.5); }
+.lb-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; color: #e2dcd0; font-size: 0.86rem; }
+.lb-controls { display: flex; align-items: center; gap: 8px; }
+.lb-btn { padding: 6px 12px; border-radius: 7px; border: 1px solid rgba(212, 175, 90, 0.45); background: #19202d; color: var(--gold-bright); font-size: 0.84rem; }
+
+/* Responsive Breakpoints (Zero Overflow on 390px Mobile) */
+@media (max-width: 1020px) {
+  .featured-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .related-rail { position: static; }
+}
+@media (max-width: 920px) {
+  .topbar-inner { padding-left: 14px; }
+  .menu-toggle { display: inline-flex; }
+  .nav-cta-gold { padding: 0 14px; font-size: 0.84rem; }
+  .nav-links {
+    display: none; position: absolute; left: 0; right: 0; top: 64px; height: auto;
+    background: #121722; border-bottom: 1px solid rgba(212, 175, 90, 0.36);
+    flex-direction: column; align-items: stretch; padding: 10px 16px 16px; gap: 2px;
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-item { height: auto; flex-direction: column; align-items: stretch; }
+  .nav-link, .nav-drop-btn { height: auto; padding: 10px 10px; justify-content: space-between; }
+  .nav-link.active::after, .nav-drop-btn.active::after { display: none; }
+  .nav-dropdown { position: static; display: flex; flex-direction: column; box-shadow: none; border: none; background: rgba(255, 255, 255, 0.04); padding: 4px 8px; margin-bottom: 6px; border-radius: 8px; }
+  .world-rail { position: static; transform: none; order: -1; flex-direction: row; flex-wrap: wrap; justify-content: center; border-right: none; padding-right: 0; margin-top: 0; margin-bottom: 18px; gap: 8px; }
+  .world-stage { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: auto; padding: 26px 16px 44px; }
+  .world-title-line { width: 34px; }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 14px; }
+  .feed-card { grid-template-columns: 1fr; gap: 14px; }
+  .paper-sheet { padding: 22px 18px 28px; }
+  .recipe-grid, .card-grid-2, .card-grid-3, .wx-summary, .chapter-pager { grid-template-columns: 1fr; }
+  .pager-card.is-next { text-align: left; }
+  .feed-search { min-width: 0; width: 100%; flex: 1 1 100%; }
+  .brand span:last-child { font-size: 0.92rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
