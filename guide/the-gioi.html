@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chọn Thế Giới: Phàm Giới · Linh Giới · Tiên Giới — Kiếm Võng Giang Hồ</title>
+  <meta name="description" content="Khám phá hệ thống 3 Thế Giới độc đáo: Phàm Giới (trang bị Xanh-Tím, giới hạn cấp 120), Linh Giới (trang bị Hoàng Kim), Tiên Giới (thế giới mới với bộ animation đặc thù) và hệ thống SimBot riêng từng thế giới." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chọn Thế Giới: Phàm Giới · Linh Giới · Tiên Giới — Kiếm Võng Giang Hồ" />
+  <meta property="og:description" content="Khám phá hệ thống 3 Thế Giới độc đáo: Phàm Giới (trang bị Xanh-Tím, giới hạn cấp 120), Linh Giới (trang bị Hoàng Kim), Tiên Giới (thế giới mới với bộ animation đặc thù) và hệ thống SimBot riêng từng thế giới." />
+  <meta property="og:image" content="https://chipop-code.github.io/kvgh-releases/guide/assets/world_tien_gioi.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./guide.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../updates/" aria-label="Kiếm Võng Giang Hồ Trang Chủ">
+        <span class="brand-seal" aria-hidden="true">劍</span>
+        <span>Kiếm Võng Giang Hồ</span>
+      </a>
+      <nav class="nav-links" aria-label="Điều hướng Cẩm Nang">
+        <div class="nav-item"><a class="nav-link" href="../updates/">Trang Chủ</a></div>
+        <div class="nav-item"><a class="nav-link" href="./index.html">Cẩm Nang</a></div>
+        <div class="nav-item"><a class="nav-link active" href="./the-gioi.html">3 Thế Giới</a></div>
+        <div class="nav-item">
+          <button class="nav-drop-btn" type="button" aria-haspopup="true">Trang Bị ▾</button>
+          <div class="nav-dropdown">
+            <a href="./tho-ren.html">Hướng Dẫn Thợ Rèn (7 Tính Năng)</a>
+            <a href="./tho-ren-huyen-bi.html">Hướng Dẫn Thợ Rèn Huyền Bí</a>
+            <a href="./cuong-hoa.html">Cường Hóa &amp; Kế Thừa</a>
+            <a href="./tay-luyen.html">Tẩy Luyện &amp; Tiềm Năng</a>
+            <a href="./kham-tach-da.html">Kho Đồ, Khảm &amp; Tách Đá</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-drop-btn" type="button" aria-haspopup="true">Hoạt Động ▾</button>
+          <div class="nav-dropdown">
+            <a href="./da-tau.html">Nhiệm Vụ Dã Tẩu &amp; Boss Mốc</a>
+            <a href="./cay-vang.html">Cách Cày Vàng Không Khóa (KNB)</a>
+            <a href="./hoa-son.html">Nhiệm Vụ Cổ Địa Hoa Sơn</a>
+            <a href="./tong-kim.html">Chiến Trường Tống Kim 25v25</a>
+            <a href="./pho-ban.html">5 Phó Bản, Phúc Lợi &amp; Hồi Hương</a>
+            <a href="./simbot-pk.html">SimBot Từng Thế Giới, PK &amp; Ngũ Hành</a>
+          </div>
+        </div>
+      </nav>
+      <div class="topbar-right">
+        <button class="menu-toggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <a class="nav-cta-gold" href="../updates/#download">Tải Game</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="world-stage" class="world-stage" aria-label="Khám phá 3 Thế Giới tương tác">
+      <img class="world-bg-layer active" data-bg-id="pham" src="./assets/world_pham_gioi.webp" alt="Cảnh quan cổ phong Phàm Giới" width="1280" height="720" fetchpriority="high" />
+      <img class="world-bg-layer" data-bg-id="linh" src="./assets/world_linh_gioi.webp" alt="Cảnh quan giao đấu Linh Giới" width="1280" height="720" />
+      <img class="world-bg-layer" data-bg-id="tien" src="./assets/world_tien_gioi.webp" alt="Cảnh quan kiếm đạo Tiên Giới" width="1280" height="720" />
+      <img class="world-bg-layer" data-bg-id="simbot" src="../updates/assets/ingame_world_newbie.webp" alt="Hệ thống SimBot đặc thù từng thế giới" width="1280" height="720" />
+      <div class="world-vignette" aria-hidden="true"></div>
+
+      <div class="world-center">
+        <div id="w-emblem" class="world-emblem" aria-hidden="true">凡</div>
+        <span id="w-badge" class="world-sub-badge">CẢNH GIỚI NHẬP MÔN · CỔ ĐIỂN NGUYÊN BẢN</span>
+        <div class="world-title-row">
+          <span class="world-title-line" aria-hidden="true"></span>
+          <h1 id="w-title">Phàm Giới</h1>
+          <span class="world-title-line" aria-hidden="true"></span>
+        </div>
+        <p id="w-desc" class="world-desc"></p>
+        <div id="w-stats" class="world-stats-pills"></div>
+        <a id="w-detail-link" class="world-detail-btn" href="#chi-tiet-pham">
+          <span class="world-diamond-ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          <span id="w-detail-text">Xem Chi Tiết Phàm Giới</span>
+        </a>
+      </div>
+
+      <aside class="world-rail" aria-label="Chọn Thế Giới">
+        <button class="rail-btn active" type="button" data-world-id="pham" aria-pressed="true"><span>Phàm Giới</span><span class="rail-dot" aria-hidden="true"></span></button>
+        <button class="rail-btn" type="button" data-world-id="linh" aria-pressed="false"><span>Linh Giới</span><span class="rail-dot" aria-hidden="true"></span></button>
+        <button class="rail-btn" type="button" data-world-id="tien" aria-pressed="false"><span>Tiên Giới</span><span class="rail-dot" aria-hidden="true"></span></button>
+        <button class="rail-btn" type="button" data-world-id="simbot" aria-pressed="false"><span>SimBot Riêng Biệt</span><span class="rail-dot" aria-hidden="true"></span></button>
+      </aside>
+    </section>
+
+    <section class="detail-backdrop" style="background:#eae5da;padding-top:40px;">
+      <div class="wrap">
+        <div class="detail-grid">
+          <article class="paper-sheet">
+            <span class="paper-kicker">Cẩm Nang Chọn Thế Giới &amp; Lộ Trình</span>
+            <h2 style="margin-top:4px;font-size:1.7rem;">So Sánh Chi Tiết 3 Thế Giới &amp; Hệ Thống SimBot Đặc Thù</h2>
+            <p>Nhấp trực tiếp vào <strong>Quả Cầu Thế Giới</strong> ở góc trên trái màn hình (hồi chiêu <code>3 giây</code>, lưu riêng theo nhân vật) để chuyển đổi linh hoạt giữa các cảnh giới phù hợp nhất với phong cách chơi của bạn:</p>
+            <div class="table-wrap"><table class="data-table">
+              <thead><tr><th>Tiêu Chí</th><th>1 · Phàm Giới (Hạ Giới)</th><th>2 · Linh Giới</th><th>3 · Tiên Giới</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Bản Sắc Trang Bị</strong></td><td><strong>Đồ Xanh &amp; Tím</strong> kích hoạt dòng ẩn Ngũ Hành chuẩn cổ điển</td><td><strong>Trang Bị Hoàng Kim</strong>, Định Quốc, An Bang &amp; Bạch Kim</td><td><strong>Thế Giới Hoàn Toàn Mới:</strong> Thần Binh Thần Long, Hào Quang &amp; Mặt Nạ 3D</td></tr>
+                <tr><td><strong>Giới Hạn &amp; Lộ Trình</strong></td><td>Trải nghiệm trọn vẹn <strong>giới hạn cấp 120</strong> (miễn phí + Tu Vi Tích Trữ)</td><td>Bứt phá Lv.120 → Lv.200, săn Boss Mốc &amp; phó bản</td><td>Chinh phục <strong>Cổ Địa Hoa Sơn 51</strong> &amp; <strong>Chuyển Sinh Lv.200</strong> (kỹ năng trần 35)</td></tr>
+                <tr><td><strong>Animation &amp; Hiệu Ứng</strong></td><td>Nhịp võ lâm truyền thống mượt mà</td><td>Full hiệu ứng cường hóa, đục 4 lỗ, khảm ngọc</td><td><strong>Bộ Animation Đặc Thù:</strong> Kiếm Sĩ BnS, Bay Bạch Long 3D, Hào Quang, Rig 55 xương &amp; Tuyệt Kỹ</td></tr>
+                <tr><td><strong>Quái / Boss</strong></td><td class="txt-jade">20% HP · 50% Công (Boss Bán Nguyệt/Sa Mạc -50% HP thêm)</td><td><code>50%</code> HP · <code>75%</code> Công</td><td><code>100%</code> HP · <code>100%</code> Công nguyên bản</td></tr>
+                <tr><td><strong>SimBot Đặc Thù</strong></td><td><code>50%</code> chỉ số · Chợ thôn đồ Xanh–Tím, kết bạn tân thủ</td><td><code>75%</code> chỉ số · Đội kéo phó bản <code>×4</code> rơi đồ &amp; Nemesis</td><td><code>100%</code> <strong>SimBot V4 Cao Thủ</strong> 10 Phái 23 nhánh, hội đồng &amp; Tống Kim 25v25</td></tr>
+              </tbody>
+            </table></div>
+
+            <h2 id="chi-tiet-pham">1. Phàm Giới — Tinh Hoa Trang Bị Xanh Tím (Giới Hạn Cấp 120)</h2>
+            <p>Phù hợp cho người chơi mới hoặc đại hiệp hoài niệm thời kỳ <strong>chơi đồ Xanh – Tím kích Ngũ Hành</strong>. Ở ngưỡng giới hạn <strong>Lv.120 miễn phí</strong>, bạn thoải mái hoàn thiện cách phối 10 món trang bị theo <a class="inline-link" href="./simbot-pk.html#ngu-hanh">Công Cụ Tra Ngũ Hành</a>, cày chuỗi <a class="inline-link" href="./da-tau.html">Dã Tẩu</a> &amp; <a class="inline-link" href="./cay-vang.html">Vàng Không Khóa</a> mà mọi EXP dư đều tích lũy nguyên vẹn trong kho <strong>Tu Vi Tích Trữ</strong>!</p>
+
+            <h2 id="chi-tiet-linh">2. Linh Giới — Thỏa Sức Săn &amp; Rèn Trang Bị Hoàng Kim</h2>
+            <p>Nếu bạn thích cảm giác săn Boss rớt <strong>Định Quốc, An Bang, Vũ Khí Hoàng Kim</strong> và đầu tư chiều sâu tại lò rèn, Linh Giới đem lại nhịp chiến đấu cân bằng (<code>50%</code> HP quái / <code>75%</code> công) để thỏa sức trải nghiệm <a class="inline-link" href="./cuong-hoa.html">Cường Hóa</a>, <a class="inline-link" href="./tay-luyen.html">Tẩy Luyện 11 Dòng</a> và <a class="inline-link" href="./kham-tach-da.html">Đục 4 Lỗ · Khảm &amp; Tách Đá 100%</a>.</p>
+
+            <h2 id="chi-tiet-tien">3. Tiên Giới — Thế Giới Hoàn Toàn Mới &amp; Bộ Animation Đặc Thù</h2>
+            <p>Cảnh giới cao nhất mở ra hệ sinh thái võ học &amp; hình ảnh hoàn toàn mới: cưỡi rồng bay <strong>Bạch Long 3D</strong>, trang bị <strong>Hào Quang Thiên Cơ Pháp Luân</strong>, thi triển <strong>bộ chiêu &amp; animation đặc thù</strong> (Kiếm Sĩ BnS, Mặt Nạ 3D Rig 55 xương, Tuyệt Kỹ Ngoại Truyện), chinh phục <a class="inline-link" href="./hoa-son.html">Cổ Địa Hoa Sơn 51</a> rèn <strong>Kiếm Thần Long</strong> và <strong>Chuyển Sinh Lv.200</strong> (diệt 200 Quái Tím + nộp 200–600 Chuyển Sinh Đan tăng trần kỹ năng lên <code>30 + CS</code>)!</p>
+
+            <h2 id="simbot-cac-the-gioi">4. Hệ Thống SimBot Riêng Từng Thế Giới &amp; Thần Hành Phù 7 Dòng</h2>
+            <p>SimBot tự động thích ứng ngoại hình, lực chiến và lối đánh theo đúng Thế Giới bạn chọn — từ sạp chợ đồ Xanh–Tím ở Phàm Giới tới cao thủ đánh hội đồng 4 hướng ở Tiên Giới (xem chi tiết tại <a class="inline-link" href="./simbot-pk.html">Hệ Thống SimBot &amp; PK</a>). Đừng quên gắn <strong>Thần Hành Phù</strong> vào phím <code>4</code> để mở đủ 7 dòng dịch chuyển (Túi Đồ · Phó Bản · Bản Đồ Train Lv.10–250 · Khu VIP · Báo Danh Hoạt Động · Đến NPC · <strong>⑦ Trở Lại Địa Điểm Cũ</strong> sau khi dùng Thổ Địa Phù)!</p>
+            <figure class="zoomable-fig">
+              <img src="./assets/guide_world_diff_real.webp" alt="Vị trí Quả Cầu Chọn Thế Giới ở góc trên bên trái màn hình" width="1280" height="720" loading="lazy" />
+              <figcaption><span>Nhấn Quả Cầu Thế Giới ngay sát bản đồ nhỏ góc trên trái để đổi cảnh giới bất cứ lúc nào.</span><span class="zoom-hint">Bấm phóng lớn</span></figcaption>
+            </figure>
+          </article>
+
+          <aside class="related-rail" aria-label="Bài viết liên quan">
+            <h2 class="rail-heading">Hướng Dẫn Chuyên Sâu</h2>
+            <div id="related-rail" class="rail-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© 2026 <strong>Kiếm Võng Giang Hồ · Chipop Studio</strong> — Cẩm Nang Tân Thủ Chính Thức (PC &amp; Android Offline).</div>
+      <div class="footer-links">
+        <a href="../updates/">Trang Cập Nhật 1.0.11</a>
+        <a href="./index.html">Danh Mục Cẩm Nang</a>
+        <a href="./the-gioi.html">Cổng 3 Thế Giới</a>
+        <a href="../privacy-policy.html">Chính sách</a>
+        <a href="https://play.google.com/store/apps/details?id=com.chipop.kiemvongoffline" target="_blank" rel="noopener noreferrer">Google Play</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh kích thước lớn" hidden>
+    <div class="lb-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lb-bar">
+        <span id="lightbox-cap"></span>
+        <div class="lb-controls">
+          <span id="lightbox-count" style="font-family:var(--font-mono);font-size:0.82rem;"></span>
+          <button class="lb-btn lb-prev" type="button" aria-label="Ảnh trước">←</button>
+          <button class="lb-btn lb-next" type="button" aria-label="Ảnh tiếp theo">→</button>
+          <button class="lb-btn lb-close" type="button" aria-label="Đóng xem ảnh">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./guide.js" defer></script>
+</body>
+</html>

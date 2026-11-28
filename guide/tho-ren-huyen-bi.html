@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hướng Dẫn NPC Thợ Rèn Huyền Bí — Dễ Hiểu Cho Người Chơi — Cẩm Nang KVGH</title>
+  <meta name="description" content="Giải thích đơn giản 5 chức năng chính tại Thợ Rèn Huyền Bí: hủy khóa giao dịch, đổi vũ khí/ngựa/bộ đồ, rút và khắc dòng Kết Tinh, đục lỗ khảm/tách ngọc bảo toàn 100%, Lò Bát Quái và đặt lại dòng Ấn." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hướng Dẫn NPC Thợ Rèn Huyền Bí — Dễ Hiểu Cho Người Chơi — Cẩm Nang KVGH" />
+  <meta property="og:description" content="Giải thích đơn giản 5 chức năng chính tại Thợ Rèn Huyền Bí: hủy khóa giao dịch, đổi vũ khí/ngựa/bộ đồ, rút và khắc dòng Kết Tinh, đục lỗ khảm/tách ngọc bảo toàn 100%, Lò Bát Quái và đặt lại dòng Ấn." />
+  <meta property="og:image" content="https://chipop-code.github.io/kvgh-releases/guide/assets/world_tien_gioi.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./guide.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../updates/" aria-label="Kiếm Võng Giang Hồ Trang Chủ">
+        <span class="brand-seal" aria-hidden="true">劍</span>
+        <span>Kiếm Võng Giang Hồ</span>
+      </a>
+      <nav class="nav-links" aria-label="Điều hướng Cẩm Nang">
+        <div class="nav-item"><a class="nav-link" href="../updates/">Trang Chủ</a></div>
+        <div class="nav-item"><a class="nav-link" href="./index.html">Cẩm Nang</a></div>
+        <div class="nav-item"><a class="nav-link" href="./the-gioi.html">3 Thế Giới</a></div>
+        <div class="nav-item">
+          <button class="nav-drop-btn active" type="button" aria-haspopup="true">Trang Bị ▾</button>
+          <div class="nav-dropdown">
+            <a href="./tho-ren.html">Hướng Dẫn Thợ Rèn (7 Tính Năng)</a>
+            <a class="active" href="./tho-ren-huyen-bi.html">Hướng Dẫn Thợ Rèn Huyền Bí</a>
+            <a href="./cuong-hoa.html">Cường Hóa &amp; Kế Thừa</a>
+            <a href="./tay-luyen.html">Tẩy Luyện &amp; Tiềm Năng</a>
+            <a href="./kham-tach-da.html">Kho Đồ, Khảm &amp; Tách Đá</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-drop-btn" type="button" aria-haspopup="true">Hoạt Động ▾</button>
+          <div class="nav-dropdown">
+            <a href="./da-tau.html">Nhiệm Vụ Dã Tẩu &amp; Boss Mốc</a>
+            <a href="./cay-vang.html">Cách Cày Vàng Không Khóa (KNB)</a>
+            <a href="./hoa-son.html">Nhiệm Vụ Cổ Địa Hoa Sơn</a>
+            <a href="./tong-kim.html">Chiến Trường Tống Kim 25v25</a>
+            <a href="./pho-ban.html">5 Phó Bản, Phúc Lợi &amp; Hồi Hương</a>
+            <a href="./simbot-pk.html">SimBot Từng Thế Giới, PK &amp; Ngũ Hành</a>
+          </div>
+        </div>
+      </nav>
+      <div class="topbar-right">
+        <button class="menu-toggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <a class="nav-cta-gold" href="../updates/#download">Tải Game</a>
+      </div>
+    </div>
+  </header>
+  <main class="detail-backdrop">
+    <div class="wrap">
+      <div class="detail-bar">
+        <nav class="detail-crumbs" aria-label="Breadcrumb">
+          <a href="../updates/">Trang Chủ</a><span>›</span>
+          <a href="./index.html">Cẩm Nang</a><span>›</span>
+          <span>Trang Bị & Rèn</span><span>›</span>
+          <span style="color:#f4eee3;">Thợ Rèn Huyền Bí</span>
+        </nav>
+        <a class="detail-back-link" href="./index.html">← Trở Về Danh Mục Cẩm Nang</a>
+      </div>
+
+      <div class="detail-grid">
+        <article class="paper-sheet">
+          <span class="paper-kicker">NPC Thợ Rèn Huyền Bí · Ngọc · Kết Tinh · Lò Bát Quái</span>
+          <h1>Hướng Dẫn NPC Thợ Rèn Huyền Bí (Thần Bí)</h1>
+          <div class="paper-meta">
+            <span>Chuyên mục: <strong>Trang Bị & Rèn</strong></span>
+            <span>Áp dụng: <strong>PC Windows &amp; Android Offline</strong></span>
+            <span>Chuẩn cơ chế Ver. 1.0.11</span>
+          </div>
+          
+    <p>Nếu <strong>Thợ Rèn</strong> lo phần đập đồ cơ bản, thì <strong>Thợ Rèn Huyền Bí</strong> (trong game gọi là <em>Thợ Rèn Thần Bí</em>) là nơi làm những việc cao cấp hơn: <strong>mở khóa giao dịch</strong>, <strong>đổi hệ vũ khí &amp; ngựa</strong>, <strong>rút dòng ngon từ đồ phụ sang đồ chính</strong>, <strong>đục lỗ – khảm/tháo ngọc</strong> và <strong>Lò Bát Quái</strong>.</p>
+    <figure class="zoomable-fig">
+      <img src="./assets/guide_forge_items_real.webp" alt="Hình nhận diện các loại Thủy Tinh, Ngọc Thạch và đá nâng cấp dùng tại Thợ Rèn Huyền Bí" width="1280" height="720" loading="eager" />
+      <figcaption><span>Nhìn hình để nhớ nhanh các viên Thủy Tinh, Ngọc 3 hệ và đá nâng cấp thường dùng tại Thợ Rèn Huyền Bí.</span><span class="zoom-hint">Bấm phóng lớn</span></figcaption>
+    </figure>
+
+    <div class="callout">
+      <strong class="co-title">Xem nhanh mục bạn cần</strong>
+      <a class="inline-link" href="#huy-khoa">1. Hủy khóa đồ</a> ·
+      <a class="inline-link" href="#chuyen-doi">2. Đổi vũ khí / Ngựa / Bộ đồ</a> ·
+      <a class="inline-link" href="#ket-tinh">3. Rút &amp; khắc dòng Kết Tinh</a> ·
+      <a class="inline-link" href="#bao-thach">4. Đục lỗ, khảm &amp; tách ngọc</a> ·
+      <a class="inline-link" href="#lo-bat-quai">5. Lò Bát Quái</a> ·
+      <a class="inline-link" href="#dat-lai-an">6. Đặt lại dòng Ấn &amp; Trang Sức</a>
+    </div>
+
+    <h2 id="huy-khoa">1. Hủy Khóa Vĩnh Viễn (Mở Giao Dịch / Bày Bán)</h2>
+    <p>Dùng khi trang bị hoặc vật phẩm đang bị khóa không bày bán hay giao dịch được.</p>
+    <ul>
+      <li>Có 2 cách rất tiện: <strong>bỏ từng món vào ô (1–5 món)</strong> để xem trước, hoặc bấm <strong>Hủy Khóa Nhanh</strong> để mở khóa một lượt toàn bộ đồ đang mặc và trong túi.</li>
+      <li><strong>An toàn tuyệt đối:</strong> Hủy khóa <strong>không làm mở mất</strong> các con Ngựa hay viên Ngọc chưa giám định — bạn có thể hủy khóa xong mang nguyên đồ chưa mở đi bán!</li>
+    </ul>
+
+    <h2 id="chuyen-doi">2. Chuyển Đổi Vũ Khí · Tọa Kỵ · Bộ An Bang · Bộ Định Quốc</h2>
+    <p>Chơi đổi phái hoặc nhặt nhầm đồ lệch hệ? Đừng vứt đi, mang vào đây đổi thẳng sang thứ mình cần:</p>
+    <ul>
+      <li><strong>Đổi Vũ Khí Thần Binh:</strong> Đổi tự do giữa 10 loại Thần Binh (Kiếm, Đao, Bổng, Thương, Chùy, Song Đao, Triền Thủ, Phi Đao, Phi Tiêu, Tụ Tiễn) — <strong>giữ nguyên 100% cấp cường hóa, tiềm năng, lỗ ngọc và các dòng đã khắc!</strong></li>
+      <li><strong>Đổi Kỹ Năng Tọa Kỵ (10 vạn Xu):</strong> Ngựa đã giám định có thể đổi lại dòng cộng cấp kỹ năng cho khớp đúng môn phái bạn đang chơi.</li>
+      <li><strong>Đổi Ngũ Hành Bộ An Bang (10 vạn Xu):</strong> Tự chọn thẳng hệ <em>Kim, Mộc, Thủy, Hỏa hay Thổ</em> theo ý muốn để kích dòng ẩn.</li>
+      <li><strong>Đổi Chỉ Số Bộ Định Quốc (10 vạn Xu):</strong> Tự chọn đổi hướng chính sang <em>Sức Mạnh, Thân Pháp, Sinh Khí</em> hoặc <em>Nội Công</em>.</li>
+    </ul>
+
+    <h2 id="ket-tinh">3. Kết Tinh — Rút Dòng Ngon Từ Đồ Phụ Sang Đồ Chính</h2>
+    <p>Ví dụ bạn nhặt được một món đồ phụ xấu nhưng lại có <strong>1 dòng cực phẩm (như Tốc Đánh max sao ★ hoặc Hút Máu cao)</strong> — bạn có thể rút đúng dòng đó ra rồi ghép đè vào món đồ xịn mình đang mặc! Thao tác gồm đúng 2 bước tách riêng cho dễ làm:</p>
+    <div class="card-grid-2">
+      <div class="info-card">
+        <span class="card-badge">Bước 1 · Chiết Xuất</span>
+        <h4>Rút Dòng Ra Viên Kết Tinh</h4>
+        <p>• Bỏ vào ô luyện: <strong>1 món đồ phụ</strong> (đã giám định) + <strong>3 viên Kết Tinh trống cùng bậc</strong> (hoặc bậc cao hơn đồ) + <strong>1 Chất Tách Thuộc Tính</strong> chọn đúng vị trí dòng muốn rút (Hiện 1, Ẩn 1... tới Đặc biệt 1–2).<br/>• <strong>Kết quả:</strong> Món đồ phụ vẫn còn nguyên (dòng bị rút hiện chữ <em>Đang nghiên cứu</em>), bạn nhận được <strong>1 viên Kết Tinh chứa đúng dòng đó</strong> (giữ nguyên cả dấu sao ★ nếu dòng đó đạt tối đa!).</p>
+      </div>
+      <div class="info-card">
+        <span class="card-badge is-jade">Bước 2 · Khắc Kết</span>
+        <h4>Ghép Dòng Vào Món Đồ Chính</h4>
+        <p>• Bỏ vào ô luyện: <strong>1 món đồ chính</strong> cần nâng cấp + <strong>1 viên Kết Tinh đã rút</strong> ở Bước 1 → bấm Xác Nhận.<br/>• <strong>Kết quả:</strong> Dòng ngon trên viên Kết Tinh sẽ ghi đè vào đúng vị trí đó trên đồ chính (mang theo cả dấu sao ★), thay thế dòng cũ!<br/>• Viên Kết Tinh rút ra có thể khắc lên bất kỳ món đồ mục tiêu nào.</p>
+      </div>
+    </div>
+
+    <h2 id="bao-thach">4. Bảo Thạch — Đục Lỗ, Nâng Lỗ, Khảm/Tách Ngọc &amp; Hợp Ngọc</h2>
+    <p>Mọi thao tác liên quan tới ngọc khảm đều gói gọn trong mục <strong>Bảo Thạch</strong>:</p>
+    <ul>
+      <li><strong>① Đục lỗ trang bị:</strong> Bỏ trang bị (từ đồ Lam trở lên) + <strong>Hoàng Thủy Tinh</strong> + Tiền Đồng (lỗ 1 đến 4 tốn lần lượt <em>5, 10, 15, 20 vạn Xu</em> và dùng Thủy Tinh bậc từ thấp lên cao: <em>Vỡ → Mòn → Lành → Nguyên Vẹn</em>). <strong>Vũ Khí &amp; Ngựa</strong> đục được tối đa <strong>4 lỗ</strong>; áo mũ và trang sức tối đa <strong>2 lỗ</strong>.</li>
+      <li><strong>② Đổi màu &amp; Nâng phẩm chất lỗ (tăng cực mạnh cộng hưởng!):</strong>
+        <ul>
+          <li><strong>Tử Thủy Tinh:</strong> Đổi màu lỗ xoay vòng <em>Đỏ (Xích Viêm) → Lam (Thanh Minh) → Tím (Tử Hà)</em>.</li>
+          <li><strong>Bát Quái Bí Ngân:</strong> Biến lỗ thành <strong>Lỗ Ngũ Sắc</strong> — khảm ngọc hệ nào vào cũng tự ăn cộng hưởng!</li>
+          <li><strong>Thủy Ngân Rực Rỡ:</strong> Nâng lên <strong>Lỗ Cực Phẩm</strong> — <strong>NHÂN ĐÔI (×2) toàn bộ chỉ số cộng hưởng</strong> của viên ngọc khảm vào lỗ đó! (Ví dụ ngọc bậc 7 ở lỗ thường cộng thêm tới 80 công/kháng, 500 máu, 5% chí mạng — lên Lỗ Cực Phẩm sẽ thành <strong>160 công/kháng, 1.000 máu, 10% chí mạng</strong>!).</li>
+        </ul>
+      </li>
+      <li><strong>③ Giám định ngọc trước khi khảm:</strong> Dùng <strong>Cửu Tiêu Ngọc Chiếu Đăng</strong> (ngọc cấp mấy thì tốn bấy nhiêu cây đèn) để mở chỉ số ngọc thuộc 3 hệ: <em>Thanh Minh (lỗ Lam), Xích Viêm (lỗ Đỏ), Tử Hà (lỗ Tím)</em>.</li>
+      <li><strong>④ Khảm ngọc:</strong> Bỏ trang bị đã đục lỗ + viên ngọc đã giám định + <strong>Lục Thủy Tinh</strong> đúng bậc lỗ. Nếu lỗ đó đang có ngọc cũ, <strong>ngọc cũ tự động trả nguyên vẹn về túi</strong>, không sợ mất!</li>
+      <li><strong>⑤ Hợp 3 ngọc lên cấp &amp; làm mới ngọc:</strong>
+        <ul>
+          <li>Bỏ <strong>3 viên ngọc giống nhau</strong> (từ cấp 1 đến cấp 6) để ép lên cấp cao hơn. Tỉ lệ gốc: cấp 1–2 là <strong>75%</strong>, cấp 3–4 là <strong>60%</strong>, cấp 5–6 là <strong>50%</strong> (lỡ xịt chỉ mất 1 viên phôi). Muốn chắc ăn <strong>100% thành công</strong> thì kẹp thêm <strong>Phù Bảo Hộ Hợp Thành Ngọc</strong>!</li>
+          <li>Ngọc giám định ra dòng xấu? Bỏ cùng <strong>Ngọc Thạch Quy Chân Kính</strong> để đưa về chưa giám định rồi mở lại.</li>
+        </ul>
+      </li>
+      <li><strong>⑥ Chuyển lỗ &amp; ngọc sang đồ mới (Di Truyền):</strong> Tháo cả 2 món cùng vị trí ra túi (món mới chưa khảm sẵn ngọc) rồi dùng <strong>Đá Truyền Thừa Bảo Thạch</strong> (mỗi lỗ tốn 1 viên đá + 5 vạn Xu) để dời nguyên dàn lỗ Cực Phẩm và toàn bộ ngọc sang món mới!</li>
+    </ul>
+
+    <div class="callout is-jade">
+      <strong class="co-title">Mẹo Tách / Gỡ Ngọc Bảo Toàn 100% (Không Mất 1 Viên Nào!)</strong>
+      Vào <strong>Bảo Thạch → Khảm &amp; Gỡ Ngọc</strong> → chỉ bỏ <strong>DUY NHẤT 1 món trang bị đang có ngọc</strong> vào ô luyện (<strong>không bỏ thêm</strong> bất kỳ viên ngọc hay thủy tinh nào) → bấm <strong>Xác Nhận</strong>. Toàn bộ ngọc sẽ được tháo sạch và trả nguyên vẹn 100% về hành trang!
+    </div>
+
+    <h2 id="lo-bat-quai">5. Lò Bát Quái (5 Công Thức Ghép &amp; Đổi Tiện Lợi)</h2>
+    <p>Mở Lò Bát Quái để bỏ trực tiếp vật phẩm vào hộp luyện — hệ thống luôn hiện trước kết quả để bạn xem rồi mới bấm:</p>
+    <ul>
+      <li><strong>Ghép 3 đồ Hoàng Kim cùng loại thành 1:</strong> Nâng thẳng lên bậc cao hơn (<em>Phỏng Chế Cấp 5 → Tinh Xảo Cấp 8 → Cực Phẩm Cấp 10</em>), tự giữ mức cường hóa cao nhất trong 3 món và tăng <strong>+20% chỉ số</strong>.</li>
+      <li><strong>Thăng cấp Bạch Kim:</strong> Bỏ 1 món Hoàng Kim + 1 <em>Trân Phẩm Thạch</em> (trong túi có sẵn 2 <em>Mảnh Cổ Thần</em>) để nâng lên đồ Bạch Kim (+20% sức mạnh).</li>
+      <li><strong>Đổi Ngũ Hành cho trang bị bất kỳ:</strong> Bỏ trang bị + 1 <em>Chuyển Sinh Đan</em> để xoay vòng hệ <em>Kim → Mộc → Thủy → Hỏa → Thổ</em> cho dễ kích dòng ẩn (<a class="inline-link" href="./simbot-pk.html#ngu-hanh">xem bảng kích Ngũ Hành</a>).</li>
+      <li><strong>Hợp 6 Thủy Tinh thành 1 viên bậc cao hơn:</strong> Gom 6 viên Lục / Hoàng / Tử Thủy Tinh bậc thấp ép thành 1 viên bậc cao để dùng cho lỗ 2, 3, 4.</li>
+      <li><strong>Lò Bát Quái Đa Năng:</strong> Quên công thức ở mục nào cứ mở Lò Đa Năng, bỏ đồ vào nó tự nhận diện hết!</li>
+    </ul>
+
+    <h2 id="dat-lai-an">6. Đặt Lại Dòng Ngũ Hành Ấn &amp; Trang Sức</h2>
+    <p>Trong bảng cường hóa Ngũ Hành Ấn hoặc Trang Sức có nút <strong>Đặt lại</strong> giúp bạn quay mới các dòng thuộc tính:</p>
+    <ul>
+      <li><strong>Chi phí mỗi lần quay:</strong> Tốn <em>2 Hồn Thạch</em> (với Ấn) hoặc <em>2 Tử Tinh</em> (với Trang Sức) + <em>10 vạn Xu</em>.</li>
+      <li><strong>Cơ chế siêu lời cho người chơi:</strong> Dòng nào đã quay ra <strong>Max Sao (★) sẽ tự động giữ nguyên MIỄN PHÍ</strong> (không mất Hứa Nguyện Châu!). Chỉ khi muốn khóa thêm dòng thường chưa Max Sao mới tốn 1 <em>Hứa Nguyện Châu</em> mỗi dòng. Mỗi lần quay có tới <strong>20% cơ hội nổ dòng Max Sao</strong>!</li>
+    </ul>
+
+    <div class="callout">
+      <strong class="co-title">Xem thêm các trang liên quan</strong>
+      <a class="inline-link" href="./tho-ren.html">← Quay lại Hướng Dẫn NPC Thợ Rèn</a> ·
+      <a class="inline-link" href="./kham-tach-da.html">Cách dùng Kho Đồ, Rương Từ Xa &amp; Tự Phân Giải</a> ·
+      <a class="inline-link" href="./simbot-pk.html#ngu-hanh">Tra Cách Kích Hoạt Dòng Ẩn Ngũ Hành</a>
+    </div>
+    
+          <nav class="chapter-pager" aria-label="Bài trước và bài tiếp theo">
+            <a class="pager-card" href="./tho-ren.html"><span class="pager-dir">← Bài trước</span><span class="pager-title">Hướng Dẫn NPC Thợ Rèn (7 Tính Năng)</span></a>
+            <a class="pager-card is-next" href="./cuong-hoa.html"><span class="pager-dir">Bài tiếp theo →</span><span class="pager-title">Tóm Tắt Nhanh Cường Hóa & Bùa</span></a>
+          </nav>
+        </article>
+
+        <aside class="related-rail" aria-label="Bài viết liên quan">
+          <h2 class="rail-heading">Bài Viết Liên Quan</h2>
+          <div id="related-rail" class="rail-list"></div>
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid #e2dacb;text-align:center;">
+            <a class="inline-link" style="font-size:0.86rem;" href="./index.html">Xem tất cả 12 hướng dẫn →</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© 2026 <strong>Kiếm Võng Giang Hồ · Chipop Studio</strong> — Cẩm Nang Tân Thủ Chính Thức (PC &amp; Android Offline).</div>
+      <div class="footer-links">
+        <a href="../updates/">Trang Cập Nhật 1.0.11</a>
+        <a href="./index.html">Danh Mục Cẩm Nang</a>
+        <a href="./the-gioi.html">Cổng 3 Thế Giới</a>
+        <a href="../privacy-policy.html">Chính sách</a>
+        <a href="https://play.google.com/store/apps/details?id=com.chipop.kiemvongoffline" target="_blank" rel="noopener noreferrer">Google Play</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh kích thước lớn" hidden>
+    <div class="lb-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <div class="lb-bar">
+        <span id="lightbox-cap"></span>
+        <div class="lb-controls">
+          <span id="lightbox-count" style="font-family:var(--font-mono);font-size:0.82rem;"></span>
+          <button class="lb-btn lb-prev" type="button" aria-label="Ảnh trước">←</button>
+          <button class="lb-btn lb-next" type="button" aria-label="Ảnh tiếp theo">→</button>
+          <button class="lb-btn lb-close" type="button" aria-label="Đóng xem ảnh">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./guide.js" defer></script>
+</body>
+</html>
